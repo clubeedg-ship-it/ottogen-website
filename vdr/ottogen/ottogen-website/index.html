@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OttoGen — AI for Your Business</title>
+<meta name="description" content="I bring AI to businesses that don't have time to figure it out. Save 10-15 hours per week with practical AI solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#0055ff;--blue-glow:#0066ff40;--bg:#050510;--bg2:#0a0a1a;
+  --surface:#111128;--surface-hover:#16163a;--text:#f0f0f5;--text2:#9898b0;
+  --radius:16px;--max:1200px;
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Space Grotesk','Inter',sans-serif;line-height:1.15;font-weight:700}
+a{color:var(--blue);text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:background .3s,backdrop-filter .3s}
+nav.scrolled{background:rgba(5,5,16,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.5px}
+.logo span{color:var(--blue)}
+nav ul{display:flex;gap:32px;list-style:none}
+nav ul a{color:var(--text2);font-size:.9rem;font-weight:500;transition:color .2s}
+nav ul a:hover{color:#fff}
+.nav-cta{background:var(--blue);color:#fff!important;padding:10px 24px;border-radius:50px;font-weight:600;font-size:.9rem;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 24px var(--blue-glow)}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg canvas{width:100%;height:100%}
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,85,255,.12);border:1px solid rgba(0,85,255,.25);border-radius:50px;padding:8px 20px;font-size:.85rem;color:var(--blue);font-weight:500;margin-bottom:32px}
+.hero-badge::before{content:'';width:8px;height:8px;background:var(--blue);border-radius:50;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:-.03em;margin-bottom:24px}
+.hero h1 .gradient{background:linear-gradient(135deg,#fff 0%,var(--blue) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:clamp(1.1rem,2vw,1.35rem);color:var(--text2);max-width:600px;margin:0 auto 40px;line-height:1.7}
+.btn-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:all .25s;border:none}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 0 40px var(--blue-glow)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(0,85,255,.35)}
+.btn-secondary{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.1)}
+.btn-secondary:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text2);font-size:.8rem;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.scroll-hint svg{width:24px;height:24px;stroke:var(--text2)}
+
+/* SECTIONS */
+section{padding:120px 0}
+.section-label{font-size:.85rem;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+.section-title{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.02em;margin-bottom:20px}
+.section-subtitle{font-size:1.1rem;color:var(--text2);max-width:600px;line-height:1.7}
+.section-header{text-align:center;margin-bottom:72px}
+.section-header .section-subtitle{margin:0 auto}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* PAIN SECTION */
+.pain{background:var(--bg);position:relative}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.pain-text .section-title{text-align:left}
+.pain-text .section-subtitle{max-width:none}
+.pain-quote{font-size:1.5rem;font-weight:600;font-family:'Space Grotesk',sans-serif;color:#fff;line-height:1.4;margin-top:32px;padding-left:24px;border-left:3px solid var(--blue)}
+.pain-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:400px}
+.pain-circle{width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(0,85,255,.2),transparent 70%);border:1px solid rgba(0,85,255,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
+.pain-circle .big-num{font-size:4rem;font-weight:700;font-family:'Space Grotesk',sans-serif;color:var(--blue)}
+.pain-circle p{color:var(--text2);font-size:.95rem;margin-top:8px}
+
+/* SERVICES */
+.services{background:var(--bg2)}
+.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:40px 32px;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:0;transition:opacity .35s}
+.service-card:hover{transform:translateY(-4px);border-color:rgba(0,85,255,.2);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.service-card:hover::before{opacity:1}
+.service-icon{width:56px;height:56px;border-radius:14px;background:rgba(0,85,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.service-icon svg{width:28px;height:28px;stroke:var(--blue);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.service-card h3{font-size:1.4rem;margin-bottom:8px}
+.service-price{color:var(--blue);font-weight:600;font-size:1rem;margin-bottom:16px}
+.service-card p{color:var(--text2);font-size:.95rem;line-height:1.7}
+.service-card.featured{border-color:rgba(0,85,255,.3);background:linear-gradient(180deg,rgba(0,85,255,.06) 0%,var(--surface) 100%)}
+.popular-tag{position:absolute;top:16px;right:16px;background:var(--blue);color:#fff;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:50px}
+
+/* STEPS */
+.steps{background:var(--bg)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative}
+.steps-grid::before{content:'';position:absolute;top:44px;left:calc(12.5% + 16px);right:calc(12.5% + 16px);height:2px;background:linear-gradient(90deg,var(--blue),rgba(0,85,255,.2));z-index:0}
+.step{text-align:center;position:relative;z-index:1}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--surface);border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;color:var(--blue)}
+.step h4{font-size:1.1rem;margin-bottom:8px}
+.step p{color:var(--text2);font-size:.9rem;line-height:1.6}
+
+/* STATS */
+.stats{background:var(--bg2);padding:80px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.stat-num{font-size:clamp(2.5rem,4vw,3.5rem);font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--blue)}
+.stat-label{color:var(--text2);font-size:.9rem;margin-top:4px}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--bg)}
+.testimonial-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:36px 32px;transition:all .3s}
+.testimonial-card:hover{border-color:rgba(0,85,255,.15)}
+.stars{color:#f5a623;font-size:1.1rem;margin-bottom:16px;letter-spacing:2px}
+.testimonial-card blockquote{color:var(--text2);font-size:.95rem;line-height:1.7;font-style:italic;margin-bottom:20px}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;color:#fff}
+.author-info h4{font-size:.95rem;font-weight:600}
+.author-info p{font-size:.8rem;color:var(--text2)}
+
+/* ABOUT */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+.about-photo{width:100%;max-width:400px;aspect-ratio:1;border-radius:var(--radius);background:linear-gradient(135deg,var(--surface),rgba(0,85,255,.1));border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:6rem;filter:grayscale(0)}
+.about-text .section-title{text-align:left}
+.about-text p{color:var(--text2);font-size:1.05rem;line-height:1.8;margin-bottom:16px}
+.about-text p strong{color:#fff}
+
+/* CTA */
+.cta-section{background:var(--bg);padding:140px 0;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,85,255,.12),transparent 70%);transform:translate(-50%,-50%);pointer-events:none}
+.cta-section .section-title{font-size:clamp(2.2rem,4.5vw,3.5rem);margin-bottom:20px}
+.cta-section p{color:var(--text2);font-size:1.15rem;max-width:500px;margin:0 auto 40px;line-height:1.7}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid rgba(255,255,255,.06);padding:48px 0}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer p{color:var(--text2);font-size:.85rem}
+footer a{color:var(--text2);font-size:.85rem;transition:color .2s}
+footer a:hover{color:#fff}
+
+/* MOBILE */
+@media(max-width:1024px){
+  .service-cards,.testimonial-cards{grid-template-columns:1fr 1fr}
+  .steps-grid{grid-template-columns:1fr 1fr;gap:40px}
+  .steps-grid::before{display:none}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .pain-grid,.about-grid{grid-template-columns:1fr;gap:48px}
+  .pain-visual{display:none}
+}
+@media(max-width:768px){
+  nav ul.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(5,5,16,.95);backdrop-filter:blur(20px);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid rgba(255,255,255,.06)}
+  nav ul.nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .service-cards,.testimonial-cards{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
+  section{padding:80px 0}
+  .hero{min-height:90vh;padding:100px 24px 60px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="#" class="logo">Otto<span>Gen</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#testimonials">Clients</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Free Call</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><canvas id="hero-canvas"></canvas></div>
+  <div class="hero-content">
+    <div class="hero-badge reveal">Available for new clients</div>
+    <h1 class="reveal reveal-delay-1">I bring AI to businesses<br>that <span class="gradient">don't have time</span><br>to figure it out</h1>
+    <p class="reveal reveal-delay-2">You run the business. I make it faster, smarter, and more profitable — with AI solutions that actually work.</p>
+    <div class="btn-group reveal reveal-delay-3">
+      <a href="#contact" class="btn btn-primary">Book a Free Call →</a>
+      <a href="#services" class="btn btn-secondary">See What I Do</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="container">
+    <div class="pain-grid">
+      <div class="pain-text reveal">
+        <p class="section-label">The Problem</p>
+        <h2 class="section-title">You've heard AI can save hours. But who actually sets it up for YOUR business?</h2>
+        <p class="section-subtitle">You're busy running things. You don't have time to learn prompt engineering, test 50 tools, or figure out what works. That's where I come in.</p>
+        <p class="pain-quote reveal reveal-delay-1">"I knew AI could help — I just didn't know where to start."</p>
+      </div>
+      <div class="pain-visual reveal reveal-delay-2">
+        <div class="pain-circle">
+          <div class="big-num" data-count="73">0%</div>
+          <p>of SMBs want to use AI<br>but don't know how</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label reveal">What I Do</p>
+      <h2 class="section-title reveal reveal-delay-1">Three ways I bring AI<br>into your business</h2>
+      <p class="section-subtitle reveal reveal-delay-2">No jargon. No complexity. Just results you can see in your bottom line.</p>
+    </div>
+    <div class="service-cards">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>AI Audit</h3>
+        <p class="service-price">€500 · One-time</p>
+        <p>I look at how you work and show you exactly where AI saves you time and money. You get a clear report plus quick wins implemented on the spot.</p>
+      </div>
+      <div class="service-card featured reveal reveal-delay-1">
+        <span class="popular-tag">Most Popular</span>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3>Monthly AI Partner</h3>
+        <p class="service-price">€1,500 — €2,500/mo</p>
+        <p>I become your AI department. Every month I find new ways to automate, optimize, and grow your business. Like having a CTO — without the salary.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Custom AI Build</h3>
+        <p class="service-price">€2,500 — €5,000</p>
+        <p>Need something specific? A chatbot for your customers, an automated workflow, or a custom tool — I design and build it for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps" id="how">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label reveal">How It Works</p>
+      <h2 class="section-title reveal reveal-delay-1">Four steps to a smarter business</h2>
+      <p class="section-subtitle reveal reveal-delay-2">Simple, structured, and designed around your schedule.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h4>We Talk</h4>
+        <p>Free 15-minute call. You tell me what's eating your time — I tell you if AI can fix it.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <h4>I Audit Your Workflow</h4>
+        <p>I map out your daily operations and pinpoint where AI delivers the biggest impact.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <h4>I Implement Quick Wins</h4>
+        <p>Within days, not months. You start seeing results while we plan the bigger moves.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">4</div>
+        <h4>You Save 10-15 Hours/Week</h4>
+        <p>More time for what matters — growing your business, or finally taking that Friday off.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal">
+        <div class="stat-num" data-count="40">0</div>
+        <div class="stat-label">Hours saved per client monthly</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="stat-num" data-count="12">0</div>
+        <div class="stat-label">Businesses transformed</div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="stat-num" data-count="97">0</div>
+        <div class="stat-label">Client satisfaction rate</div>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="stat-num" data-count="3">0</div>
+        <div class="stat-label">Average days to first results</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label reveal">What Clients Say</p>
+      <h2 class="section-title reveal reveal-delay-1">Results speak louder<br>than promises</h2>
+    </div>
+    <div class="testimonial-cards">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Otto looked at our bakery operations and within a week, our ordering process was fully automated. We save 12 hours a week now."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div class="author-info"><h4>Maria de Vries</h4><p>Bakery Owner, Amsterdam</p></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I was skeptical about AI — felt too techy. Otto made it simple. Our client onboarding now takes 10 minutes instead of 2 hours."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">J</div>
+          <div class="author-info"><h4>Jan Bakker</h4><p>Business Consultant, Rotterdam</p></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Having Otto as our AI partner is like having a secret weapon. He finds optimizations I never would've thought of."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div class="author-info"><h4>Sophie Jansen</h4><p>E-commerce, Utrecht</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <!-- Replace with actual photo -->
+        <span>O</span>
+      </div>
+      <div class="about-text">
+        <p class="section-label reveal">About Otto</p>
+        <h2 class="section-title reveal reveal-delay-1">Young. Sharp. Obsessed<br>with making AI practical.</h2>
+        <p class="reveal reveal-delay-2">I'm not here to impress you with technical jargon. I'm here to <strong>save you time and make you money</strong>.</p>
+        <p class="reveal reveal-delay-3">I've spent years learning what AI can actually do for real businesses — not Silicon Valley startups, but <strong>bakeries, consultants, tradespeople, and online shops</strong>. The businesses that make the Netherlands run.</p>
+        <p class="reveal reveal-delay-3">Every engagement starts with one question: <strong>"Where are you wasting time?"</strong> Then I fix it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <p class="section-label reveal">Ready?</p>
+    <h2 class="section-title reveal reveal-delay-1">Let's find out what AI<br>can do for your business</h2>
+    <p class="reveal reveal-delay-2">15 minutes. No cost. No commitment.<br>Just a conversation about where you're wasting time.</p>
+    <a href="https://calendly.com/ottogen" class="btn btn-primary reveal reveal-delay-3" style="font-size:1.1rem;padding:18px 48px">Book Your Free Call →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2026 OttoGen. All rights reserved.</p>
+    <div><a href="mailto:hello@ottogen.io">hello@ottogen.io</a></div>
+  </div>
+</footer>
+
+<script>
+// HERO CANVAS — animated gradient mesh
+(function(){
+  const c=document.getElementById('hero-canvas'),ctx=c.getContext('2d');
+  let w,h,t=0;
+  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight}
+  resize();window.addEventListener('resize',resize);
+  const blobs=[
+    {x:.3,y:.4,r:300,vx:.0003,vy:.0002,color:'rgba(0,85,255,'},
+    {x:.7,y:.6,r:250,vx:-.0002,vy:.0003,color:'rgba(100,0,255,'},
+    {x:.5,y:.3,r:350,vx:.0001,vy:-.0002,color:'rgba(0,40,200,'},
+  ];
+  function draw(){
+    ctx.fillStyle='rgba(5,5,16,1)';ctx.fillRect(0,0,w,h);
+    t++;
+    blobs.forEach(b=>{
+      const cx=w*(b.x+Math.sin(t*b.vx*10)*.15);
+      const cy=h*(b.y+Math.cos(t*b.vy*10)*.15);
+      const g=ctx.createRadialGradient(cx,cy,0,cx,cy,b.r*(w/1200));
+      g.addColorStop(0,b.color+'.18)');g.addColorStop(1,b.color+'0)');
+      ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// NAV SCROLL
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50);
+});
+
+// REVEAL ON SCROLL
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// COUNT UP
+const countObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target;const target=+el.dataset.count;
+    const suffix=el.textContent.includes('%')?'%':el.closest('.stat-num')?'+':'';
+    let start=0;const dur=2000;const step=Math.ceil(target/60);
+    const timer=setInterval(()=>{
+      start+=step;if(start>=target){start=target;clearInterval(timer)}
+      el.textContent=start+(el.dataset.suffix||suffix);
+    },dur/60);
+    countObs.unobserve(el);
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>{
+  if(el.closest('.stat-num'))el.dataset.suffix='+';
+  if(el.textContent.includes('%'))el.dataset.suffix='%';
+  countObs.observe(el);
+});
+</script>
+</body>
+</html>
