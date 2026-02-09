@@ -24,7 +24,7 @@ img{max-width:100%;display:block}
 
 /* ASCII BACKGROUNDS */
 .ascii-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.ascii-bg canvas{position:absolute;top:0;left:0;width:100%;height:100%;opacity:.18}
+.ascii-bg pre{position:absolute;top:0;left:0;width:100%;height:100%;margin:0;padding:0;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.1;color:rgba(0,85,255,.18);overflow:hidden;white-space:pre;user-select:none}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:background .3s,backdrop-filter .3s}
@@ -348,7 +348,7 @@ footer a:hover{color:#fff}
 
 <!-- HERO (ASCII waves background) -->
 <section class="hero">
-  <div class="ascii-bg"><canvas id="ascii-hero"></canvas></div>
+  <div class="ascii-bg"><pre id="ascii-hero"></pre></div>
   <div class="hero-content">
     <div class="hero-badge reveal">Currently onboarding new pilot partners</div>
     <h1 class="reveal reveal-delay-1">AI systems that<br><span class="gradient">run your business</span><br>while you grow it</h1>
@@ -389,7 +389,7 @@ footer a:hover{color:#fff}
 
 <!-- PAIN (ASCII scattered particles bg) -->
 <section class="pain">
-  <div class="ascii-bg"><canvas id="ascii-pain"></canvas></div>
+  <div class="ascii-bg"><pre id="ascii-pain"></pre></div>
   <div class="container">
     <div class="pain-grid">
       <div class="pain-text reveal">
@@ -410,7 +410,7 @@ footer a:hover{color:#fff}
 
 <!-- AI SYSTEMS — Connection Hub (ASCII matrix rain bg) -->
 <section class="systems-section" id="systems">
-  <div class="ascii-bg"><canvas id="ascii-systems"></canvas></div>
+  <div class="ascii-bg"><pre id="ascii-systems"></pre></div>
   <div class="container">
     <div class="systems-grid">
       <div class="hub-visual reveal" id="hub-vis">
@@ -433,7 +433,7 @@ footer a:hover{color:#fff}
 
 <!-- AI CHAT DEMO (ASCII pulse bg) -->
 <section class="ai-demo">
-  <div class="ascii-bg"><canvas id="ascii-chat"></canvas></div>
+  <div class="ascii-bg"><pre id="ascii-chat"></pre></div>
   <div class="container">
     <div class="demo-grid">
       <div class="reveal">
@@ -467,7 +467,7 @@ footer a:hover{color:#fff}
 
 <!-- FEATURE TABS (ASCII data flow bg) -->
 <section class="feature-tabs" id="ai-systems">
-  <div class="ascii-bg"><canvas id="ascii-tabs"></canvas></div>
+  <div class="ascii-bg"><pre id="ascii-tabs"></pre></div>
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal">What You Get</p>
@@ -543,7 +543,7 @@ footer a:hover{color:#fff}
 
 <!-- SERVICES / PRICING (ASCII grid bg) -->
 <section class="services" id="services">
-  <div class="ascii-bg"><canvas id="ascii-pricing"></canvas></div>
+  <div class="ascii-bg"><pre id="ascii-pricing"></pre></div>
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal">Simple Pricing</p>
@@ -576,7 +576,7 @@ footer a:hover{color:#fff}
 
 <!-- PROCESS STEPS (ASCII mountain bg) -->
 <section class="steps" id="how">
-  <div class="ascii-bg"><canvas id="ascii-steps"></canvas></div>
+  <div class="ascii-bg"><pre id="ascii-steps"></pre></div>
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal">Our Process</p>
@@ -709,7 +709,7 @@ footer a:hover{color:#fff}
 
 <!-- TESTIMONIALS (ASCII constellation bg) -->
 <section class="testimonials" id="testimonials">
-  <div class="ascii-bg"><canvas id="ascii-testimonials"></canvas></div>
+  <div class="ascii-bg"><pre id="ascii-testimonials"></pre></div>
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal">What Clients Say</p>
@@ -746,7 +746,7 @@ footer a:hover{color:#fff}
 
 <!-- ABOUT (ASCII mountain silhouette bg) -->
 <section class="about" id="about">
-  <div class="ascii-bg"><canvas id="ascii-about"></canvas></div>
+  <div class="ascii-bg"><pre id="ascii-about"></pre></div>
   <div class="container">
     <div class="about-grid">
       <div class="about-photo reveal">
@@ -765,7 +765,7 @@ footer a:hover{color:#fff}
 
 <!-- CTA (ASCII converging particles bg) -->
 <section class="cta-section" id="contact">
-  <div class="ascii-bg"><canvas id="ascii-cta"></canvas></div>
+  <div class="ascii-bg"><pre id="ascii-cta"></pre></div>
   <div class="container">
     <p class="section-label reveal">Ready?</p>
     <h2 class="section-title reveal reveal-delay-1">Let AI do the work<br>so you can scale faster</h2>
@@ -784,55 +784,11 @@ footer a:hover{color:#fff}
 
 <script>
 // ============================================
-// ASCII BACKGROUND ENGINE
-// Each section gets a unique ASCII animation
+// ASCII BACKGROUND ENGINE (pre-based, no canvas)
+// Each section gets a unique text animation
 // ============================================
-const ASCII_CHARS = '.·:;+*#@%&';
-const ASCII_LIGHT = '·.,:;\'`';
-const ASCII_WAVE = '~≈∼∾≋';
 
-class ASCIIBackground {
-  constructor(canvasId, drawFn, opts = {}) {
-    this.canvas = document.getElementById(canvasId);
-    if (!this.canvas) { console.warn('ASCII canvas not found:', canvasId); return; }
-    this.ctx = this.canvas.getContext('2d');
-    this.drawFn = drawFn;
-    this.opts = opts;
-    this.t = 0;
-    this.fontSize = opts.fontSize || 14;
-    this.active = false;
-    // Delay init to ensure layout is computed
-    const self = this;
-    setTimeout(() => {
-      self.resize();
-      window.addEventListener('resize', () => self.resize());
-      self.active = true;
-      self.animate();
-    }, 200);
-  }
-  resize() {
-    // Canvas is stretched to 100% via CSS; read actual rendered size
-    this.w = this.canvas.clientWidth || this.canvas.parentElement.clientWidth || window.innerWidth;
-    this.h = this.canvas.clientHeight || this.canvas.parentElement.clientHeight || 600;
-    console.log('ASCII resize:', this.canvas.id, 'w:', this.w, 'h:', this.h, 'clientW:', this.canvas.clientWidth, 'parentW:', this.canvas.parentElement?.clientWidth);
-    if (this.w < 10 || this.h < 10) { this.w = window.innerWidth; this.h = 600; console.log('  → fallback used'); }
-    this.canvas.width = this.w;
-    this.canvas.height = this.h;
-    this.cols = Math.floor(this.w / (this.fontSize * 0.6));
-    this.rows = Math.floor(this.h / this.fontSize);
-  }
-  animate() {
-    if (!this.active) return;
-    this.ctx.clearRect(0, 0, this.w, this.h);
-    this.ctx.font = `${this.fontSize}px monospace`;
-    this.ctx.textBaseline = 'top';
-    this.drawFn(this.ctx, this.t, this.cols, this.rows, this.w, this.h, this.fontSize);
-    this.t += 0.02;
-    requestAnimationFrame(() => this.animate());
-  }
-}
-
-// Simplex-ish noise (good enough for ASCII)
+// Simple noise functions
 function noise2D(x, y) {
   const n = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
   return n - Math.floor(n);
@@ -845,232 +801,242 @@ function smoothNoise(x, y) {
   const ux = fx * fx * (3 - 2 * fx), uy = fy * fy * (3 - 2 * fy);
   return a + (b - a) * ux + (c - a) * uy + (a - b - c + d) * ux * uy;
 }
-function fbm(x, y, octaves) {
-  let v = 0, amp = 0.5, freq = 1;
-  for (let i = 0; i < octaves; i++) {
-    v += amp * smoothNoise(x * freq, y * freq);
-    amp *= 0.5; freq *= 2;
-  }
+function fbm(x, y, oct) {
+  let v = 0, a = .5, f = 1;
+  for (let i = 0; i < oct; i++) { v += a * smoothNoise(x * f, y * f); a *= .5; f *= 2; }
   return v;
 }
 
-// 1. HERO — Flowing ocean waves
-new ASCIIBackground('ascii-hero', (ctx, t, cols, rows, w, h, fs) => {
-  const chars = '~≈∼·.';
-  for (let row = 0; row < rows; row++) {
-    for (let col = 0; col < cols; col++) {
-      const x = col / cols;
-      const y = row / rows;
-      const wave1 = Math.sin(x * 6 + t * 1.5 + y * 3) * 0.5 + 0.5;
-      const wave2 = Math.sin(x * 4 - t * 0.8 + y * 5) * 0.3 + 0.5;
-      const wave3 = Math.sin(x * 10 + t * 2 + y * 2) * 0.2 + 0.5;
-      const v = (wave1 + wave2 + wave3) / 3;
-      const ci = Math.floor(v * (chars.length - 1));
-      const alpha = 0.15 + v * 0.25;
-      ctx.fillStyle = `rgba(0,85,255,${alpha})`;
-      ctx.fillText(chars[ci], col * fs * 0.6, row * fs);
-    }
+// Pre-based ASCII animation — writes textContent each frame
+function asciiAnimate(id, genFn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  let t = 0;
+
+  function frame() {
+    const w = el.parentElement.clientWidth || el.closest('section')?.clientWidth || window.innerWidth;
+    const h = el.parentElement.clientHeight || el.closest('section')?.clientHeight || 600;
+    const charW = 7.8; // approx monospace char width at 13px
+    const lineH = 14.3; // line-height 1.1 * 13px
+    const cols = Math.floor(w / charW);
+    const rows = Math.floor(h / lineH);
+    if (cols < 5 || rows < 3) { requestAnimationFrame(frame); return; }
+
+    const text = genFn(t, cols, rows);
+    el.textContent = text;
+    t += 0.03;
+    requestAnimationFrame(frame);
   }
+  // Wait for layout
+  setTimeout(frame, 300);
+}
+
+// 1. HERO — Flowing ocean waves
+asciiAnimate('ascii-hero', (t, cols, rows) => {
+  let out = '';
+  const chars = '~-=~._.-=~';
+  for (let r = 0; r < rows; r++) {
+    let line = '';
+    for (let c = 0; c < cols; c++) {
+      const x = c / cols, y = r / rows;
+      const w1 = Math.sin(x * 8 + t * 1.5 + y * 4) * .5 + .5;
+      const w2 = Math.sin(x * 5 - t + y * 6) * .3 + .5;
+      const v = (w1 + w2) / 2;
+      if (v > 0.45) {
+        line += chars[Math.floor(v * (chars.length - 1))];
+      } else {
+        line += ' ';
+      }
+    }
+    out += line + '\n';
+  }
+  return out;
 });
 
 // 2. PAIN — Chaotic scattered particles
-new ASCIIBackground('ascii-pain', (ctx, t, cols, rows, w, h, fs) => {
-  const chars = '×+·*!?#';
-  for (let row = 0; row < rows; row++) {
-    for (let col = 0; col < cols; col++) {
-      const n = fbm(col * 0.08 + t * 0.3, row * 0.08 + t * 0.2, 3);
-      if (n > 0.55) {
-        const ci = Math.floor((n - 0.55) * 20) % chars.length;
-        const jx = Math.sin(t * 3 + col * 0.5) * 2;
-        const jy = Math.cos(t * 2.5 + row * 0.7) * 1.5;
-        const alpha = (n - 0.55) * 2;
-        ctx.fillStyle = `rgba(255,${80 + Math.floor(n * 100)},${80 + Math.floor(n * 50)},${Math.min(alpha, 0.4)})`;
-        ctx.fillText(chars[ci], col * fs * 0.6 + jx, row * fs + jy);
+asciiAnimate('ascii-pain', (t, cols, rows) => {
+  let out = '';
+  const chars = 'x+.*!?#';
+  for (let r = 0; r < rows; r++) {
+    let line = '';
+    for (let c = 0; c < cols; c++) {
+      const n = fbm(c * 0.06 + t * 0.4, r * 0.06 + t * 0.25, 3);
+      if (n > 0.58) {
+        line += chars[Math.floor((n - .58) * 25) % chars.length];
+      } else {
+        line += ' ';
       }
     }
+    out += line + '\n';
   }
+  return out;
 });
 
-// 3. SYSTEMS — Matrix-style data rain
-new ASCIIBackground('ascii-systems', (ctx, t, cols, rows, w, h, fs) => {
-  const chars = '01アイウエオカキクケコ';
-  const drops = [];
-  if (!window._matrixDrops) {
-    window._matrixDrops = [];
-    for (let i = 0; i < cols; i++) {
-      window._matrixDrops.push(Math.random() * rows);
-    }
+// 3. SYSTEMS — Matrix data rain
+asciiAnimate('ascii-systems', (t, cols, rows) => {
+  if (!window._mdrops) {
+    window._mdrops = [];
+    for (let i = 0; i < 300; i++) window._mdrops.push({ x: Math.floor(Math.random() * 200), y: Math.random() * 100, s: .3 + Math.random() * .7 });
   }
-  const d = window._matrixDrops;
-  for (let col = 0; col < cols; col++) {
-    d[col] += 0.15 + Math.sin(col) * 0.05;
-    if (d[col] > rows + 10) d[col] = -Math.random() * 20;
-    const headRow = Math.floor(d[col]);
-    for (let trail = 0; trail < 12; trail++) {
-      const r = headRow - trail;
-      if (r < 0 || r >= rows) continue;
-      const alpha = (1 - trail / 12) * 0.35;
-      const ci = Math.floor(noise2D(col, r + t * 5) * chars.length) % chars.length;
-      ctx.fillStyle = trail === 0
-        ? `rgba(100,200,255,${alpha})`
-        : `rgba(0,85,255,${alpha})`;
-      ctx.fillText(chars[ci], col * fs * 0.6, r * fs);
-    }
-  }
-});
-
-// 4. CHAT — Subtle pulse / heartbeat sine waves
-new ASCIIBackground('ascii-chat', (ctx, t, cols, rows, w, h, fs) => {
-  const midY = rows / 2;
-  const chars = '·─═━▬';
-  for (let col = 0; col < cols; col++) {
-    const x = col / cols;
-    // ECG-like pulse
-    const pulse = Math.sin(x * 20 - t * 4) * Math.exp(-Math.pow((x * 5 - t * 0.5) % 5 - 2.5, 2) * 2);
-    const y = midY + pulse * rows * 0.15;
-    const row = Math.floor(y);
-    if (row >= 0 && row < rows) {
-      const ci = Math.min(Math.floor(Math.abs(pulse) * 5), chars.length - 1);
-      ctx.fillStyle = `rgba(0,85,255,${0.1 + Math.abs(pulse) * 0.3})`;
-      ctx.fillText(chars[ci], col * fs * 0.6, row * fs);
-    }
-  }
-});
-
-// 5. TABS — Flowing data streams (horizontal)
-new ASCIIBackground('ascii-tabs', (ctx, t, cols, rows, w, h, fs) => {
-  const chars = '→›»·';
-  for (let row = 0; row < rows; row++) {
-    if (row % 3 !== 0) continue;
-    const speed = 0.5 + noise2D(0, row) * 2;
-    const offset = t * speed * 10;
-    for (let col = 0; col < cols; col++) {
-      const n = noise2D(col * 0.1 + offset, row * 0.3);
-      if (n > 0.6) {
-        const ci = Math.floor((n - 0.6) * 10) % chars.length;
-        ctx.fillStyle = `rgba(0,85,255,${(n - 0.6) * 0.6})`;
-        ctx.fillText(chars[ci], col * fs * 0.6, row * fs);
+  const grid = [];
+  for (let r = 0; r < rows; r++) grid.push(new Array(cols).fill(' '));
+  const chars = '01.:;|';
+  window._mdrops.forEach(d => {
+    d.y += d.s * 0.5;
+    if (d.y > rows + 5) { d.y = -Math.floor(Math.random() * 10); d.x = Math.floor(Math.random() * cols); }
+    for (let trail = 0; trail < 6; trail++) {
+      const ry = Math.floor(d.y) - trail;
+      if (ry >= 0 && ry < rows && d.x < cols) {
+        grid[ry][d.x] = trail === 0 ? chars[Math.floor(Math.random() * 2)] : chars[2 + Math.floor(Math.random() * 4)];
       }
     }
-  }
+  });
+  return grid.map(row => row.join('')).join('\n');
 });
 
-// 6. PRICING — Clean dot grid
-new ASCIIBackground('ascii-pricing', (ctx, t, cols, rows, w, h, fs) => {
-  for (let row = 0; row < rows; row++) {
-    for (let col = 0; col < cols; col++) {
-      if (col % 4 === 0 && row % 3 === 0) {
-        const pulse = Math.sin(t + col * 0.2 + row * 0.3) * 0.5 + 0.5;
-        ctx.fillStyle = `rgba(0,85,255,${0.05 + pulse * 0.1})`;
-        ctx.fillText('·', col * fs * 0.6, row * fs);
+// 4. CHAT — Pulse / heartbeat
+asciiAnimate('ascii-chat', (t, cols, rows) => {
+  let out = '';
+  const midR = Math.floor(rows / 2);
+  for (let r = 0; r < rows; r++) {
+    let line = '';
+    for (let c = 0; c < cols; c++) {
+      const x = c / cols;
+      const pulse = Math.sin(x * 25 - t * 5) * Math.exp(-Math.pow((x * 6 - t * 0.6) % 6 - 3, 2) * 2);
+      const targetR = midR + Math.floor(pulse * rows * 0.12);
+      if (r === targetR) {
+        line += Math.abs(pulse) > .3 ? '#' : '-';
+      } else if (Math.abs(r - targetR) === 1 && Math.abs(pulse) > .5) {
+        line += '.';
+      } else {
+        line += ' ';
       }
     }
+    out += line + '\n';
   }
+  return out;
 });
 
-// 7. STEPS — Perlin mountain silhouettes
-new ASCIIBackground('ascii-steps', (ctx, t, cols, rows, w, h, fs) => {
-  const chars = '▁▂▃▄▅▆▇█';
-  // Draw 3 mountain layers
+// 5. TABS — Flowing data streams
+asciiAnimate('ascii-tabs', (t, cols, rows) => {
+  let out = '';
+  const chars = '>->>';
+  for (let r = 0; r < rows; r++) {
+    let line = '';
+    if (r % 3 !== 0) { out += ' '.repeat(cols) + '\n'; continue; }
+    const speed = .5 + noise2D(0, r) * 2;
+    const off = t * speed * 12;
+    for (let c = 0; c < cols; c++) {
+      const n = noise2D(c * .08 + off, r * .3);
+      if (n > .62) {
+        line += chars[Math.floor((n - .62) * 30) % chars.length];
+      } else {
+        line += ' ';
+      }
+    }
+    out += line + '\n';
+  }
+  return out;
+});
+
+// 6. PRICING — Dot grid
+asciiAnimate('ascii-pricing', (t, cols, rows) => {
+  let out = '';
+  for (let r = 0; r < rows; r++) {
+    let line = '';
+    for (let c = 0; c < cols; c++) {
+      if (c % 5 === 0 && r % 3 === 0) {
+        const pulse = Math.sin(t * 1.5 + c * .15 + r * .2) * .5 + .5;
+        line += pulse > .4 ? '.' : ' ';
+      } else {
+        line += ' ';
+      }
+    }
+    out += line + '\n';
+  }
+  return out;
+});
+
+// 7. STEPS — Mountain silhouettes
+asciiAnimate('ascii-steps', (t, cols, rows) => {
+  const grid = [];
+  for (let r = 0; r < rows; r++) grid.push(new Array(cols).fill(' '));
+  const fill = ['.', ':', '#', '@'];
   for (let layer = 0; layer < 3; layer++) {
-    const baseY = rows * (0.5 + layer * 0.15);
-    const amp = rows * (0.2 - layer * 0.04);
-    const freq = 0.03 + layer * 0.01;
-    const speed = 0.1 + layer * 0.05;
-    const alpha = 0.08 - layer * 0.02;
-
-    for (let col = 0; col < cols; col++) {
-      const mountainHeight = baseY - fbm(col * freq + t * speed, layer * 10, 4) * amp;
-      for (let row = Math.floor(mountainHeight); row < rows; row++) {
-        if (row < 0 || row >= rows) continue;
-        const depth = (row - mountainHeight) / (rows - mountainHeight);
-        const ci = Math.min(Math.floor(depth * chars.length), chars.length - 1);
-        ctx.fillStyle = `rgba(0,${50 + layer * 20},${180 + layer * 30},${alpha})`;
-        ctx.fillText(chars[ci], col * fs * 0.6, row * fs);
+    const base = rows * (.55 + layer * .12);
+    const amp = rows * (.18 - layer * .03);
+    const freq = .025 + layer * .008;
+    const sp = .08 + layer * .04;
+    for (let c = 0; c < cols; c++) {
+      const mh = base - fbm(c * freq + t * sp, layer * 10, 4) * amp;
+      for (let r = Math.floor(mh); r < rows; r++) {
+        if (r >= 0 && r < rows) {
+          const d = (r - mh) / (rows - mh);
+          const fi = Math.min(Math.floor(d * fill.length), fill.length - 1);
+          if (grid[r][c] === ' ') grid[r][c] = fill[fi];
+        }
       }
     }
   }
+  return grid.map(row => row.join('')).join('\n');
 });
 
-// 8. TESTIMONIALS — Floating constellation
-new ASCIIBackground('ascii-testimonials', (ctx, t, cols, rows, w, h, fs) => {
-  if (!window._constellationPts) {
-    window._constellationPts = [];
-    for (let i = 0; i < 40; i++) {
-      window._constellationPts.push({
-        x: Math.random() * cols,
-        y: Math.random() * rows,
-        vx: (Math.random() - 0.5) * 0.02,
-        vy: (Math.random() - 0.5) * 0.02,
-        char: '*·+⊹✦'[Math.floor(Math.random() * 6)]
-      });
-    }
+// 8. TESTIMONIALS — Constellation
+asciiAnimate('ascii-testimonials', (t, cols, rows) => {
+  if (!window._cpts) {
+    window._cpts = [];
+    for (let i = 0; i < 35; i++) window._cpts.push({ x: Math.random() * 200, y: Math.random() * 80, vx: (Math.random() - .5) * .08, vy: (Math.random() - .5) * .05 });
   }
-  const pts = window._constellationPts;
-  pts.forEach(p => {
+  const grid = [];
+  for (let r = 0; r < rows; r++) grid.push(new Array(cols).fill(' '));
+  window._cpts.forEach(p => {
     p.x += p.vx; p.y += p.vy;
     if (p.x < 0) p.x = cols; if (p.x > cols) p.x = 0;
     if (p.y < 0) p.y = rows; if (p.y > rows) p.y = 0;
-    const twinkle = Math.sin(t * 3 + p.x + p.y) * 0.5 + 0.5;
-    ctx.fillStyle = `rgba(0,85,255,${0.1 + twinkle * 0.2})`;
-    ctx.fillText(p.char, p.x * fs * 0.6, p.y * fs);
-  });
-  // Draw lines between close points
-  ctx.strokeStyle = 'rgba(0,85,255,0.04)';
-  ctx.lineWidth = 0.5;
-  for (let i = 0; i < pts.length; i++) {
-    for (let j = i + 1; j < pts.length; j++) {
-      const dx = (pts[i].x - pts[j].x) * fs * 0.6;
-      const dy = (pts[i].y - pts[j].y) * fs;
-      if (Math.sqrt(dx * dx + dy * dy) < 150) {
-        ctx.beginPath();
-        ctx.moveTo(pts[i].x * fs * 0.6, pts[i].y * fs);
-        ctx.lineTo(pts[j].x * fs * 0.6, pts[j].y * fs);
-        ctx.stroke();
-      }
+    const twinkle = Math.sin(t * 4 + p.x + p.y) > 0;
+    const rx = Math.floor(p.x), ry = Math.floor(p.y);
+    if (rx >= 0 && rx < cols && ry >= 0 && ry < rows && twinkle) {
+      grid[ry][rx] = '*+.'[Math.floor(Math.random() * 3)];
     }
-  }
+  });
+  return grid.map(row => row.join('')).join('\n');
 });
 
-// 9. ABOUT — Mountain silhouette (simpler)
-new ASCIIBackground('ascii-about', (ctx, t, cols, rows, w, h, fs) => {
-  const chars = '▁▂▃▄';
-  const baseY = rows * 0.7;
-  for (let col = 0; col < cols; col++) {
-    const mh = baseY - fbm(col * 0.04 + 5, 0, 3) * rows * 0.25;
-    for (let row = Math.floor(mh); row < rows; row++) {
-      if (row < 0 || row >= rows) continue;
-      const d = (row - mh) / (rows - mh);
-      const ci = Math.min(Math.floor(d * chars.length), chars.length - 1);
-      ctx.fillStyle = `rgba(0,60,200,${0.04 + d * 0.03})`;
-      ctx.fillText(chars[ci], col * fs * 0.6, row * fs);
+// 9. ABOUT — Gentle mountain
+asciiAnimate('ascii-about', (t, cols, rows) => {
+  const grid = [];
+  for (let r = 0; r < rows; r++) grid.push(new Array(cols).fill(' '));
+  const baseY = rows * .72;
+  for (let c = 0; c < cols; c++) {
+    const mh = baseY - fbm(c * .035 + 5, 0, 3) * rows * .22;
+    for (let r = Math.floor(mh); r < rows; r++) {
+      if (r >= 0 && r < rows) grid[r][c] = '.';
     }
   }
+  return grid.map(row => row.join('')).join('\n');
 });
 
 // 10. CTA — Converging particles
-new ASCIIBackground('ascii-cta', (ctx, t, cols, rows, w, h, fs) => {
-  const cx = cols / 2, cy = rows / 2;
-  if (!window._ctaParticles) {
-    window._ctaParticles = [];
-    for (let i = 0; i < 80; i++) {
-      const angle = Math.random() * Math.PI * 2;
-      const dist = 0.3 + Math.random() * 0.7;
-      window._ctaParticles.push({ angle, dist, speed: 0.002 + Math.random() * 0.005, char: '·*+⊹✧'[Math.floor(Math.random() * 5)] });
+asciiAnimate('ascii-cta', (t, cols, rows) => {
+  if (!window._ctap) {
+    window._ctap = [];
+    for (let i = 0; i < 60; i++) {
+      const a = Math.random() * Math.PI * 2;
+      window._ctap.push({ a, d: .3 + Math.random() * .6, s: .003 + Math.random() * .005 });
     }
   }
-  const pts = window._ctaParticles;
-  pts.forEach(p => {
-    p.dist -= p.speed;
-    if (p.dist < 0.05) p.dist = 0.7 + Math.random() * 0.3;
-    const x = cx + Math.cos(p.angle + t * 0.3) * p.dist * cx;
-    const y = cy + Math.sin(p.angle + t * 0.3) * p.dist * cy;
-    const alpha = (1 - p.dist) * 0.4;
-    ctx.fillStyle = `rgba(0,85,255,${alpha})`;
-    ctx.fillText(p.char, x * fs * 0.6, y * fs);
+  const grid = [];
+  for (let r = 0; r < rows; r++) grid.push(new Array(cols).fill(' '));
+  const cx = cols / 2, cy = rows / 2;
+  window._ctap.forEach(p => {
+    p.d -= p.s;
+    if (p.d < .05) p.d = .6 + Math.random() * .3;
+    const x = Math.floor(cx + Math.cos(p.a + t * .4) * p.d * cx);
+    const y = Math.floor(cy + Math.sin(p.a + t * .4) * p.d * cy);
+    if (x >= 0 && x < cols && y >= 0 && y < rows) grid[y][x] = '.+*'[Math.floor(Math.random() * 3)];
   });
+  return grid.map(row => row.join('')).join('\n');
 });
-
 // ============================================
 // HUB VISUAL — Interactive connection hub
 // ============================================
