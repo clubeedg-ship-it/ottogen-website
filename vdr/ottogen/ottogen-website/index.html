@@ -802,18 +802,20 @@ class ASCIIBackground {
     this.fontSize = opts.fontSize || 14;
     this.active = false;
     // Delay init to ensure layout is computed
-    requestAnimationFrame(() => {
-      this.resize();
-      window.addEventListener('resize', () => this.resize());
-      this.active = true;
-      this.animate();
-    });
+    const self = this;
+    setTimeout(() => {
+      self.resize();
+      window.addEventListener('resize', () => self.resize());
+      self.active = true;
+      self.animate();
+    }, 200);
   }
   resize() {
     // Canvas is stretched to 100% via CSS; read actual rendered size
     this.w = this.canvas.clientWidth || this.canvas.parentElement.clientWidth || window.innerWidth;
     this.h = this.canvas.clientHeight || this.canvas.parentElement.clientHeight || 600;
-    if (this.w < 10 || this.h < 10) { this.w = window.innerWidth; this.h = 600; }
+    console.log('ASCII resize:', this.canvas.id, 'w:', this.w, 'h:', this.h, 'clientW:', this.canvas.clientWidth, 'parentW:', this.canvas.parentElement?.clientWidth);
+    if (this.w < 10 || this.h < 10) { this.w = window.innerWidth; this.h = 600; console.log('  → fallback used'); }
     this.canvas.width = this.w;
     this.canvas.height = this.h;
     this.cols = Math.floor(this.w / (this.fontSize * 0.6));
@@ -822,7 +824,7 @@ class ASCIIBackground {
   animate() {
     if (!this.active) return;
     this.ctx.clearRect(0, 0, this.w, this.h);
-    this.ctx.font = `${this.fontSize}px 'JetBrains Mono', monospace`;
+    this.ctx.font = `${this.fontSize}px monospace`;
     this.ctx.textBaseline = 'top';
     this.drawFn(this.ctx, this.t, this.cols, this.rows, this.w, this.h, this.fontSize);
     this.t += 0.02;
