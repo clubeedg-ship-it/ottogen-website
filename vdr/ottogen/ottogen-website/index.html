@@ -35,10 +35,12 @@ nav ul a:hover{color:#fff}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 24px var(--blue-glow)}
 .menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer}
 
+/* ASCII BACKGROUNDS */
+.ascii-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.ascii-bg canvas{width:100%;height:100%;display:block}
+
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg canvas{width:100%;height:100%}
 .hero-content{position:relative;z-index:2;max-width:800px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,85,255,.12);border:1px solid rgba(0,85,255,.25);border-radius:50px;padding:8px 20px;font-size:.85rem;color:var(--blue);font-weight:500;margin-bottom:32px}
 .hero-badge::before{content:'';width:8px;height:8px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
@@ -52,16 +54,16 @@ nav ul a:hover{color:#fff}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(0,85,255,.35)}
 .btn-secondary{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.1)}
 .btn-secondary:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
-.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text2);font-size:.8rem;animation:float 3s ease-in-out infinite}
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text2);font-size:.8rem;animation:float 3s ease-in-out infinite;z-index:2}
 @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 .scroll-hint svg{width:24px;height:24px;stroke:var(--text2)}
 
 /* SECTIONS */
-section{padding:120px 0}
+section{padding:120px 0;position:relative;overflow:hidden}
 .section-label{font-size:.85rem;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
 .section-title{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.02em;margin-bottom:20px}
 .section-subtitle{font-size:1.1rem;color:var(--text2);max-width:600px;line-height:1.7}
-.section-header{text-align:center;margin-bottom:72px}
+.section-header{text-align:center;margin-bottom:72px;position:relative;z-index:2}
 .section-header .section-subtitle{margin:0 auto}
 
 /* REVEAL */
@@ -72,9 +74,9 @@ section{padding:120px 0}
 .reveal-delay-3{transition-delay:.3s}
 
 /* TOOL MARQUEE */
-.tool-marquee{padding:60px 0;background:var(--bg);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);overflow:hidden}
-.tool-marquee p{text-align:center;color:var(--text2);font-size:.8rem;text-transform:uppercase;letter-spacing:3px;margin-bottom:28px;font-weight:500}
-.marquee-track{display:flex;gap:60px;animation:marquee 25s linear infinite;width:max-content}
+.tool-marquee{padding:60px 0;background:var(--bg);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);overflow:hidden;position:relative}
+.tool-marquee p{text-align:center;color:var(--text2);font-size:.8rem;text-transform:uppercase;letter-spacing:3px;margin-bottom:28px;font-weight:500;position:relative;z-index:2}
+.marquee-track{display:flex;gap:60px;animation:marquee 25s linear infinite;width:max-content;position:relative;z-index:2}
 .marquee-track:hover{animation-play-state:paused}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .tool-logo{display:flex;align-items:center;gap:10px;color:var(--text2);font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:600;white-space:nowrap;opacity:.5;transition:opacity .3s}
@@ -82,8 +84,8 @@ section{padding:120px 0}
 .tool-logo svg{width:28px;height:28px;flex-shrink:0}
 
 /* PAIN SECTION */
-.pain{background:var(--bg);position:relative}
-.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.pain{background:var(--bg)}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:2}
 .pain-text .section-title{text-align:left}
 .pain-text .section-subtitle{max-width:none}
 .pain-quote{font-size:1.5rem;font-weight:600;font-family:'Space Grotesk',sans-serif;color:#fff;line-height:1.4;margin-top:32px;padding-left:24px;border-left:3px solid var(--blue)}
@@ -92,24 +94,32 @@ section{padding:120px 0}
 .pain-circle .big-num{font-size:4rem;font-weight:700;font-family:'Space Grotesk',sans-serif;color:var(--blue)}
 .pain-circle p{color:var(--text2);font-size:.95rem;margin-top:8px}
 
-/* ASCII ART VISUAL */
-.ascii-visual{background:var(--bg2);padding:100px 0;position:relative;overflow:hidden}
-.ascii-visual::before{content:'';position:absolute;top:50%;left:50%;width:800px;height:800px;background:radial-gradient(circle,rgba(0,85,255,.06),transparent 70%);transform:translate(-50%,-50%);pointer-events:none}
-.ascii-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.ascii-display{position:relative;background:rgba(0,0,0,.4);border:1px solid rgba(0,85,255,.15);border-radius:12px;padding:0;overflow:hidden;font-family:'JetBrains Mono',monospace}
-.ascii-titlebar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(0,0,0,.3);border-bottom:1px solid rgba(255,255,255,.06)}
-.ascii-dot{width:12px;height:12px;border-radius:50%}
-.ascii-dot.r{background:#ff5f57}.ascii-dot.y{background:#febc2e}.ascii-dot.g{background:#28c840}
-.ascii-titlebar span{color:var(--text2);font-size:.75rem;margin-left:8px}
-.ascii-content{padding:24px;min-height:300px;font-size:.8rem;line-height:1.4;color:var(--blue);position:relative}
-.ascii-content pre{margin:0;white-space:pre;overflow:hidden}
-.ascii-text h2{font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:20px;letter-spacing:-.02em}
-.ascii-text p{color:var(--text2);font-size:1.05rem;line-height:1.8;margin-bottom:16px}
-.ascii-text .highlight{color:var(--blue);font-weight:600}
+/* AI SYSTEMS — connection visual replaces old ASCII box */
+.ai-systems-section{background:var(--bg2);padding:100px 0}
+.systems-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.systems-text h2{font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:20px;letter-spacing:-.02em}
+.systems-text p{color:var(--text2);font-size:1.05rem;line-height:1.8;margin-bottom:16px}
+.systems-text .highlight{color:var(--blue);font-weight:600}
+.systems-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:380px}
+
+/* Animated connection hub */
+.sys-hub{position:relative;width:340px;height:340px}
+.sys-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem;color:#fff;font-family:'Space Grotesk',sans-serif;z-index:3;box-shadow:0 0 40px var(--blue-glow)}
+.sys-center::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(0,85,255,.2);animation:sysPulse 2s ease-in-out infinite}
+@keyframes sysPulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.15);opacity:0}}
+.sys-node{position:absolute;width:52px;height:52px;border-radius:14px;background:var(--surface);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.55rem;color:var(--text2);font-weight:600;font-family:'JetBrains Mono',monospace;z-index:3;transition:border-color .3s,box-shadow .3s}
+.sys-node:hover{border-color:var(--blue);box-shadow:0 0 20px var(--blue-glow)}
+.sys-node:nth-child(2){top:2%;left:50%;transform:translateX(-50%)}
+.sys-node:nth-child(3){top:22%;right:2%}
+.sys-node:nth-child(4){bottom:22%;right:2%}
+.sys-node:nth-child(5){bottom:2%;left:50%;transform:translateX(-50%)}
+.sys-node:nth-child(6){bottom:22%;left:2%}
+.sys-node:nth-child(7){top:22%;left:2%}
+.sys-line{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none}
 
 /* CHAT INTERFACE */
-.ai-demo{background:var(--bg);padding:100px 0;overflow:hidden}
-.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ai-demo{background:var(--bg);padding:100px 0}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
 .chat-phone{background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.08);border-radius:24px;overflow:hidden;max-width:420px;margin:0 auto}
 .chat-header{display:flex;align-items:center;gap:12px;padding:16px 20px;background:rgba(0,0,0,.4);border-bottom:1px solid rgba(255,255,255,.06)}
 .chat-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#fff;flex-shrink:0}
@@ -126,8 +136,6 @@ section{padding:120px 0}
 .chat-msg.user .chat-time{text-align:right}
 .chat-read{font-size:.6rem;color:var(--blue);text-align:right;padding-right:4px}
 @keyframes chatIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-
-/* Rich chat components */
 .chat-card{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;margin-top:8px}
 .chat-card-row{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.8rem;color:var(--text2)}
 .chat-card-row strong{color:#fff;font-size:.95rem}
@@ -152,7 +160,7 @@ section{padding:120px 0}
 
 /* SERVICES */
 .services{background:var(--bg2)}
-.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:2}
 .service-card{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:40px 32px;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
 .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:0;transition:opacity .35s}
 .service-card:hover{transform:translateY(-4px);border-color:rgba(0,85,255,.2);box-shadow:0 20px 60px rgba(0,0,0,.4)}
@@ -167,7 +175,7 @@ section{padding:120px 0}
 
 /* FEATURE TABS */
 .feature-tabs{background:var(--bg);padding:120px 0}
-.tabs-container{max-width:900px;margin:0 auto}
+.tabs-container{max-width:900px;margin:0 auto;position:relative;z-index:2}
 .tab-buttons{display:flex;gap:4px;background:var(--surface);border-radius:12px;padding:4px;margin-bottom:40px}
 .tab-btn{flex:1;padding:14px 24px;border:none;background:transparent;color:var(--text2);font-family:'Inter',sans-serif;font-size:.95rem;font-weight:500;border-radius:10px;cursor:pointer;transition:all .3s}
 .tab-btn.active{background:var(--blue);color:#fff;box-shadow:0 4px 20px var(--blue-glow)}
@@ -189,7 +197,7 @@ section{padding:120px 0}
 
 /* PROCESS STEPS — Rich Cards */
 .steps{background:var(--bg2);padding:120px 0}
-.step-card{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px}
+.step-card{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px;position:relative;z-index:2}
 .step-card:last-child{margin-bottom:0}
 .step-card:nth-child(even){direction:rtl}
 .step-card:nth-child(even) > *{direction:ltr}
@@ -260,13 +268,13 @@ section{padding:120px 0}
 
 /* STATS */
 .stats{background:var(--bg);padding:80px 0}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;position:relative;z-index:2}
 .stat-num{font-size:clamp(2.5rem,4vw,3.5rem);font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--blue)}
 .stat-label{color:var(--text2);font-size:.9rem;margin-top:4px}
 
 /* TESTIMONIALS */
 .testimonials{background:var(--bg2)}
-.testimonial-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:2}
 .testimonial-card{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:36px 32px;transition:all .3s}
 .testimonial-card:hover{border-color:rgba(0,85,255,.15)}
 .stars{color:#f5a623;font-size:1.1rem;margin-bottom:16px;letter-spacing:2px}
@@ -278,7 +286,7 @@ section{padding:120px 0}
 
 /* ABOUT */
 .about{background:var(--bg)}
-.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center;position:relative;z-index:2}
 .about-photo{width:100%;max-width:400px;aspect-ratio:1;border-radius:var(--radius);background:linear-gradient(135deg,var(--surface),rgba(0,85,255,.1));border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:6rem;filter:grayscale(0)}
 .about-text .section-title{text-align:left}
 .about-text p{color:var(--text2);font-size:1.05rem;line-height:1.8;margin-bottom:16px}
@@ -286,7 +294,7 @@ section{padding:120px 0}
 
 /* CTA */
 .cta-section{background:var(--bg2);padding:140px 0;text-align:center;position:relative;overflow:hidden}
-.cta-section::before{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,85,255,.12),transparent 70%);transform:translate(-50%,-50%);pointer-events:none}
+.cta-section .container{position:relative;z-index:2}
 .cta-section .section-title{font-size:clamp(2.2rem,4.5vw,3.5rem);margin-bottom:20px}
 .cta-section p{color:var(--text2);font-size:1.15rem;max-width:500px;margin:0 auto 40px;line-height:1.7}
 
@@ -301,7 +309,7 @@ footer a:hover{color:#fff}
 @media(max-width:1024px){
   .service-cards,.testimonial-cards{grid-template-columns:1fr 1fr}
   .stats-grid{grid-template-columns:1fr 1fr}
-  .pain-grid,.about-grid,.ascii-grid,.demo-grid{grid-template-columns:1fr;gap:48px}
+  .pain-grid,.about-grid,.systems-grid,.demo-grid{grid-template-columns:1fr;gap:48px}
   .step-card,.step-card:nth-child(even){grid-template-columns:1fr;direction:ltr;gap:40px}
   .step-card:nth-child(even) > *{direction:ltr}
   .pain-visual{display:none}
@@ -338,7 +346,7 @@ footer a:hover{color:#fff}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"><canvas id="hero-canvas"></canvas></div>
+  <div class="ascii-bg"><canvas id="ascii-hero"></canvas></div>
   <div class="hero-content">
     <div class="hero-badge reveal">Currently onboarding new pilot partners</div>
     <h1 class="reveal reveal-delay-1">AI systems that<br><span class="gradient">run your business</span><br>while you grow it</h1>
@@ -379,6 +387,7 @@ footer a:hover{color:#fff}
 
 <!-- PAIN -->
 <section class="pain">
+  <div class="ascii-bg"><canvas id="ascii-pain"></canvas></div>
   <div class="container">
     <div class="pain-grid">
       <div class="pain-text reveal">
@@ -397,43 +406,24 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- ASCII ART VISUAL — "Your AI Operating System" -->
-<section class="ascii-visual" id="systems">
+<!-- AI SYSTEMS — animated connection hub replaces ASCII box diagram -->
+<section class="ai-systems-section" id="systems">
+  <div class="ascii-bg"><canvas id="ascii-systems"></canvas></div>
   <div class="container">
-    <div class="ascii-grid">
-      <div class="ascii-display reveal">
-        <div class="ascii-titlebar">
-          <div class="ascii-dot r"></div>
-          <div class="ascii-dot y"></div>
-          <div class="ascii-dot g"></div>
-          <span>ottogen — ai-system</span>
-        </div>
-        <div class="ascii-content">
-<pre id="ascii-art">
-    ┌─────────────────────────────┐
-    │       YOUR  BUSINESS        │
-    │   ┌───┐  ┌───┐  ┌───┐     │
-    │   │ $ │  │ ✉ │  │ 📊│     │
-    │   └─┬─┘  └─┬─┘  └─┬─┘     │
-    │     │      │      │        │
-    │     └──────┼──────┘        │
-    │            │               │
-    │      ┌─────▼─────┐         │
-    │      │  OttoGen  │         │
-    │      │  AI Core  │         │
-    │      └─────┬─────┘         │
-    │            │               │
-    │   ┌────────┼────────┐      │
-    │   ▼        ▼        ▼      │
-    │ ┌─────┐ ┌─────┐ ┌─────┐   │
-    │ │Sales│ │Ops  │ │Cont.│   │
-    │ │ Bot │ │Auto │ │ Gen │   │
-    │ └─────┘ └─────┘ └─────┘   │
-    └─────────────────────────────┘
-</pre>
+    <div class="systems-grid">
+      <div class="systems-visual reveal">
+        <div class="sys-hub">
+          <div class="sys-center">OttoGen</div>
+          <div class="sys-node">Apollo</div>
+          <div class="sys-node">Retell</div>
+          <div class="sys-node">Notion</div>
+          <div class="sys-node">Gmail</div>
+          <div class="sys-node">Make</div>
+          <div class="sys-node">Sheets</div>
+          <svg class="sys-line" id="sys-lines" viewBox="0 0 340 340" fill="none"></svg>
         </div>
       </div>
-      <div class="ascii-text reveal reveal-delay-1">
+      <div class="systems-text reveal reveal-delay-1">
         <p class="section-label">AI Systems</p>
         <h2>Your AI Runs the<br>Business 24/7</h2>
         <p>One connected system that handles <span class="highlight">content creation</span>, <span class="highlight">lead generation</span>, <span class="highlight">follow-ups</span>, and <span class="highlight">revenue tracking</span> — so your business keeps running without you being online.</p>
@@ -443,11 +433,12 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- AI CHAT DEMO — "Your AI Assistant" -->
+<!-- AI CHAT DEMO -->
 <section class="ai-demo">
+  <div class="ascii-bg"><canvas id="ascii-chat"></canvas></div>
   <div class="container">
     <div class="demo-grid">
-      <div class="reveal">
+      <div class="reveal" style="position:relative;z-index:2">
         <p class="section-label">Your AI Assistant</p>
         <h2 class="section-title" style="text-align:left">Just text it.<br>It handles the rest.</h2>
         <p class="section-subtitle">Talk to your AI like you'd text a colleague. It checks your leads, schedules posts, sends follow-ups — and shows you results with real data, not just words.</p>
@@ -458,7 +449,7 @@ footer a:hover{color:#fff}
           <span style="background:rgba(0,85,255,.1);border:1px solid rgba(0,85,255,.2);padding:6px 14px;border-radius:50px;font-size:.8rem;color:var(--blue)">Analytics</span>
         </div>
       </div>
-      <div class="chat-phone reveal reveal-delay-1">
+      <div class="chat-phone reveal reveal-delay-1" style="position:relative;z-index:2">
         <div class="chat-header">
           <div class="chat-avatar">O</div>
           <div class="chat-header-info">
@@ -466,9 +457,7 @@ footer a:hover{color:#fff}
             <span>● Online</span>
           </div>
         </div>
-        <div class="chat-body" id="chat-demo">
-          <!-- Messages injected by JS -->
-        </div>
+        <div class="chat-body" id="chat-demo"></div>
         <div class="chat-input-bar">
           <input type="text" placeholder="Ask your AI anything..." disabled>
           <button>↑</button>
@@ -555,6 +544,7 @@ footer a:hover{color:#fff}
 
 <!-- SERVICES / PRICING -->
 <section class="services" id="services">
+  <div class="ascii-bg"><canvas id="ascii-pricing"></canvas></div>
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal">Simple Pricing</p>
@@ -585,8 +575,9 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- PROCESS STEPS — Rich Animated Cards -->
+<!-- PROCESS STEPS -->
 <section class="steps" id="how">
+  <div class="ascii-bg"><canvas id="ascii-steps"></canvas></div>
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal">Our Process</p>
@@ -594,7 +585,6 @@ footer a:hover{color:#fff}
       <p class="section-subtitle reveal reveal-delay-2">No fluff. No 6-month projects. Real results in days.</p>
     </div>
 
-    <!-- Step 1: Map Your Chaos -->
     <div class="step-card reveal">
       <div class="step-card-text">
         <div class="step-badge">Step 01</div>
@@ -602,7 +592,7 @@ footer a:hover{color:#fff}
         <p>You show us where time disappears — the inbox, the spreadsheets, the manual follow-ups. We find the 3 biggest time sinks and build a plan to kill them.</p>
       </div>
       <div class="step-visual">
-        <div class="radar-container" id="radar-vis">
+        <div class="radar-container">
           <div class="radar-circle"></div>
           <div class="radar-circle"></div>
           <div class="radar-circle"></div>
@@ -614,7 +604,6 @@ footer a:hover{color:#fff}
       </div>
     </div>
 
-    <!-- Step 2: Wire Up Your Tools -->
     <div class="step-card reveal">
       <div class="step-card-text">
         <div class="step-badge">Step 02</div>
@@ -636,7 +625,6 @@ footer a:hover{color:#fff}
       </div>
     </div>
 
-    <!-- Step 3: Your AI Starts Working -->
     <div class="step-card reveal">
       <div class="step-card-text">
         <div class="step-badge">Step 03</div>
@@ -653,7 +641,6 @@ footer a:hover{color:#fff}
       </div>
     </div>
 
-    <!-- Step 4: We Keep It Growing -->
     <div class="step-card reveal">
       <div class="step-card-text">
         <div class="step-badge">Step 04</div>
@@ -673,7 +660,6 @@ footer a:hover{color:#fff}
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -757,6 +743,7 @@ footer a:hover{color:#fff}
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
+  <div class="ascii-bg"><canvas id="ascii-cta"></canvas></div>
   <div class="container">
     <p class="section-label reveal">Ready?</p>
     <h2 class="section-title reveal reveal-delay-1">Let AI do the work<br>so you can scale faster</h2>
@@ -774,138 +761,395 @@ footer a:hover{color:#fff}
 </footer>
 
 <script>
-// HERO CANVAS
+/* ======================================================
+   ASCII BACKGROUND ENGINE
+   Each section gets a themed ASCII canvas animation
+   at low opacity (~0.12) behind content.
+   ====================================================== */
 (function(){
-  const c=document.getElementById('hero-canvas'),ctx=c.getContext('2d');
-  let w,h,t=0;
-  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight}
-  resize();window.addEventListener('resize',resize);
-  const blobs=[
-    {x:.3,y:.4,r:300,vx:.0003,vy:.0002,color:'rgba(0,85,255,'},
-    {x:.7,y:.6,r:250,vx:-.0002,vy:.0003,color:'rgba(100,0,255,'},
-    {x:.5,y:.3,r:350,vx:.0001,vy:-.0002,color:'rgba(0,40,200,'},
-  ];
-  function draw(){
-    ctx.fillStyle='rgba(5,5,16,1)';ctx.fillRect(0,0,w,h);
-    t++;
-    blobs.forEach(b=>{
-      const cx=w*(b.x+Math.sin(t*b.vx*10)*.15);
-      const cy=h*(b.y+Math.cos(t*b.vy*10)*.15);
-      const g=ctx.createRadialGradient(cx,cy,0,cx,cy,b.r*(w/1200));
-      g.addColorStop(0,b.color+'.18)');g.addColorStop(1,b.color+'0)');
-      ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
-    });
-    requestAnimationFrame(draw);
+  const CHAR_W = 10, CHAR_H = 16; // approx monospace char size
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+  // Shared setup
+  function initCanvas(id) {
+    const c = document.getElementById(id);
+    if (!c) return null;
+    const ctx = c.getContext('2d');
+    let w, h, cols, rows;
+    function resize() {
+      const rect = c.parentElement.getBoundingClientRect();
+      w = rect.width; h = rect.height;
+      c.width = w * DPR; c.height = h * DPR;
+      c.style.width = w + 'px'; c.style.height = h + 'px';
+      ctx.scale(DPR, DPR);
+      cols = Math.ceil(w / CHAR_W);
+      rows = Math.ceil(h / CHAR_H);
+      ctx.font = '12px "JetBrains Mono", monospace';
+      ctx.textBaseline = 'top';
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    return { c, ctx, w: () => w, h: () => h, cols: () => cols, rows: () => rows, resize };
   }
-  draw();
+
+  // Simple Perlin-like noise
+  function noise2d(x, y) {
+    const n = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
+    return n - Math.floor(n);
+  }
+  function smoothNoise(x, y) {
+    const ix = Math.floor(x), iy = Math.floor(y);
+    const fx = x - ix, fy = y - iy;
+    const a = noise2d(ix, iy), b = noise2d(ix+1, iy);
+    const c = noise2d(ix, iy+1), d = noise2d(ix+1, iy+1);
+    const ux = fx*fx*(3-2*fx), uy = fy*fy*(3-2*fy);
+    return (a*(1-ux)+b*ux)*(1-uy) + (c*(1-ux)+d*ux)*uy;
+  }
+  function fbm(x, y, octaves) {
+    let v = 0, amp = 1, freq = 1, max = 0;
+    for (let i = 0; i < octaves; i++) {
+      v += smoothNoise(x*freq, y*freq) * amp;
+      max += amp; amp *= .5; freq *= 2;
+    }
+    return v / max;
+  }
+
+  // 1. HERO — flowing ocean waves
+  (function(){
+    const s = initCanvas('ascii-hero');
+    if (!s) return;
+    const chars = '~≈∼∽≋~-·.';
+    let t = 0;
+    function draw() {
+      const { ctx } = s, w = s.w(), h = s.h(), cols = s.cols(), rows = s.rows();
+      ctx.clearRect(0, 0, w, h);
+      t += 0.008;
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const nx = c / cols * 4 + t;
+          const ny = r / rows * 2;
+          const v = fbm(nx, ny, 3);
+          const wave = Math.sin(v * Math.PI * 3 + t * 2) * 0.5 + 0.5;
+          const ci = Math.floor(wave * (chars.length - 1));
+          const alpha = 0.04 + wave * 0.08;
+          ctx.fillStyle = `rgba(0,85,255,${alpha})`;
+          ctx.fillText(chars[ci], c * CHAR_W, r * CHAR_H);
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  // 2. PAIN — chaotic scattered particles
+  (function(){
+    const s = initCanvas('ascii-pain');
+    if (!s) return;
+    const chars = '!@#$%&?*×÷±≠';
+    // Create scattered particles
+    const particles = [];
+    for (let i = 0; i < 80; i++) {
+      particles.push({
+        x: Math.random(), y: Math.random(),
+        vx: (Math.random() - 0.5) * 0.0003,
+        vy: (Math.random() - 0.5) * 0.0003,
+        c: chars[Math.floor(Math.random() * chars.length)],
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+    let t = 0;
+    function draw() {
+      const { ctx } = s, w = s.w(), h = s.h();
+      ctx.clearRect(0, 0, w, h);
+      t += 0.02;
+      particles.forEach(p => {
+        p.x += p.vx + Math.sin(t + p.phase) * 0.0001;
+        p.y += p.vy + Math.cos(t + p.phase) * 0.0001;
+        if (p.x < 0) p.x = 1; if (p.x > 1) p.x = 0;
+        if (p.y < 0) p.y = 1; if (p.y > 1) p.y = 0;
+        const flicker = Math.sin(t * 3 + p.phase) * 0.5 + 0.5;
+        ctx.fillStyle = `rgba(255,60,60,${0.04 + flicker * 0.1})`;
+        ctx.fillText(p.c, p.x * w, p.y * h);
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  // 3. AI SYSTEMS — matrix/data rain
+  (function(){
+    const s = initCanvas('ascii-systems');
+    if (!s) return;
+    const chars = '01アイウエオカキクケコ';
+    let drops = [];
+    function initDrops() {
+      const cols = s.cols();
+      drops = [];
+      for (let i = 0; i < cols; i++) {
+        if (Math.random() < 0.3) {
+          drops.push({ x: i, y: Math.random() * -50, speed: 0.3 + Math.random() * 0.8, len: 5 + Math.floor(Math.random() * 15) });
+        }
+      }
+    }
+    initDrops();
+    function draw() {
+      const { ctx } = s, w = s.w(), h = s.h(), rows = s.rows(), cols = s.cols();
+      ctx.clearRect(0, 0, w, h);
+      drops.forEach(d => {
+        for (let i = 0; i < d.len; i++) {
+          const row = Math.floor(d.y) - i;
+          if (row < 0 || row >= rows) continue;
+          const fade = 1 - i / d.len;
+          const alpha = fade * 0.12;
+          const ch = chars[Math.floor(Math.random() * chars.length)];
+          ctx.fillStyle = i === 0 ? `rgba(0,85,255,${alpha + 0.05})` : `rgba(0,85,255,${alpha})`;
+          ctx.fillText(ch, d.x * CHAR_W, row * CHAR_H);
+        }
+        d.y += d.speed;
+        if (d.y - d.len > rows) {
+          d.y = Math.random() * -20;
+          d.x = Math.floor(Math.random() * cols);
+        }
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  // 4. CHAT DEMO — pulse/heartbeat pattern
+  (function(){
+    const s = initCanvas('ascii-chat');
+    if (!s) return;
+    const chars = '·∙●○◦◌';
+    let t = 0;
+    function draw() {
+      const { ctx } = s, w = s.w(), h = s.h(), cols = s.cols(), rows = s.rows();
+      ctx.clearRect(0, 0, w, h);
+      t += 0.015;
+      const cx = w / 2, cy = h / 2;
+      for (let r = 0; r < rows; r += 2) {
+        for (let c = 0; c < cols; c += 2) {
+          const px = c * CHAR_W, py = r * CHAR_H;
+          const dx = (px - cx) / w, dy = (py - cy) / h;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          const wave = Math.sin(dist * 12 - t * 3) * 0.5 + 0.5;
+          const ci = Math.floor(wave * (chars.length - 1));
+          const alpha = wave * 0.1 * (1 - dist * 1.2);
+          if (alpha <= 0) continue;
+          ctx.fillStyle = `rgba(0,85,255,${Math.min(alpha, 0.12)})`;
+          ctx.fillText(chars[ci], px, py);
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  // 5. PRICING — clean minimal grid
+  (function(){
+    const s = initCanvas('ascii-pricing');
+    if (!s) return;
+    let t = 0;
+    function draw() {
+      const { ctx } = s, w = s.w(), h = s.h(), cols = s.cols(), rows = s.rows();
+      ctx.clearRect(0, 0, w, h);
+      t += 0.005;
+      for (let r = 0; r < rows; r += 3) {
+        for (let c = 0; c < cols; c += 4) {
+          const v = smoothNoise(c * 0.05 + t, r * 0.05);
+          const char = v > 0.6 ? '+' : v > 0.4 ? '·' : ' ';
+          if (char === ' ') continue;
+          const alpha = 0.04 + v * 0.06;
+          ctx.fillStyle = `rgba(0,85,255,${alpha})`;
+          ctx.fillText(char, c * CHAR_W, r * CHAR_H);
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  // 6. STEPS — flowing topology/contour lines
+  (function(){
+    const s = initCanvas('ascii-steps');
+    if (!s) return;
+    const chars = '─│┌┐└┘├┤┬┴┼·';
+    let t = 0;
+    function draw() {
+      const { ctx } = s, w = s.w(), h = s.h(), cols = s.cols(), rows = s.rows();
+      ctx.clearRect(0, 0, w, h);
+      t += 0.006;
+      for (let r = 0; r < rows; r += 2) {
+        for (let c = 0; c < cols; c += 2) {
+          const v = fbm(c * 0.04 + t * 0.5, r * 0.06 + t * 0.3, 3);
+          // Contour lines at specific thresholds
+          const frac = v * 10 % 1;
+          if (frac > 0.08 && frac < 0.92) continue;
+          const ci = Math.floor(v * chars.length) % chars.length;
+          ctx.fillStyle = `rgba(0,85,255,0.08)`;
+          ctx.fillText(chars[ci], c * CHAR_W, r * CHAR_H);
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  // 7. CTA — converging particles
+  (function(){
+    const s = initCanvas('ascii-cta');
+    if (!s) return;
+    const chars = '→←↑↓↗↘↙↖◆◇⬡·';
+    const particles = [];
+    for (let i = 0; i < 120; i++) {
+      particles.push({
+        x: Math.random(), y: Math.random(),
+        c: chars[Math.floor(Math.random() * chars.length)],
+        speed: 0.0005 + Math.random() * 0.001,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+    let t = 0;
+    function draw() {
+      const { ctx } = s, w = s.w(), h = s.h();
+      ctx.clearRect(0, 0, w, h);
+      t += 0.01;
+      particles.forEach(p => {
+        // Pull toward center with oscillation
+        const dx = 0.5 - p.x, dy = 0.5 - p.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        const pull = Math.sin(t + p.phase) * 0.5 + 0.5; // oscillate in/out
+        p.x += dx * p.speed * pull;
+        p.y += dy * p.speed * pull;
+        // Push back out periodically
+        if (dist < 0.05) {
+          p.x = Math.random();
+          p.y = Math.random();
+        }
+        const alpha = 0.04 + (1 - dist) * 0.08;
+        ctx.fillStyle = `rgba(0,85,255,${Math.min(alpha, 0.13)})`;
+        ctx.fillText(p.c, p.x * w, p.y * h);
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
 })();
 
-// NAV SCROLL
-window.addEventListener('scroll',()=>{
-  document.querySelector('nav').classList.toggle('scrolled',window.scrollY>50);
+/* ======================================================
+   SYSTEM HUB — animated SVG lines
+   ====================================================== */
+(function(){
+  const svg = document.getElementById('sys-lines');
+  if (!svg) return;
+  // Node positions (center of 340x340 grid)
+  const cx = 170, cy = 170;
+  const nodes = [
+    { x: 170, y: 18 },   // Apollo (top)
+    { x: 314, y: 96 },   // Retell (top-right)
+    { x: 314, y: 244 },  // Notion (bottom-right)
+    { x: 170, y: 322 },  // Gmail (bottom)
+    { x: 26, y: 244 },   // Make (bottom-left)
+    { x: 26, y: 96 },    // Sheets (top-left)
+  ];
+  let html = '';
+  nodes.forEach((n, i) => {
+    html += `<line x1="${cx}" y1="${cy}" x2="${n.x}" y2="${n.y}" stroke="url(#lineGrad)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4">
+      <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="${1.5 + i * 0.3}s" repeatCount="indefinite"/>
+    </line>`;
+    // Data packet dot
+    html += `<circle r="3" fill="#0055ff" opacity="0.8">
+      <animateMotion dur="${2 + i * 0.4}s" repeatCount="indefinite" path="M${cx},${cy} L${n.x},${n.y}"/>
+    </circle>`;
+  });
+  svg.innerHTML = `<defs><linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#0055ff" stop-opacity="0.6"/><stop offset="100%" stop-color="#7c3aed" stop-opacity="0.2"/></linearGradient></defs>` + html;
+})();
+
+/* ======================================================
+   NAV SCROLL
+   ====================================================== */
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// REVEAL ON SCROLL
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
-},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+/* ======================================================
+   REVEAL ON SCROLL
+   ====================================================== */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// COUNT UP
-const countObs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(!e.isIntersecting)return;
-    const el=e.target;const target=+el.dataset.count;
-    const suffix=el.textContent.includes('%')?'%':el.closest('.stat-num')?'+':'';
-    let start=0;const dur=2000;const step=Math.ceil(target/60);
-    const timer=setInterval(()=>{
-      start+=step;if(start>=target){start=target;clearInterval(timer)}
-      el.textContent=start+(el.dataset.suffix||suffix);
-    },dur/60);
+/* ======================================================
+   COUNT UP
+   ====================================================== */
+const countObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target; const target = +el.dataset.count;
+    const suffix = el.textContent.includes('%') ? '%' : el.closest('.stat-num') ? '+' : '';
+    let start = 0; const dur = 2000; const step = Math.ceil(target / 60);
+    const timer = setInterval(() => {
+      start += step; if (start >= target) { start = target; clearInterval(timer); }
+      el.textContent = start + (el.dataset.suffix || suffix);
+    }, dur / 60);
     countObs.unobserve(el);
   });
-},{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(el=>{
-  if(el.closest('.stat-num'))el.dataset.suffix='+';
-  if(el.textContent.includes('%'))el.dataset.suffix='%';
+}, { threshold: .5 });
+document.querySelectorAll('[data-count]').forEach(el => {
+  if (el.closest('.stat-num')) el.dataset.suffix = '+';
+  if (el.textContent.includes('%')) el.dataset.suffix = '%';
   countObs.observe(el);
 });
 
-// FEATURE TABS
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+/* ======================================================
+   FEATURE TABS
+   ====================================================== */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
   });
 });
 
-// CHAT DEMO — animated conversation
+/* ======================================================
+   CHAT DEMO — animated conversation
+   ====================================================== */
 (function(){
   const chat = document.getElementById('chat-demo');
+  if (!chat) return;
   let started = false;
 
   const messages = [
-    {
-      type: 'user',
-      text: 'Hey, how did my leads do this week?',
-      time: '09:12'
-    },
-    {
-      type: 'ai',
-      time: '09:12',
+    { type: 'user', text: 'Hey, how did my leads do this week?', time: '09:12' },
+    { type: 'ai', time: '09:12',
       html: `<div>Here's your weekly lead report 📊</div>
         <div class="chat-card">
           <div class="chat-card-row"><strong>Lead Performance</strong><span style="color:#28c840;font-weight:600">↑ 24%</span></div>
-          <div class="chat-card-stats">
-            <span>🟢 12 new</span>
-            <span>⭐ 3 qualified</span>
-            <span>📞 1 call booked</span>
-          </div>
+          <div class="chat-card-stats"><span>🟢 12 new</span><span>⭐ 3 qualified</span><span>📞 1 call booked</span></div>
           <div style="margin-top:8px;font-size:.8rem;color:var(--text2)">Call booked: <strong style="color:#fff">Tomorrow 10:00</strong> — Jan from Utrecht</div>
           <div class="chat-progress"><div class="chat-progress-fill" style="--pw:75%"></div></div>
-        </div>`
-    },
-    {
-      type: 'user',
-      text: 'Schedule social posts for this week',
-      time: '09:14'
-    },
-    {
-      type: 'ai',
-      time: '09:14',
+        </div>` },
+    { type: 'user', text: 'Schedule social posts for this week', time: '09:14' },
+    { type: 'ai', time: '09:14',
       html: `<div>Done ✓ <strong>5 posts</strong> scheduled Mon–Fri</div>
-        <div class="chat-thumbs">
-          <div class="chat-thumb">🏗️</div>
-          <div class="chat-thumb">💡</div>
-          <div class="chat-thumb">📈</div>
-          <div class="chat-thumb">🤝</div>
-          <div class="chat-thumb">🎯</div>
-        </div>
-        <div style="margin-top:6px;font-size:.75rem;color:var(--text2)">LinkedIn + Instagram · Best times auto-selected</div>`
-    },
-    {
-      type: 'user',
-      text: 'Send follow-up to leads that didn\'t reply',
-      time: '09:15'
-    },
-    {
-      type: 'ai',
-      time: '09:15',
+        <div class="chat-thumbs"><div class="chat-thumb">🏗️</div><div class="chat-thumb">💡</div><div class="chat-thumb">📈</div><div class="chat-thumb">🤝</div><div class="chat-thumb">🎯</div></div>
+        <div style="margin-top:6px;font-size:.75rem;color:var(--text2)">LinkedIn + Instagram · Best times auto-selected</div>` },
+    { type: 'user', text: "Send follow-up to leads that didn't reply", time: '09:15' },
+    { type: 'ai', time: '09:15',
       html: `<div>3 follow-ups sent ✓</div>
         <div style="font-size:.85rem;color:var(--text2);margin-top:4px">Here's what I wrote:</div>
         <div class="chat-collapsed">Preview: "Hi [name], just checking in on our conversation about..."</div>
-        <div style="margin-top:6px;font-size:.75rem;color:var(--text2)">Sent via Gmail · Read receipts on</div>`
-    }
+        <div style="margin-top:6px;font-size:.75rem;color:var(--text2)">Sent via Gmail · Read receipts on</div>` }
   ];
 
   const demoObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting && !started) {
-        started = true;
-        animateChat();
-        demoObs.unobserve(e.target);
+        started = true; animateChat(); demoObs.unobserve(e.target);
       }
     });
   }, { threshold: .3 });
@@ -914,103 +1158,50 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
   function animateChat() {
     let i = 0;
     function next() {
-      if (i >= messages.length) {
-        // Reset after pause
-        setTimeout(() => {
-          chat.innerHTML = '';
-          i = 0;
-          next();
-        }, 5000);
-        return;
-      }
+      if (i >= messages.length) { setTimeout(() => { chat.innerHTML = ''; i = 0; next(); }, 5000); return; }
       const m = messages[i];
-
       if (m.type === 'ai') {
-        // Show typing indicator
         const typing = document.createElement('div');
         typing.className = 'chat-typing visible';
         typing.innerHTML = '<span></span><span></span><span></span>';
         chat.appendChild(typing);
         chat.scrollTop = chat.scrollHeight;
-
-        setTimeout(() => {
-          typing.remove();
-          addMessage(m);
-          i++;
-          setTimeout(next, 1200);
-        }, 1200);
+        setTimeout(() => { typing.remove(); addMessage(m); i++; setTimeout(next, 1200); }, 1200);
       } else {
-        addMessage(m);
-        i++;
-        setTimeout(next, 800);
+        addMessage(m); i++; setTimeout(next, 800);
       }
     }
-
     function addMessage(m) {
       const div = document.createElement('div');
       div.className = `chat-msg ${m.type}`;
       const bubble = document.createElement('div');
       bubble.className = 'chat-bubble';
-      if (m.html) {
-        bubble.innerHTML = m.html;
-      } else {
-        bubble.textContent = m.text;
-      }
+      if (m.html) bubble.innerHTML = m.html; else bubble.textContent = m.text;
       div.appendChild(bubble);
       const time = document.createElement('div');
-      time.className = 'chat-time';
-      time.textContent = m.time;
+      time.className = 'chat-time'; time.textContent = m.time;
       if (m.type === 'user') {
         const read = document.createElement('div');
-        read.className = 'chat-read';
-        read.textContent = '✓✓';
-        div.appendChild(time);
-        div.appendChild(read);
-      } else {
-        div.appendChild(time);
-      }
+        read.className = 'chat-read'; read.textContent = '✓✓';
+        div.appendChild(time); div.appendChild(read);
+      } else { div.appendChild(time); }
       chat.appendChild(div);
-      // Trigger animation
-      requestAnimationFrame(() => {
-        div.style.animationDelay = '0s';
-      });
+      requestAnimationFrame(() => { div.style.animationDelay = '0s'; });
       chat.scrollTop = chat.scrollHeight;
     }
-
     next();
   }
 })();
 
-// ASCII ART — subtle glow animation
-(function(){
-  const pre = document.getElementById('ascii-art');
-  if(!pre) return;
-  let hue = 220;
-  setInterval(()=>{
-    hue = 220 + Math.sin(Date.now()/2000) * 15;
-    pre.style.color = `hsl(${hue}, 100%, 60%)`;
-    pre.style.textShadow = `0 0 20px hsla(${hue}, 100%, 50%, .3)`;
-  }, 50);
-})();
-
-// Restart step animations when visible
+/* ======================================================
+   RE-TRIGGER STEP ANIMATIONS ON SCROLL
+   ====================================================== */
 (function(){
   const stepObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        // Re-trigger bubble animations
-        const bubbles = e.target.querySelectorAll('.task-bubble');
-        bubbles.forEach(b => {
-          b.style.animation = 'none';
-          b.offsetHeight; // reflow
-          b.style.animation = '';
-        });
-        // Re-trigger chart bars
-        const bars = e.target.querySelectorAll('.chart-bar');
-        bars.forEach(b => {
-          b.style.animation = 'none';
-          b.offsetHeight;
-          b.style.animation = '';
+        e.target.querySelectorAll('.task-bubble, .chart-bar').forEach(b => {
+          b.style.animation = 'none'; b.offsetHeight; b.style.animation = '';
         });
       }
     });
