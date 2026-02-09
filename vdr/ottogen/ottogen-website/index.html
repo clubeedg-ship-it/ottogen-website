@@ -24,7 +24,7 @@ img{max-width:100%;display:block}
 
 /* ASCII BACKGROUNDS */
 .ascii-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.ascii-bg pre{position:absolute;top:0;left:0;width:100%;height:100%;margin:0;padding:0;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.1;color:rgba(0,85,255,.18);overflow:hidden;white-space:pre;user-select:none}
+.ascii-bg pre{position:absolute;top:0;left:0;width:100%;height:100%;margin:0;padding:0;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.1;color:rgba(0,85,255,.3);overflow:hidden;white-space:pre;user-select:none}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:background .3s,backdrop-filter .3s}
@@ -389,7 +389,7 @@ footer a:hover{color:#fff}
 
 <!-- PAIN (ASCII scattered particles bg) -->
 <section class="pain">
-  <div class="ascii-bg"><pre id="ascii-pain"></pre></div>
+  <!-- no ascii bg -->
   <div class="container">
     <div class="pain-grid">
       <div class="pain-text reveal">
@@ -433,7 +433,7 @@ footer a:hover{color:#fff}
 
 <!-- AI CHAT DEMO (ASCII pulse bg) -->
 <section class="ai-demo">
-  <div class="ascii-bg"><pre id="ascii-chat"></pre></div>
+  <!-- no ascii bg -->
   <div class="container">
     <div class="demo-grid">
       <div class="reveal">
@@ -467,7 +467,7 @@ footer a:hover{color:#fff}
 
 <!-- FEATURE TABS (ASCII data flow bg) -->
 <section class="feature-tabs" id="ai-systems">
-  <div class="ascii-bg"><pre id="ascii-tabs"></pre></div>
+  <!-- no ascii bg -->
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal">What You Get</p>
@@ -543,7 +543,7 @@ footer a:hover{color:#fff}
 
 <!-- SERVICES / PRICING (ASCII grid bg) -->
 <section class="services" id="services">
-  <div class="ascii-bg"><pre id="ascii-pricing"></pre></div>
+  <!-- no ascii bg -->
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal">Simple Pricing</p>
@@ -709,7 +709,7 @@ footer a:hover{color:#fff}
 
 <!-- TESTIMONIALS (ASCII constellation bg) -->
 <section class="testimonials" id="testimonials">
-  <div class="ascii-bg"><pre id="ascii-testimonials"></pre></div>
+  <!-- no ascii bg -->
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal">What Clients Say</p>
@@ -746,7 +746,7 @@ footer a:hover{color:#fff}
 
 <!-- ABOUT (ASCII mountain silhouette bg) -->
 <section class="about" id="about">
-  <div class="ascii-bg"><pre id="ascii-about"></pre></div>
+  <!-- no ascii bg -->
   <div class="container">
     <div class="about-grid">
       <div class="about-photo reveal">
@@ -872,26 +872,29 @@ asciiAnimate('ascii-pain', (t, cols, rows) => {
   return out;
 });
 
-// 3. SYSTEMS — Matrix data rain
+// 3. SYSTEMS — Concentric ripples expanding from center
 asciiAnimate('ascii-systems', (t, cols, rows) => {
-  if (!window._mdrops) {
-    window._mdrops = [];
-    for (let i = 0; i < 300; i++) window._mdrops.push({ x: Math.floor(Math.random() * 200), y: Math.random() * 100, s: .3 + Math.random() * .7 });
-  }
-  const grid = [];
-  for (let r = 0; r < rows; r++) grid.push(new Array(cols).fill(' '));
-  const chars = '01.:;|';
-  window._mdrops.forEach(d => {
-    d.y += d.s * 0.5;
-    if (d.y > rows + 5) { d.y = -Math.floor(Math.random() * 10); d.x = Math.floor(Math.random() * cols); }
-    for (let trail = 0; trail < 6; trail++) {
-      const ry = Math.floor(d.y) - trail;
-      if (ry >= 0 && ry < rows && d.x < cols) {
-        grid[ry][d.x] = trail === 0 ? chars[Math.floor(Math.random() * 2)] : chars[2 + Math.floor(Math.random() * 4)];
+  let out = '';
+  const cx = cols / 2, cy = rows / 2;
+  const chars = ' .oO0Oo. ';
+  for (let r = 0; r < rows; r++) {
+    let line = '';
+    for (let c = 0; c < cols; c++) {
+      const dx = (c - cx) / cols * 2;
+      const dy = (r - cy) / rows * 2;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const wave = Math.sin(dist * 12 - t * 3) * .5 + .5;
+      const fade = Math.max(0, 1 - dist * 1.2);
+      const v = wave * fade;
+      if (v > 0.2) {
+        line += chars[Math.floor(v * (chars.length - 1))];
+      } else {
+        line += ' ';
       }
     }
-  });
-  return grid.map(row => row.join('')).join('\n');
+    out += line + '\n';
+  }
+  return out;
 });
 
 // 4. CHAT — Pulse / heartbeat
