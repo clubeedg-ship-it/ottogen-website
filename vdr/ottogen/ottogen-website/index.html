@@ -24,7 +24,7 @@ img{max-width:100%;display:block}
 
 /* ASCII BACKGROUNDS */
 .ascii-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.ascii-bg canvas{width:100%;height:100%;opacity:.08}
+.ascii-bg canvas{display:block;opacity:.15}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:background .3s,backdrop-filter .3s}
@@ -806,7 +806,9 @@ class ASCIIBackground {
   }
   resize() {
     const r = devicePixelRatio || 1;
-    const rect = this.canvas.parentElement.getBoundingClientRect();
+    // Use the section (grandparent) for dimensions since ascii-bg is absolute
+    const section = this.canvas.closest('section, .hero, .tool-marquee, .cta-section') || this.canvas.parentElement.parentElement;
+    const rect = section.getBoundingClientRect();
     this.w = rect.width;
     this.h = rect.height;
     this.canvas.width = this.w * r;
