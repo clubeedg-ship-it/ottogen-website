@@ -1075,41 +1075,44 @@ new ASCIIBackground('ascii-cta', (ctx, t, cols, rows, w, h, fs) => {
 (function(){
   const hub = document.getElementById('hub-vis');
   if (!hub) return;
-  const tools = [
-    { name: 'Apollo', angle: 0 },
-    { name: 'Retell', angle: 60 },
-    { name: 'Notion', angle: 120 },
-    { name: 'Gmail', angle: 180 },
-    { name: 'Sheets', angle: 240 },
-    { name: 'Make', angle: 300 }
-  ];
-  const radius = 170;
   const svg = document.getElementById('hub-lines');
 
-  tools.forEach((tool, i) => {
-    const rad = (tool.angle - 90) * Math.PI / 180;
-    const x = 50 + Math.cos(rad) * 37; // percentage
-    const y = 50 + Math.sin(rad) * 37;
+  // Inner orbit (closer, faster)
+  const inner = [
+    { name: 'Gmail', angle: 0 },
+    { name: 'Slack', angle: 90 },
+    { name: 'Notion', angle: 180 },
+    { name: 'Zapier', angle: 270 }
+  ];
+  // Outer orbit (further, slower)
+  const outer = [
+    { name: 'ChatGPT', angle: 30 },
+    { name: 'Shopify', angle: 90 },
+    { name: 'HubSpot', angle: 150 },
+    { name: 'Stripe', angle: 210 },
+    { name: 'Calendly', angle: 270 },
+    { name: 'WhatsApp', angle: 330 }
+  ];
 
-    // Create node
-    const node = document.createElement('div');
-    node.className = 'hub-node';
-    node.textContent = tool.name;
-    node.style.cssText = `left:${x}%;top:${y}%;transform:translate(-50%,-50%)`;
-    hub.appendChild(node);
+  const allNodes = [];
 
-    // SVG animated line
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    line.setAttribute('x1', '50%'); line.setAttribute('y1', '50%');
-    line.setAttribute('x2', x + '%'); line.setAttribute('y2', y + '%');
-    line.setAttribute('stroke', 'url(#hubGrad)');
-    line.setAttribute('stroke-width', '1.5');
-    line.setAttribute('opacity', '0.4');
-    line.style.animation = `lineFlow 2s ease-in-out infinite ${i * 0.3}s`;
-    svg.appendChild(line);
-  });
+  function createOrbitNodes(tools, radiusPct, orbitClass) {
+    tools.forEach((tool, i) => {
+      const node = document.createElement('div');
+      node.className = 'hub-node';
+      node.textContent = tool.name;
+      node.dataset.orbit = orbitClass;
+      node.dataset.angle = tool.angle;
+      node.dataset.radius = radiusPct;
+      hub.appendChild(node);
+      allNodes.push(node);
+    });
+  }
 
-  // Add gradient def
+  createOrbitNodes(inner, 24, 'inner');
+  createOrbitNodes(outer, 40, 'outer');
+
+  // Add gradient def to SVG
   const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
   const grad = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
   grad.setAttribute('id', 'hubGrad');
@@ -1119,6 +1122,38 @@ new ASCIIBackground('ascii-cta', (ctx, t, cols, rows, w, h, fs) => {
   s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', 'transparent');
   grad.appendChild(s1); grad.appendChild(s2);
   defs.appendChild(grad); svg.insertBefore(defs, svg.firstChild);
+
+  // Animate orbits
+  let t = 0;
+  function spinOrbit() {
+    // Clear SVG lines
+    while (svg.childNodes.length > 1) svg.removeChild(svg.lastChild);
+
+    allNodes.forEach(node => {
+      const baseAngle = parseFloat(node.dataset.angle);
+      const r = parseFloat(node.dataset.radius);
+      const isInner = node.dataset.orbit === 'inner';
+      const speed = isInner ? 0.15 : 0.08; // deg per frame
+      const currentAngle = baseAngle + t * speed;
+      const rad = (currentAngle - 90) * Math.PI / 180;
+      const x = 50 + Math.cos(rad) * r;
+      const y = 50 + Math.sin(rad) * r;
+      node.style.cssText = `left:${x}%;top:${y}%;transform:translate(-50%,-50%)`;
+
+      // Draw line to center
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', '50%'); line.setAttribute('y1', '50%');
+      line.setAttribute('x2', x + '%'); line.setAttribute('y2', y + '%');
+      line.setAttribute('stroke', '#0055ff');
+      line.setAttribute('stroke-width', '1');
+      line.setAttribute('opacity', isInner ? '0.25' : '0.12');
+      svg.appendChild(line);
+    });
+
+    t++;
+    requestAnimationFrame(spinOrbit);
+  }
+  spinOrbit();
 })();
 
 // ============================================
