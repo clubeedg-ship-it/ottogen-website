@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OttoGen — AI for Your Business</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="I bring AI to businesses that don't have time to figure it out. Save 10-15 hours per week with practical AI solutions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,8 +32,9 @@ img{max-width:100%;display:block}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:background .3s,backdrop-filter .3s}
 nav.scrolled{background:rgba(5,5,16,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
 nav .container{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.5px}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
 .logo span{color:var(--blue)}
+.logo-icon{flex-shrink:0}
 nav ul{display:flex;gap:32px;list-style:none}
 nav ul a{color:var(--text2);font-size:.9rem;font-weight:500;transition:color .2s}
 nav ul a:hover{color:#fff}
@@ -335,7 +337,7 @@ footer a:hover{color:#fff}
 <!-- NAV -->
 <nav>
   <div class="container">
-    <a href="#" class="logo">Otto<span>Gen</span></a>
+    <a href="#" class="logo"><svg class="logo-icon" width="28" height="28" viewBox="0 0 240 240"><defs><filter id="lg"><feGaussianBlur stdDeviation="3"/></filter></defs><circle cx="120" cy="120" r="72" fill="none" stroke="#0055ff" stroke-width="2" opacity=".15" stroke-dasharray="6 6"/><line x1="68" y1="72" x2="172" y2="68" stroke="#0055ff" stroke-width="2" opacity=".35"/><line x1="172" y1="68" x2="178" y2="168" stroke="#0055ff" stroke-width="2" opacity=".35"/><line x1="178" y1="168" x2="80" y2="182" stroke="#0055ff" stroke-width="2" opacity=".35"/><line x1="80" y1="182" x2="55" y2="120" stroke="#0055ff" stroke-width="2" opacity=".35"/><line x1="55" y1="120" x2="68" y2="72" stroke="#0055ff" stroke-width="2" opacity=".35"/><circle cx="68" cy="72" r="10" fill="#0055ff" filter="url(#lg)"/><circle cx="172" cy="68" r="10" fill="#0055ff" filter="url(#lg)"/><circle cx="178" cy="168" r="10" fill="#0055ff" filter="url(#lg)"/><circle cx="80" cy="182" r="10" fill="#0055ff" filter="url(#lg)"/><circle cx="55" cy="120" r="10" fill="#0055ff" filter="url(#lg)"/><circle cx="120" cy="120" r="6" fill="#fff"/></svg>Otto<span>Gen</span></a>
     <ul class="nav-links">
       <li><a href="#systems">AI Systems</a></li>
       <li><a href="#services">Pricing</a></li>
