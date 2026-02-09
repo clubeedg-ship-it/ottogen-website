@@ -1,0 +1,6 @@
+*
+!.gitignore
+!vdr/
+!vdr/ottogen/
+!vdr/ottogen/ottogen-website/
+!vdr/ottogen/ottogen-website/**

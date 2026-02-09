@@ -7,7 +7,7 @@
 <meta name="description" content="I bring AI to businesses that don't have time to figure it out. Save 10-15 hours per week with practical AI solutions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -41,7 +41,7 @@ nav ul a:hover{color:#fff}
 .hero-bg canvas{width:100%;height:100%}
 .hero-content{position:relative;z-index:2;max-width:800px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,85,255,.12);border:1px solid rgba(0,85,255,.25);border-radius:50px;padding:8px 20px;font-size:.85rem;color:var(--blue);font-weight:500;margin-bottom:32px}
-.hero-badge::before{content:'';width:8px;height:8px;background:var(--blue);border-radius:50;animation:pulse 2s infinite}
+.hero-badge::before{content:'';width:8px;height:8px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .hero h1{font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:-.03em;margin-bottom:24px}
 .hero h1 .gradient{background:linear-gradient(135deg,#fff 0%,var(--blue) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -71,6 +71,16 @@ section{padding:120px 0}
 .reveal-delay-2{transition-delay:.2s}
 .reveal-delay-3{transition-delay:.3s}
 
+/* TOOL MARQUEE */
+.tool-marquee{padding:60px 0;background:var(--bg);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);overflow:hidden}
+.tool-marquee p{text-align:center;color:var(--text2);font-size:.8rem;text-transform:uppercase;letter-spacing:3px;margin-bottom:28px;font-weight:500}
+.marquee-track{display:flex;gap:60px;animation:marquee 25s linear infinite;width:max-content}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tool-logo{display:flex;align-items:center;gap:10px;color:var(--text2);font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:600;white-space:nowrap;opacity:.5;transition:opacity .3s}
+.tool-logo:hover{opacity:1}
+.tool-logo svg{width:28px;height:28px;flex-shrink:0}
+
 /* PAIN SECTION */
 .pain{background:var(--bg);position:relative}
 .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
@@ -81,6 +91,35 @@ section{padding:120px 0}
 .pain-circle{width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(0,85,255,.2),transparent 70%);border:1px solid rgba(0,85,255,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
 .pain-circle .big-num{font-size:4rem;font-weight:700;font-family:'Space Grotesk',sans-serif;color:var(--blue)}
 .pain-circle p{color:var(--text2);font-size:.95rem;margin-top:8px}
+
+/* ASCII ART VISUAL */
+.ascii-visual{background:var(--bg2);padding:100px 0;position:relative;overflow:hidden}
+.ascii-visual::before{content:'';position:absolute;top:50%;left:50%;width:800px;height:800px;background:radial-gradient(circle,rgba(0,85,255,.06),transparent 70%);transform:translate(-50%,-50%);pointer-events:none}
+.ascii-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ascii-display{position:relative;background:rgba(0,0,0,.4);border:1px solid rgba(0,85,255,.15);border-radius:12px;padding:0;overflow:hidden;font-family:'JetBrains Mono',monospace}
+.ascii-titlebar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(0,0,0,.3);border-bottom:1px solid rgba(255,255,255,.06)}
+.ascii-dot{width:12px;height:12px;border-radius:50%}
+.ascii-dot.r{background:#ff5f57}.ascii-dot.y{background:#febc2e}.ascii-dot.g{background:#28c840}
+.ascii-titlebar span{color:var(--text2);font-size:.75rem;margin-left:8px}
+.ascii-content{padding:24px;min-height:300px;font-size:.8rem;line-height:1.4;color:var(--blue);position:relative}
+.ascii-content pre{margin:0;white-space:pre;overflow:hidden}
+.ascii-text h2{font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:20px;letter-spacing:-.02em}
+.ascii-text p{color:var(--text2);font-size:1.05rem;line-height:1.8;margin-bottom:16px}
+.ascii-text .highlight{color:var(--blue);font-weight:600}
+
+/* AI COMMAND DEMO */
+.ai-demo{background:var(--bg);padding:100px 0;overflow:hidden}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.demo-terminal{background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden}
+.demo-titlebar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(0,0,0,.3);border-bottom:1px solid rgba(255,255,255,.06)}
+.demo-body{padding:24px;font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:1.8;min-height:320px}
+.demo-line{opacity:0;animation:typeLine .5s forwards}
+.demo-line .prompt{color:var(--blue)}
+.demo-line .cmd{color:#fff}
+.demo-line .output{color:var(--text2)}
+.demo-line .success{color:#28c840}
+.demo-line .accent{color:#febc2e}
+@keyframes typeLine{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 /* SERVICES */
 .services{background:var(--bg2)}
@@ -97,8 +136,30 @@ section{padding:120px 0}
 .service-card.featured{border-color:rgba(0,85,255,.3);background:linear-gradient(180deg,rgba(0,85,255,.06) 0%,var(--surface) 100%)}
 .popular-tag{position:absolute;top:16px;right:16px;background:var(--blue);color:#fff;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:50px}
 
+/* FEATURE TABS */
+.feature-tabs{background:var(--bg);padding:120px 0}
+.tabs-container{max-width:900px;margin:0 auto}
+.tab-buttons{display:flex;gap:4px;background:var(--surface);border-radius:12px;padding:4px;margin-bottom:40px}
+.tab-btn{flex:1;padding:14px 24px;border:none;background:transparent;color:var(--text2);font-family:'Inter',sans-serif;font-size:.95rem;font-weight:500;border-radius:10px;cursor:pointer;transition:all .3s}
+.tab-btn.active{background:var(--blue);color:#fff;box-shadow:0 4px 20px var(--blue-glow)}
+.tab-btn:hover:not(.active){color:#fff;background:rgba(255,255,255,.05)}
+.tab-panel{display:none;animation:fadeTab .4s ease}
+.tab-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@keyframes fadeTab{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.tab-content h3{font-size:1.6rem;margin-bottom:16px;font-family:'Space Grotesk',sans-serif}
+.tab-content p{color:var(--text2);font-size:1rem;line-height:1.8;margin-bottom:12px}
+.tab-content ul{list-style:none;margin-top:16px}
+.tab-content ul li{color:var(--text2);font-size:.95rem;padding:8px 0;padding-left:24px;position:relative}
+.tab-content ul li::before{content:'→';position:absolute;left:0;color:var(--blue);font-weight:600}
+.tab-visual{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:32px;min-height:280px;display:flex;align-items:center;justify-content:center}
+.tab-visual .metric{text-align:center}
+.tab-visual .metric-num{font-size:3.5rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--blue);line-height:1}
+.tab-visual .metric-label{color:var(--text2);font-size:.9rem;margin-top:8px}
+.tab-visual .metric-bar{width:100%;height:8px;background:rgba(255,255,255,.06);border-radius:4px;margin-top:20px;overflow:hidden}
+.tab-visual .metric-fill{height:100%;background:linear-gradient(90deg,var(--blue),#7c3aed);border-radius:4px;transition:width 1.5s cubic-bezier(.16,1,.3,1)}
+
 /* STEPS */
-.steps{background:var(--bg)}
+.steps{background:var(--bg2)}
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative}
 .steps-grid::before{content:'';position:absolute;top:44px;left:calc(12.5% + 16px);right:calc(12.5% + 16px);height:2px;background:linear-gradient(90deg,var(--blue),rgba(0,85,255,.2));z-index:0}
 .step{text-align:center;position:relative;z-index:1}
@@ -107,13 +168,13 @@ section{padding:120px 0}
 .step p{color:var(--text2);font-size:.9rem;line-height:1.6}
 
 /* STATS */
-.stats{background:var(--bg2);padding:80px 0}
+.stats{background:var(--bg);padding:80px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
 .stat-num{font-size:clamp(2.5rem,4vw,3.5rem);font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--blue)}
 .stat-label{color:var(--text2);font-size:.9rem;margin-top:4px}
 
 /* TESTIMONIALS */
-.testimonials{background:var(--bg)}
+.testimonials{background:var(--bg2)}
 .testimonial-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .testimonial-card{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:36px 32px;transition:all .3s}
 .testimonial-card:hover{border-color:rgba(0,85,255,.15)}
@@ -125,7 +186,7 @@ section{padding:120px 0}
 .author-info p{font-size:.8rem;color:var(--text2)}
 
 /* ABOUT */
-.about{background:var(--bg2)}
+.about{background:var(--bg)}
 .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
 .about-photo{width:100%;max-width:400px;aspect-ratio:1;border-radius:var(--radius);background:linear-gradient(135deg,var(--surface),rgba(0,85,255,.1));border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:6rem;filter:grayscale(0)}
 .about-text .section-title{text-align:left}
@@ -133,13 +194,13 @@ section{padding:120px 0}
 .about-text p strong{color:#fff}
 
 /* CTA */
-.cta-section{background:var(--bg);padding:140px 0;text-align:center;position:relative;overflow:hidden}
+.cta-section{background:var(--bg2);padding:140px 0;text-align:center;position:relative;overflow:hidden}
 .cta-section::before{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,85,255,.12),transparent 70%);transform:translate(-50%,-50%);pointer-events:none}
 .cta-section .section-title{font-size:clamp(2.2rem,4.5vw,3.5rem);margin-bottom:20px}
 .cta-section p{color:var(--text2);font-size:1.15rem;max-width:500px;margin:0 auto 40px;line-height:1.7}
 
 /* FOOTER */
-footer{background:var(--bg2);border-top:1px solid rgba(255,255,255,.06);padding:48px 0}
+footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.06);padding:48px 0}
 footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 footer p{color:var(--text2);font-size:.85rem}
 footer a{color:var(--text2);font-size:.85rem;transition:color .2s}
@@ -151,8 +212,9 @@ footer a:hover{color:#fff}
   .steps-grid{grid-template-columns:1fr 1fr;gap:40px}
   .steps-grid::before{display:none}
   .stats-grid{grid-template-columns:1fr 1fr}
-  .pain-grid,.about-grid{grid-template-columns:1fr;gap:48px}
+  .pain-grid,.about-grid,.ascii-grid,.demo-grid{grid-template-columns:1fr;gap:48px}
   .pain-visual{display:none}
+  .tab-panel.active{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   nav ul.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(5,5,16,.95);backdrop-filter:blur(20px);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid rgba(255,255,255,.06)}
@@ -162,6 +224,8 @@ footer a:hover{color:#fff}
   .steps-grid{grid-template-columns:1fr}
   section{padding:80px 0}
   .hero{min-height:90vh;padding:100px 24px 60px}
+  .tab-buttons{flex-direction:column}
+  .marquee-track{gap:40px}
 }
 </style>
 </head>
@@ -172,9 +236,9 @@ footer a:hover{color:#fff}
   <div class="container">
     <a href="#" class="logo">Otto<span>Gen</span></a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#testimonials">Clients</a></li>
+      <li><a href="#systems">AI Systems</a></li>
+      <li><a href="#services">Pricing</a></li>
+      <li><a href="#how">Process</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact" class="nav-cta">Book a Free Call</a></li>
     </ul>
@@ -186,18 +250,42 @@ footer a:hover{color:#fff}
 <section class="hero">
   <div class="hero-bg"><canvas id="hero-canvas"></canvas></div>
   <div class="hero-content">
-    <div class="hero-badge reveal">Available for new clients</div>
-    <h1 class="reveal reveal-delay-1">I bring AI to businesses<br>that <span class="gradient">don't have time</span><br>to figure it out</h1>
-    <p class="reveal reveal-delay-2">You run the business. I make it faster, smarter, and more profitable — with AI solutions that actually work.</p>
+    <div class="hero-badge reveal">Currently onboarding new pilot partners</div>
+    <h1 class="reveal reveal-delay-1">AI systems that<br><span class="gradient">run your business</span><br>while you grow it</h1>
+    <p class="reveal reveal-delay-2">No coding. No complexity. Just real AI systems that automate your operations, sales, and content — so you stop trading time for money.</p>
     <div class="btn-group reveal reveal-delay-3">
       <a href="#contact" class="btn btn-primary">Book a Free Call →</a>
-      <a href="#services" class="btn btn-secondary">See What I Do</a>
+      <a href="#systems" class="btn btn-secondary">See How It Works</a>
     </div>
   </div>
   <div class="scroll-hint">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
   </div>
 </section>
+
+<!-- TOOL MARQUEE -->
+<div class="tool-marquee">
+  <p>Powered by industry-standard AI technology</p>
+  <div class="marquee-track" id="marquee">
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14 8v6l4 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>OpenAI</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><rect x="4" y="4" width="20" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 14h8M14 10v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Make</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><path d="M6 14l6-8v6h4l-6 8v-6H6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Zapier</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><rect x="5" y="5" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 11h18M11 11v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Notion</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><path d="M8 18l4-8 4 4 4-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="20" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Slack</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 14a4 4 0 008 0" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="11" r="1" fill="currentColor"/><circle cx="18" cy="11" r="1" fill="currentColor"/></svg>ChatGPT</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><path d="M14 4l8 5v10l-8 5-8-5V9l8-5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Claude</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><path d="M4 8h20M4 14h20M4 20h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="22" cy="20" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Google Sheets</div>
+    <!-- Duplicate for infinite scroll -->
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14 8v6l4 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>OpenAI</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><rect x="4" y="4" width="20" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 14h8M14 10v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Make</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><path d="M6 14l6-8v6h4l-6 8v-6H6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Zapier</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><rect x="5" y="5" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 11h18M11 11v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Notion</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><path d="M8 18l4-8 4 4 4-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="20" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Slack</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 14a4 4 0 008 0" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="11" r="1" fill="currentColor"/><circle cx="18" cy="11" r="1" fill="currentColor"/></svg>ChatGPT</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><path d="M14 4l8 5v10l-8 5-8-5V9l8-5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Claude</div>
+    <div class="tool-logo"><svg viewBox="0 0 28 28"><path d="M4 8h20M4 14h20M4 20h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="22" cy="20" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Google Sheets</div>
+  </div>
+</div>
 
 <!-- PAIN -->
 <section class="pain">
@@ -219,13 +307,163 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ASCII ART VISUAL — "Your AI Operating System" -->
+<section class="ascii-visual" id="systems">
+  <div class="container">
+    <div class="ascii-grid">
+      <div class="ascii-display reveal">
+        <div class="ascii-titlebar">
+          <div class="ascii-dot r"></div>
+          <div class="ascii-dot y"></div>
+          <div class="ascii-dot g"></div>
+          <span>ottogen — ai-system</span>
+        </div>
+        <div class="ascii-content">
+<pre id="ascii-art">
+    ┌─────────────────────────────┐
+    │       YOUR  BUSINESS        │
+    │   ┌───┐  ┌───┐  ┌───┐     │
+    │   │ $ │  │ ✉ │  │ 📊│     │
+    │   └─┬─┘  └─┬─┘  └─┬─┘     │
+    │     │      │      │        │
+    │     └──────┼──────┘        │
+    │            │               │
+    │      ┌─────▼─────┐         │
+    │      │  OttoGen  │         │
+    │      │  AI Core  │         │
+    │      └─────┬─────┘         │
+    │            │               │
+    │   ┌────────┼────────┐      │
+    │   ▼        ▼        ▼      │
+    │ ┌─────┐ ┌─────┐ ┌─────┐   │
+    │ │Sales│ │Ops  │ │Cont.│   │
+    │ │ Bot │ │Auto │ │ Gen │   │
+    │ └─────┘ └─────┘ └─────┘   │
+    └─────────────────────────────┘
+</pre>
+        </div>
+      </div>
+      <div class="ascii-text reveal reveal-delay-1">
+        <p class="section-label">AI Systems</p>
+        <h2>Your AI Runs the<br>Business 24/7</h2>
+        <p>One connected system that handles <span class="highlight">content creation</span>, <span class="highlight">lead generation</span>, <span class="highlight">follow-ups</span>, and <span class="highlight">revenue tracking</span> — so your business keeps running without you being online.</p>
+        <p>Not a single chatbot. A complete operating system for your business, built with tools you already know.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI COMMAND DEMO — "Give Commands. AI Executes." -->
+<section class="ai-demo">
+  <div class="container">
+    <div class="demo-grid">
+      <div class="reveal">
+        <p class="section-label">Your AI Assistant</p>
+        <h2 class="section-title" style="text-align:left">Give commands.<br>Your AI executes.</h2>
+        <p class="section-subtitle">Tell it what to do in plain language. The system handles content, sales, operations, and reporting — in real time.</p>
+        <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:8px">
+          <span style="background:rgba(0,85,255,.1);border:1px solid rgba(0,85,255,.2);padding:6px 14px;border-radius:50px;font-size:.8rem;color:var(--blue)">Content</span>
+          <span style="background:rgba(0,85,255,.1);border:1px solid rgba(0,85,255,.2);padding:6px 14px;border-radius:50px;font-size:.8rem;color:var(--blue)">Sales</span>
+          <span style="background:rgba(0,85,255,.1);border:1px solid rgba(0,85,255,.2);padding:6px 14px;border-radius:50px;font-size:.8rem;color:var(--blue)">Operations</span>
+          <span style="background:rgba(0,85,255,.1);border:1px solid rgba(0,85,255,.2);padding:6px 14px;border-radius:50px;font-size:.8rem;color:var(--blue)">Analytics</span>
+        </div>
+      </div>
+      <div class="demo-terminal reveal reveal-delay-1">
+        <div class="demo-titlebar">
+          <div class="ascii-dot r"></div>
+          <div class="ascii-dot y"></div>
+          <div class="ascii-dot g"></div>
+          <span style="color:var(--text2);font-size:.75rem;margin-left:8px;font-family:'JetBrains Mono',monospace">ottogen — assistant</span>
+        </div>
+        <div class="demo-body" id="demo-terminal">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE TABS — "AI Systems That Build Freedom" -->
+<section class="feature-tabs" id="ai-systems">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label reveal">What You Get</p>
+      <h2 class="section-title reveal reveal-delay-1">AI systems that build<br>freedom &amp; income</h2>
+      <p class="section-subtitle reveal reveal-delay-2">We build AI-powered systems that automate content, sales, and operations — so you don't trade time for money.</p>
+    </div>
+    <div class="tabs-container reveal reveal-delay-3">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="content">Content System</button>
+        <button class="tab-btn" data-tab="sales">Sales System</button>
+        <button class="tab-btn" data-tab="ops">Operations</button>
+      </div>
+      <div class="tab-panel active" data-panel="content">
+        <div class="tab-content">
+          <h3>AI Content System</h3>
+          <p>Your AI creates, schedules, and optimizes content across all platforms. Posts that sound like you — because it learns your voice.</p>
+          <ul>
+            <li>Social media posts generated daily</li>
+            <li>Email newsletters written automatically</li>
+            <li>Blog content from your expertise</li>
+            <li>Consistent brand voice across everything</li>
+          </ul>
+        </div>
+        <div class="tab-visual">
+          <div class="metric">
+            <div class="metric-num">30+</div>
+            <div class="metric-label">posts per month, zero effort</div>
+            <div class="metric-bar"><div class="metric-fill" style="width:85%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" data-panel="sales">
+        <div class="tab-content">
+          <h3>AI Sales System</h3>
+          <p>Leads come in. Your AI qualifies them, follows up, books calls, and sends proposals. You just show up and close.</p>
+          <ul>
+            <li>Automated lead qualification</li>
+            <li>Follow-up sequences that convert</li>
+            <li>Calendar booking on autopilot</li>
+            <li>Proposal generation in minutes</li>
+          </ul>
+        </div>
+        <div class="tab-visual">
+          <div class="metric">
+            <div class="metric-num">3x</div>
+            <div class="metric-label">more leads handled, same team</div>
+            <div class="metric-bar"><div class="metric-fill" style="width:75%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" data-panel="ops">
+        <div class="tab-content">
+          <h3>AI Operations System</h3>
+          <p>Invoicing, scheduling, reporting, client onboarding — the boring stuff that eats your week. AI handles it all.</p>
+          <ul>
+            <li>Client onboarding in 10 minutes</li>
+            <li>Automatic invoicing &amp; follow-ups</li>
+            <li>Weekly reports generated automatically</li>
+            <li>Team task assignment &amp; tracking</li>
+          </ul>
+        </div>
+        <div class="tab-visual">
+          <div class="metric">
+            <div class="metric-num">15h</div>
+            <div class="metric-label">saved per week on operations</div>
+            <div class="metric-bar"><div class="metric-fill" style="width:90%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES / PRICING -->
 <section class="services" id="services">
   <div class="container">
     <div class="section-header">
-      <p class="section-label reveal">What I Do</p>
-      <h2 class="section-title reveal reveal-delay-1">Three ways I bring AI<br>into your business</h2>
-      <p class="section-subtitle reveal reveal-delay-2">No jargon. No complexity. Just results you can see in your bottom line.</p>
+      <p class="section-label reveal">Simple Pricing</p>
+      <h2 class="section-title reveal reveal-delay-1">Pick the plan that<br>fits your goals</h2>
+      <p class="section-subtitle reveal reveal-delay-2">Start small. Scale when you see results.</p>
     </div>
     <div class="service-cards">
       <div class="service-card reveal">
@@ -255,30 +493,30 @@ footer a:hover{color:#fff}
 <section class="steps" id="how">
   <div class="container">
     <div class="section-header">
-      <p class="section-label reveal">How It Works</p>
-      <h2 class="section-title reveal reveal-delay-1">Four steps to a smarter business</h2>
-      <p class="section-subtitle reveal reveal-delay-2">Simple, structured, and designed around your schedule.</p>
+      <p class="section-label reveal">Our Process</p>
+      <h2 class="section-title reveal reveal-delay-1">From audit to launch in 4 steps</h2>
+      <p class="section-subtitle reveal reveal-delay-2">Then ongoing support to scale.</p>
     </div>
     <div class="steps-grid">
       <div class="step reveal">
         <div class="step-num">1</div>
-        <h4>We Talk</h4>
-        <p>Free 15-minute call. You tell me what's eating your time — I tell you if AI can fix it.</p>
+        <h4>System Audit</h4>
+        <p>We analyze workflows, bottlenecks, and opportunities where AI creates immediate impact.</p>
       </div>
       <div class="step reveal reveal-delay-1">
         <div class="step-num">2</div>
-        <h4>I Audit Your Workflow</h4>
-        <p>I map out your daily operations and pinpoint where AI delivers the biggest impact.</p>
+        <h4>System Architecture</h4>
+        <p>We design a custom AI system aligned with your business processes and goals.</p>
       </div>
       <div class="step reveal reveal-delay-2">
         <div class="step-num">3</div>
-        <h4>I Implement Quick Wins</h4>
-        <p>Within days, not months. You start seeing results while we plan the bigger moves.</p>
+        <h4>Seamless Integration</h4>
+        <p>We connect AI directly into your existing tools and workflows — without disruption.</p>
       </div>
       <div class="step reveal reveal-delay-3">
         <div class="step-num">4</div>
-        <h4>You Save 10-15 Hours/Week</h4>
-        <p>More time for what matters — growing your business, or finally taking that Friday off.</p>
+        <h4>Optimize &amp; Scale</h4>
+        <p>Monthly reviews, system updates, and scaling support — your AI keeps delivering as you grow.</p>
       </div>
     </div>
   </div>
@@ -349,7 +587,6 @@ footer a:hover{color:#fff}
   <div class="container">
     <div class="about-grid">
       <div class="about-photo reveal">
-        <!-- Replace with actual photo -->
         <span>O</span>
       </div>
       <div class="about-text">
@@ -367,7 +604,7 @@ footer a:hover{color:#fff}
 <section class="cta-section" id="contact">
   <div class="container">
     <p class="section-label reveal">Ready?</p>
-    <h2 class="section-title reveal reveal-delay-1">Let's find out what AI<br>can do for your business</h2>
+    <h2 class="section-title reveal reveal-delay-1">Let AI do the work<br>so you can scale faster</h2>
     <p class="reveal reveal-delay-2">15 minutes. No cost. No commitment.<br>Just a conversation about where you're wasting time.</p>
     <a href="https://calendly.com/ottogen" class="btn btn-primary reveal reveal-delay-3" style="font-size:1.1rem;padding:18px 48px">Book Your Free Call →</a>
   </div>
@@ -438,6 +675,141 @@ document.querySelectorAll('[data-count]').forEach(el=>{
   if(el.textContent.includes('%'))el.dataset.suffix='%';
   countObs.observe(el);
 });
+
+// FEATURE TABS
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+  });
+});
+
+// AI COMMAND DEMO — typewriter effect
+(function(){
+  const lines = [
+    {type:'prompt',text:'otto@business:~$ '},
+    {type:'cmd',text:'ottogen schedule "Post this week\'s tips"'},
+    {type:'output',text:''},
+    {type:'success',text:'✓ 5 social posts scheduled for Mon–Fri'},
+    {type:'success',text:'✓ Email newsletter drafted for Thursday'},
+    {type:'output',text:''},
+    {type:'prompt',text:'otto@business:~$ '},
+    {type:'cmd',text:'ottogen sales --check-leads'},
+    {type:'output',text:''},
+    {type:'accent',text:'⚡ 3 new leads qualified overnight'},
+    {type:'success',text:'✓ Follow-ups sent automatically'},
+    {type:'success',text:'✓ 1 call booked for tomorrow 10:00'},
+    {type:'output',text:''},
+    {type:'prompt',text:'otto@business:~$ '},
+    {type:'cmd',text:'ottogen report --weekly'},
+    {type:'output',text:''},
+    {type:'success',text:'✓ Revenue: +18% vs last week'},
+    {type:'success',text:'✓ Time saved: 14.5 hours'},
+    {type:'accent',text:'✓ 0 tasks missed. System running 24/7.'},
+  ];
+  
+  const terminal = document.getElementById('demo-terminal');
+  let started = false;
+  
+  const demoObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !started){
+        started = true;
+        animateTerminal();
+        demoObs.unobserve(e.target);
+      }
+    });
+  },{threshold:.3});
+  demoObs.observe(terminal);
+  
+  function animateTerminal(){
+    let i = 0;
+    let currentLine = null;
+    
+    function nextLine(){
+      if(i >= lines.length){
+        // Loop after pause
+        setTimeout(()=>{
+          terminal.innerHTML = '';
+          i = 0;
+          started = true;
+          nextLine();
+        }, 3000);
+        return;
+      }
+      
+      const l = lines[i];
+      const div = document.createElement('div');
+      div.className = 'demo-line';
+      div.style.animationDelay = '0s';
+      
+      if(l.type === 'prompt'){
+        const span = document.createElement('span');
+        span.className = 'prompt';
+        span.textContent = l.text;
+        div.appendChild(span);
+        terminal.appendChild(div);
+        currentLine = div;
+        i++;
+        // Type the command on next line
+        if(i < lines.length && lines[i].type === 'cmd'){
+          typeCommand(currentLine, lines[i].text, ()=>{
+            i++;
+            setTimeout(nextLine, 400);
+          });
+        } else {
+          setTimeout(nextLine, 200);
+        }
+        return;
+      }
+      
+      if(l.text === ''){
+        div.innerHTML = '&nbsp;';
+        div.style.opacity = '1';
+      } else {
+        const span = document.createElement('span');
+        span.className = l.type;
+        span.textContent = l.text;
+        div.appendChild(span);
+      }
+      
+      terminal.appendChild(div);
+      i++;
+      setTimeout(nextLine, l.text === '' ? 100 : 300);
+    }
+    
+    function typeCommand(line, text, cb){
+      const span = document.createElement('span');
+      span.className = 'cmd';
+      line.appendChild(span);
+      let j = 0;
+      const interval = setInterval(()=>{
+        span.textContent += text[j];
+        j++;
+        if(j >= text.length){
+          clearInterval(interval);
+          setTimeout(cb, 600);
+        }
+      }, 35);
+    }
+    
+    nextLine();
+  }
+})();
+
+// ASCII ART — subtle glow animation
+(function(){
+  const pre = document.getElementById('ascii-art');
+  if(!pre) return;
+  let hue = 220;
+  setInterval(()=>{
+    hue = 220 + Math.sin(Date.now()/2000) * 15;
+    pre.style.color = `hsl(${hue}, 100%, 60%)`;
+    pre.style.textShadow = `0 0 20px hsla(${hue}, 100%, 50%, .3)`;
+  }, 50);
+})();
 </script>
 </body>
 </html>
