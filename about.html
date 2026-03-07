@@ -27,13 +27,19 @@
       <li><a href="about.html" data-i18n="nav.about">About</a></li>
       <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       <li>
-        <div class="lang-switcher">
-          <button data-lang="en" class="active">EN</button>
-          <button data-lang="nl">NL</button>
-          <button data-lang="pt">PT</button>
-          <button data-lang="de">DE</button>
-          <button data-lang="fr">FR</button>
-          <button data-lang="es">ES</button>
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-toggle" id="langToggle">
+            <span class="lang-current">EN</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="lang-dropdown-menu" id="langMenu">
+            <button data-lang="en" class="lang-option active">English</button>
+            <button data-lang="nl" class="lang-option">Nederlands</button>
+            <button data-lang="pt" class="lang-option">Português</button>
+            <button data-lang="de" class="lang-option">Deutsch</button>
+            <button data-lang="fr" class="lang-option">Français</button>
+            <button data-lang="es" class="lang-option">Español</button>
+          </div>
         </div>
       </li>
       <li><a href="contact.html" class="nav-cta" data-i18n="nav.cta">Get Started</a></li>
@@ -120,17 +126,17 @@
     </div>
     <div class="pillars">
       <div class="pillar reveal">
-        <div class="pillar-icon">💼</div>
+        <div class="pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
         <h3>Services</h3>
         <p>Revenue engine. Client work for SMBs and enterprises. Websites, business systems, AI support, and private infrastructure deployments.</p>
       </div>
       <div class="pillar reveal reveal-delay-1">
-        <div class="pillar-icon">🚀</div>
+        <div class="pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
         <h3>Ventures</h3>
         <p>Portfolio companies we build, operate, and hold equity in. ZenithCred, SentinAgro, Interactive Move — each running on Oopuo infrastructure.</p>
       </div>
       <div class="pillar reveal reveal-delay-2">
-        <div class="pillar-icon">🔬</div>
+        <div class="pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></div>
         <h3>Core</h3>
         <p>R&D and IP. Chimera, Kira Platform, Nexus OS. The technology moat that makes everything else possible and keeps Oopuo irreplaceable.</p>
       </div>
@@ -191,5 +197,10 @@
 <script src="js/main.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/chat-widget.js"></script>
+<script src="js/analytics.js"></script>
+<script src="js/cookie-consent.js"></script>
+
+<!-- HubSpot Tracking Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/HUBSPOT_PORTAL_ID.js"></script>
 </body>
 </html>

@@ -27,13 +27,19 @@
       <li><a href="about.html" data-i18n="nav.about">About</a></li>
       <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       <li>
-        <div class="lang-switcher">
-          <button data-lang="en" class="active">EN</button>
-          <button data-lang="nl">NL</button>
-          <button data-lang="pt">PT</button>
-          <button data-lang="de">DE</button>
-          <button data-lang="fr">FR</button>
-          <button data-lang="es">ES</button>
+        <div class="lang-dropdown">
+          <button class="lang-dropdown-toggle" id="langToggle">
+            <span class="lang-current">EN</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="lang-dropdown-menu" id="langMenu">
+            <button data-lang="en" class="lang-option active">English</button>
+            <button data-lang="nl" class="lang-option">Nederlands</button>
+            <button data-lang="pt" class="lang-option">Português</button>
+            <button data-lang="de" class="lang-option">Deutsch</button>
+            <button data-lang="fr" class="lang-option">Français</button>
+            <button data-lang="es" class="lang-option">Español</button>
+          </div>
         </div>
       </li>
       <li><a href="contact.html" class="nav-cta" data-i18n="nav.cta">Get Started</a></li>
@@ -225,5 +231,10 @@
 <script src="js/main.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/chat-widget.js"></script>
+<script src="js/analytics.js"></script>
+<script src="js/cookie-consent.js"></script>
+
+<!-- HubSpot Tracking Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/HUBSPOT_PORTAL_ID.js"></script>
 </body>
 </html>

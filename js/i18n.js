@@ -257,3 +257,62 @@ if (document.readyState === 'loading') {
 } else {
   initI18n();
 }
+
+// Language Dropdown Controller
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdown = document.querySelector('.lang-dropdown');
+  const toggle = document.getElementById('langToggle');
+  const menu = document.getElementById('langMenu');
+  const currentLabel = dropdown?.querySelector('.lang-current');
+  
+  if (!toggle || !menu) return;
+  
+  const langNames = { en:'EN', nl:'NL', pt:'PT', de:'DE', fr:'FR', es:'ES' };
+  const langFlags = { en:'', nl:'', pt:'', de:'', fr:'', es:'' };
+  
+  // Set current language display
+  const saved = localStorage.getItem('oopuo_lang') || 'en';
+  if (currentLabel) currentLabel.textContent = langNames[saved];
+  
+  // Toggle dropdown
+  toggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+  
+  // Close on outside click
+  document.addEventListener('click', function() {
+    dropdown.classList.remove('open');
+  });
+  
+  // Language selection
+  menu.querySelectorAll('.lang-option').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const lang = this.dataset.lang;
+      
+      // Update active state
+      menu.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Update toggle display
+      if (currentLabel) currentLabel.textContent = langNames[lang];
+      
+      // Store and apply
+      localStorage.setItem('oopuo_lang', lang);
+      if (window.applyLanguage) window.applyLanguage(lang);
+      
+      // Close dropdown
+      dropdown.classList.remove('open');
+    });
+    
+    // Mark current language as active on load
+    if (btn.dataset.lang === saved) {
+      menu.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  });
+  
+  // Prevent menu click from closing
+  menu.addEventListener('click', function(e) { e.stopPropagation(); });
+});
