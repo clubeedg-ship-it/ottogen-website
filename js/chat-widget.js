@@ -4,42 +4,42 @@
   ============================================ */
 
 (function() {
- const SYSTEM_PROMPT = "You are Oopuo's AI assistant. Help visitors understand services, pricing, and how to get started. Respond in visitor's language.";
+ const SYSTEM_PROMPT = "You are Oopuo's AI assistant. Help visitors understand our outsourced digital & AI team plans, pricing, and how to get started. Respond in visitor's language.";
 
  // FAQ knowledge base — language-aware
  const faqDB = {
   en: {
    services: {
-    patterns: ['service', 'offer', 'what do you do', 'help', 'provide'],
-    answer: "We offer two tiers of services:\n\n**For Growing Businesses:**\n• Web Design & Development (€3,500–€8,000)\n• Business Systems / Inventory (€2,500–€6,000)\n• AI Customer Support (€2,000–€4,000)\n• Brand & Strategy (€2,000–€5,000)\n\n**For Enterprise:**\n• AI Strategy & Governance (€8K–€25K)\n• Local AI Deployment (€15K–€75K)\n• Internal Automation (€10K–€40K)\n• Data Infrastructure (€10K–€30K)\n\nWould you like to know more about any specific service?"
+    patterns: ['service', 'offer', 'what do you do', 'help', 'provide', 'include'],
+    answer: "We're your outsourced digital & AI team. One subscription covers:\n\n• Website management & hosting\n• Email & DNS infrastructure\n• AI tools setup & automation\n• Ongoing support & guidance\n• Strategic digital direction\n\nTwo plans: **Essentials** (EUR 300/mo) and **Growth** (EUR 500/mo). Would you like details on either?"
    },
    pricing: {
-    patterns: ['price', 'cost', 'how much', 'pricing', 'budget', 'afford', 'expensive'],
-    answer: "Our pricing is transparent and stackable:\n\n**SMB Monthly Retainers:**\n• Website & Maintenance: €397/mo\n• Inventory / Business System: €497/mo\n• AI Customer Support: €497/mo\n• Full Stack (all-in-one): €1,097/mo (save €294)\n\n**Enterprise Monthly Retainers:**\n• AI Operations: €2,500/mo\n• Infrastructure: €1,500/mo\n• AI Engineering: €4,500/mo\n• Strategy: €2,000/mo\n• Enterprise Full Stack: €8,500/mo\n\nAll plans require initial project setup. Want to discuss your specific needs?"
+    patterns: ['price', 'cost', 'how much', 'pricing', 'budget', 'afford', 'expensive', 'plan'],
+    answer: "Simple, transparent pricing:\n\n**Essentials — EUR 300/mo:**\n• Website, hosting, email, DNS\n• 5h monthly support\n• Basic AI setup & guidance\n• Quarterly strategy check-in\n• 48h response time\n\n**Growth — EUR 500/mo:**\n• Everything in Essentials\n• 12h monthly support\n• Full AI workflow automation\n• Monthly strategic review\n• 24h priority response\n• Dedicated point of contact\n• Cost optimization audit\n\n**Custom** — for specific or larger needs.\n\nNo long-term contracts. Billed monthly. Cancel anytime."
    },
    enterprise: {
-    patterns: ['enterprise', 'large company', 'corporate', 'institutional', 'private ai', 'local model', 'on-premise'],
-    answer: "Absolutely! Our enterprise tier is built for organizations that need:\n\n **Private AI** — Models run on your hardware, data never leaves your building\n **EU/GDPR Native** — Dutch company, full compliance\n **Chimera Technology** — Our own privacy-preserving AI compute layer\n **Dedicated Teams** — Not a vendor, your AI engineering team\n\nWe work with institutional clients on AI strategy, local deployments, and internal automation. Want to request a consultation?"
+    patterns: ['enterprise', 'large company', 'corporate', 'custom', 'bigger'],
+    answer: "For businesses with specific or larger needs, we offer custom plans. These can include custom AI builds, larger support hours, or specialized requirements.\n\nThe best way to explore this is to book a free 15-minute call — we'll discuss your situation and propose something tailored."
    },
    started: {
     patterns: ['start', 'begin', 'get started', 'next step', 'book', 'call', 'contact'],
-    answer: "Getting started is simple:\n\n1⃣ **Book a discovery call** — Free 30-minute conversation about your needs\n2⃣ **We scope your project** — Clear proposal with timeline and pricing\n3⃣ **We build** — 2-6 week delivery depending on scope\n4⃣ **Launch + Grow** — Ongoing support keeps your systems evolving\n\n Book your call at our Contact page, or just tell me what you need and I'll point you in the right direction!"
+    answer: "Getting started is simple:\n\n1. **Free call** — 15 minutes, we learn about your business\n2. **Audit** — We map what you're paying and what's working\n3. **Transition** — We take over and consolidate your providers\n4. **Ongoing** — Monthly support, guidance, and improvement\n\nBook your free call at our Contact page!"
    },
    different: {
     patterns: ['different', 'unique', 'why you', 'competitor', 'special', 'stand out'],
-    answer: "What makes Oopuo different:\n\n **We build infrastructure, not just websites** — Complete AI-powered business systems\n **Privacy-first** — We built Chimera, our own AI compute layer. Your data stays yours.\n **Two tiers, one team** — Whether you're an SMB or enterprise, same quality of engineering\n **Proven results** — 6+ projects, €1.1M+ funding raised for portfolio companies, 100% client retention\n **Netherlands-based** — EU jurisdiction, GDPR native\n\nWe're not an agency. We're your AI infrastructure partner."
+    answer: "What makes Oopuo different:\n\n• **One team, not five providers** — Website, email, AI, support, strategy all under one roof\n• **Built for small businesses** — We understand teams of 2-20 people\n• **Privacy-first** — Dutch company, EU jurisdiction, GDPR native\n• **AI that's practical** — Not buzzwords, actual tools that save you time\n• **100% client retention** — Our partners stay because it works\n\nWe become your digital & AI department."
    },
    default: {
-    answer: "I can help you with:\n\n• **Our services** — What we build\n• **Pricing** — How much it costs\n• **Enterprise** — Solutions for larger organizations\n• **Getting started** — Next steps\n• **What makes us different** — Our approach\n\nOr feel free to ask anything else! For detailed discussions, you can also book a free discovery call."
+    answer: "I can help you with:\n\n• **What we do** — Your outsourced digital & AI team\n• **Pricing** — Plans from EUR 300/mo\n• **Getting started** — How the process works\n• **What makes us different** — Our approach\n\nOr feel free to ask anything else! You can also book a free 15-minute call."
    }
   },
   nl: {
    services: {
     patterns: ['dienst', 'aanbod', 'wat doen', 'help', 'bied'],
-    answer: "Wij bieden twee niveaus van diensten:\n\n**Voor groeiende bedrijven:**\n• Webdesign & Ontwikkeling (€3.500–€8.000)\n• Bedrijfssystemen (€2.500–€6.000)\n• AI Klantenservice (€2.000–€4.000)\n• Merk & Strategie (€2.000–€5.000)\n\n**Voor Enterprise:**\n• AI Strategie (€8K–€25K)\n• Lokale AI-implementatie (€15K–€75K)\n\nWilt u meer weten over een specifieke dienst?"
+    answer: "Wij zijn uw uitbestede digitale & AI team. Eén abonnement dekt:\n\n• Website beheer & hosting\n• E-mail & DNS infrastructuur\n• AI tools & automatisering\n• Doorlopende ondersteuning\n• Strategische digitale richting\n\nTwee plannen: **Essentials** (EUR 300/mnd) en **Growth** (EUR 500/mnd)."
    },
    default: {
-    answer: "Ik kan u helpen met:\n\n• **Onze diensten** — Wat wij bouwen\n• **Prijzen** — Hoeveel het kost\n• **Enterprise** — Oplossingen voor grotere organisaties\n• **Aan de slag** — Volgende stappen\n\nVoel u vrij om iets te vragen!"
+    answer: "Ik kan u helpen met:\n\n• **Wat wij doen** — Uw uitbestede digitale & AI team\n• **Prijzen** — Plannen vanaf EUR 300/mnd\n• **Aan de slag** — Hoe het werkt\n\nVoel u vrij om iets te vragen!"
    }
   }
  };
@@ -111,7 +111,7 @@
    chat.style.display = isOpen ? 'flex' : 'none';
    if (isOpen && !chat.dataset.greeted) {
     chat.dataset.greeted = '1';
-    addBotMessage("Hi! I'm Oopuo's AI assistant. I can help you understand our services, pricing, and how to get started. What would you like to know?");
+    addBotMessage("Hi! I'm Oopuo's AI assistant. Looking for a simpler way to manage your business's digital presence? I can help you find the right plan, explain what's included, or walk you through how to get started.");
    }
   });
 

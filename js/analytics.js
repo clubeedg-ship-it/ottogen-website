@@ -1,6 +1,6 @@
 // Oopuo Analytics — Google Tag (gtag.js)
 // Only loads after cookie consent
-// GA4 Measurement ID: placeholder (replace with real ID)
+// GA4 Measurement ID: placeholder (update with real ID)
 
 window.OOPUO_GA_ID = 'G-XXXXXXXXXX'; // TODO: Replace with real GA4 Measurement ID
 
