@@ -200,7 +200,14 @@ function applyTranslations() {
 }
 
 function updateLangSwitcher() {
+  const langNames = { en:'EN', nl:'NL', pt:'PT', de:'DE', fr:'FR', es:'ES' };
   document.querySelectorAll('.lang-switcher button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === currentLang);
+  });
+  // Update dropdown display
+  const currentLabel = document.querySelector('.lang-current');
+  if (currentLabel) currentLabel.textContent = langNames[currentLang] || 'EN';
+  document.querySelectorAll('.lang-option').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === currentLang);
   });
 }
@@ -235,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const langFlags = { en:'', nl:'', pt:'', de:'', fr:'', es:'' };
   
   // Set current language display
-  const saved = localStorage.getItem('oopuo_lang') || 'en';
+  const saved = localStorage.getItem('oopuo-lang') || detectBrowserLang();
   if (currentLabel) currentLabel.textContent = langNames[saved];
   
   // Toggle dropdown
@@ -263,15 +270,14 @@ document.addEventListener('DOMContentLoaded', function() {
       if (currentLabel) currentLabel.textContent = langNames[lang];
       
       // Store and apply
-      localStorage.setItem('oopuo_lang', lang);
-      if (window.applyLanguage) window.applyLanguage(lang);
+      setLanguage(lang);
       
       // Close dropdown
       dropdown.classList.remove('open');
     });
     
     // Mark current language as active on load
-    if (btn.dataset.lang === saved) {
+    if (btn.dataset.lang === currentLang) {
       menu.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     }
