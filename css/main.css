@@ -415,8 +415,9 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.06);padding:6
 .lang-option.active::after{content:'✓';float:right;font-size:.7rem}
 
 @media(max-width:768px){
-  .lang-dropdown{order:2}
-  .lang-dropdown-menu{right:-20px}
+  .lang-dropdown{order:2;position:relative}
+  .lang-dropdown-menu{right:-20px;z-index:999}
+  .lang-option{padding:12px 14px;font-size:.95rem}
 }
 
 /* ═══ Grid overrides ═══ */

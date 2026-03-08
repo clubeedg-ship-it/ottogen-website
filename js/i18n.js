@@ -239,50 +239,62 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!toggle || !menu) return;
   
   const langNames = { en:'EN', nl:'NL', pt:'PT', de:'DE', fr:'FR', es:'ES' };
-  const langFlags = { en:'', nl:'', pt:'', de:'', fr:'', es:'' };
   
   // Set current language display
   const saved = localStorage.getItem('oopuo-lang') || detectBrowserLang();
-  if (currentLabel) currentLabel.textContent = langNames[saved];
+  if (currentLabel) currentLabel.textContent = langNames[saved] || 'EN';
   
-  // Toggle dropdown
-  toggle.addEventListener('click', function(e) {
+  // Mark active on load
+  menu.querySelectorAll('.lang-option').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.lang === currentLang);
+  });
+
+  // Toggle dropdown — use touchend + click for mobile reliability
+  function toggleDropdown(e) {
+    e.preventDefault();
     e.stopPropagation();
+    e.stopImmediatePropagation();
     dropdown.classList.toggle('open');
-  });
+  }
+  toggle.addEventListener('click', toggleDropdown);
+  toggle.addEventListener('touchend', toggleDropdown);
   
-  // Close on outside click
-  document.addEventListener('click', function() {
-    dropdown.classList.remove('open');
-  });
-  
-  // Language selection
+  // Language selection — bind both click and touchend
   menu.querySelectorAll('.lang-option').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
+    function selectLang(e) {
+      e.preventDefault();
       e.stopPropagation();
-      const lang = this.dataset.lang;
+      e.stopImmediatePropagation();
+      
+      var lang = btn.dataset.lang;
+      if (!lang) return;
       
       // Update active state
-      menu.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
+      menu.querySelectorAll('.lang-option').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
       
       // Update toggle display
-      if (currentLabel) currentLabel.textContent = langNames[lang];
+      if (currentLabel) currentLabel.textContent = langNames[lang] || lang.toUpperCase();
       
-      // Store and apply
+      // Store and apply translation
       setLanguage(lang);
       
       // Close dropdown
       dropdown.classList.remove('open');
-    });
-    
-    // Mark current language as active on load
-    if (btn.dataset.lang === currentLang) {
-      menu.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
     }
+    btn.addEventListener('click', selectLang);
+    btn.addEventListener('touchend', selectLang);
   });
   
-  // Prevent menu click from closing
+  // Prevent any click inside menu from bubbling
   menu.addEventListener('click', function(e) { e.stopPropagation(); });
+  menu.addEventListener('touchend', function(e) { e.stopPropagation(); });
+  
+  // Close on outside click/touch
+  document.addEventListener('click', function(e) {
+    if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+  });
+  document.addEventListener('touchend', function(e) {
+    if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+  });
 });
