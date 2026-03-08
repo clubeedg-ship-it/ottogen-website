@@ -169,6 +169,36 @@ function detectBrowserLang() {
   return translations[lang] ? lang : 'en';
 }
 
+// Geo-detect language on first visit (no localStorage set yet)
+function geoDetectLang() {
+  if (localStorage.getItem('oopuo-lang')) return; // user already chose
+  
+  fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(3000) })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (!data || !data.country_code) return;
+      var countryToLang = {
+        NL: 'nl', BE: 'nl', SR: 'nl',
+        BR: 'pt', PT: 'pt', AO: 'pt', MZ: 'pt',
+        DE: 'de', AT: 'de', CH: 'de', LI: 'de',
+        FR: 'fr', MC: 'fr', LU: 'fr', SN: 'fr', CI: 'fr', CM: 'fr',
+        ES: 'es', MX: 'es', AR: 'es', CO: 'es', CL: 'es', PE: 'es', VE: 'es', EC: 'es', UY: 'es', PY: 'es', BO: 'es', CR: 'es', PA: 'es', DO: 'es', GT: 'es', HN: 'es', SV: 'es', NI: 'es', CU: 'es'
+      };
+      var detected = countryToLang[data.country_code];
+      if (detected && translations[detected] && detected !== currentLang) {
+        setLanguage(detected);
+      }
+    })
+    .catch(function() { /* silent fail — keep browser lang */ });
+}
+
+// Run geo-detection after page loads
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', geoDetectLang);
+} else {
+  geoDetectLang();
+}
+
 function setLanguage(lang) {
   if (!translations[lang]) lang = 'en';
   currentLang = lang;
