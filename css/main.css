@@ -341,6 +341,7 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.06);padding:6
   .stats-grid{grid-template-columns:1fr 1fr}
   .pricing-grid{grid-template-columns:1fr 1fr}
   .pricing-grid-3{grid-template-columns:1fr}
+  .process-steps-4{grid-template-columns:repeat(2,1fr)}
   .pricing-grid-5{grid-template-columns:1fr 1fr}
   .hub-grid{grid-template-columns:1fr;gap:40px}
   .portfolio-grid{grid-template-columns:1fr 1fr}
@@ -357,6 +358,7 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.06);padding:6
   .path-card{padding:36px 28px}
   .service-cards,.capability-cards,.portfolio-grid,.pricing-grid,.pricing-grid-3,.pricing-grid-5,.trust-builders,.pillars{grid-template-columns:1fr}
   .hub-grid{grid-template-columns:1fr;gap:40px}
+  .process-steps-4{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr 1fr}
   section{padding:80px 0}
   .hero{min-height:90vh;padding:100px 24px 60px}
@@ -417,8 +419,9 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.06);padding:6
   .lang-dropdown-menu{right:-20px}
 }
 
-/* ═══ Homepage grid overrides ═══ */
+/* ═══ Grid overrides ═══ */
 .pricing-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;z-index:2}
+.process-steps-4{grid-template-columns:repeat(4,1fr)}
 .hub-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 
 /* ═══ Monochrome Icon Containers ═══ */
