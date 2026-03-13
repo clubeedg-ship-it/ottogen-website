@@ -63,29 +63,29 @@
       <form class="contact-form reveal" id="contact-form">
         <div class="form-group">
           <label data-i18n="contact.form.name">Full Name</label>
-          <input type="text" name="name" required placeholder="Your name">
+          <input type="text" name="name" required placeholder="Your name" data-i18n="contact.form.name.placeholder">
         </div>
         <div class="form-group">
           <label data-i18n="contact.form.email">Email</label>
-          <input type="email" name="email" required placeholder="you@company.com">
+          <input type="email" name="email" required placeholder="you@company.com" data-i18n="contact.form.email.placeholder">
         </div>
         <div class="form-group">
           <label data-i18n="contact.form.company">Company</label>
-          <input type="text" name="company" placeholder="Your company name">
+          <input type="text" name="company" placeholder="Your company name" data-i18n="contact.form.company.placeholder">
         </div>
         <div class="form-group">
           <label data-i18n="contact.form.service">Plan Interest</label>
           <select name="service">
-            <option value="">Select a plan...</option>
-            <option value="essentials">Essentials (&euro;300/mo)</option>
-            <option value="growth">Growth (&euro;500/mo)</option>
-            <option value="custom">Custom / Not sure yet</option>
-            <option value="other">Other</option>
+            <option value="" data-i18n="contact.form.service.default">Select a plan...</option>
+            <option value="essentials" data-i18n="contact.form.service.essentials">Essentials (&euro;300/mo)</option>
+            <option value="growth" data-i18n="contact.form.service.growth">Growth (&euro;500/mo)</option>
+            <option value="custom" data-i18n="contact.form.service.enterprise">Enterprise / Custom</option>
+            <option value="other" data-i18n="contact.form.service.other">Other / Not sure</option>
           </select>
         </div>
         <div class="form-group">
           <label data-i18n="contact.form.message">Message</label>
-          <textarea name="message" required placeholder="Tell us about your project, challenges, or goals..."></textarea>
+          <textarea name="message" required placeholder="Tell us about your project, challenges, or goals..." data-i18n="contact.form.message.placeholder"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="contact.form.submit">Send Message →</button>
       </form>
@@ -102,9 +102,9 @@
           <p data-i18n="contact.info.schedule.desc">Book a free 15-minute call to discuss your business needs.</p>
           <div class="hubspot-meetings-embed">
             <div style="text-align:center">
-              <p style="margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Calendly Booking</p>
-              <a href="#" id="hubspot-meeting-link" target="_blank" class="btn btn-secondary">Schedule a Meeting →</a>
-              <p style="color:var(--text2);font-size:.85rem;margin-top:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg> Set up your HubSpot meeting link in the dashboard, then we'll embed it here.</p>
+              <p style="margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <span data-i18n="contact.booking.label">Calendly Booking</span></p>
+              <a href="#" id="hubspot-meeting-link" target="_blank" class="btn btn-secondary" data-i18n="contact.booking.cta">Schedule a Meeting →</a>
+              <p style="color:var(--text2);font-size:.85rem;margin-top:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg> <span data-i18n="contact.booking.note">Set up your HubSpot meeting link in the dashboard, then we'll embed it here.</span></p>
             </div>
           </div>
         </div>
@@ -112,12 +112,12 @@
         <div class="contact-info-item">
           <h3 data-i18n="contact.info.location.title">Location</h3>
           <p data-i18n="contact.info.location.desc">Netherlands, EU</p>
-          <p style="margin-top:8px;color:var(--text2);font-size:.9rem">We work with clients worldwide. All meetings are conducted online unless otherwise arranged.</p>
+          <p style="margin-top:8px;color:var(--text2);font-size:.9rem" data-i18n="contact.worldwide">We work with clients worldwide. All meetings are conducted online unless otherwise arranged.</p>
         </div>
 
         <div class="contact-info-item">
-          <h3>Response Time</h3>
-          <p style="color:var(--text2)">We typically respond within 24 hours on business days.</p>
+          <h3 data-i18n="contact.response.title">Response Time</h3>
+          <p style="color:var(--text2)" data-i18n="contact.response.text">We typically respond within 24 hours on business days.</p>
         </div>
       </div>
     </div>
@@ -159,7 +159,7 @@
     </div>
     <div class="footer-bottom">
       <p data-i18n="footer.copy">© 2026 Oopuo B.V. All rights reserved.</p>
-      <p>Netherlands, EU</p>
+      <p data-i18n="footer.location">Netherlands, EU</p>
     </div>
   </div>
 </footer>
