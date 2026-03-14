@@ -1,0 +1,35 @@
+/* ============================================
+   OOPUO — Theme Tokens (from theme.json)
+   Generated design tokens as CSS custom properties.
+   ============================================ */
+:root {
+  /* Colors */
+  --blue: #0055ff;
+  --blue-glow: #0066ff40;
+  --bg: #050510;
+  --bg2: #0a0a1a;
+  --surface: #111128;
+  --surface-hover: #16163a;
+  --text: #f0f0f5;
+  --text2: #9898b0;
+  --green: #22c55e;
+
+  /* Light section overrides */
+  --light-bg: #f4f6fa;
+  --light-text: #1a1a2e;
+  --light-text-muted: #4a4a6a;
+  --light-surface: #ffffff;
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Layout */
+  --radius: 16px;
+  --max: 1200px;
+
+  /* Spacing */
+  --section-padding: 120px;
+  --container-padding: 24px;
+}

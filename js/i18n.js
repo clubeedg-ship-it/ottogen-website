@@ -1711,7 +1711,7 @@ var translations = {
     'home.badge': 'A receber novos parceiros',
     'home.hero.title1': 'Uma equipa para todas as suas',
     'home.hero.title2': 'necessidades digitais e de IA.',
-    'home.hero.subtitle': 'Deixe de depender de v\u00e1rios fornecedores. Uma subscri\u00e7\u00e3o. Um ponto de contacto. O seu neg\u00f3cio funciona melhor.',
+    'home.hero.subtitle': 'Deixe de depender de v\u00e1rios fornecedores. Uma assinatura. Um ponto de contacto. O seu neg\u00f3cio funciona melhor.',
     'home.hero.cta1': 'Ver Planos',
     'home.hero.cta2': 'Chamada Gratuita',
 
@@ -1728,7 +1728,7 @@ var translations = {
     'home.problem2.text2': 'Entretanto, os concorrentes que j\u00e1 resolveram esta quest\u00e3o avan\u00e7am ao dobro da velocidade. Cada m\u00eas que espera, fica mais para tr\u00e1s \u2014 n\u00e3o porque n\u00e3o seja capaz, mas porque n\u00e3o \u00e9 a sua fun\u00e7\u00e3o acompanhar a IA.',
     'home.solution.title': 'Uma equipa. Ambos os problemas resolvidos.',
     'home.solution.text': 'Tratamos da sua infraestrutura digital fragmentada. E garantimos que utiliza a IA onde realmente faz diferen\u00e7a \u2014 sem que dedique uma \u00fanica hora a resolver isso.',
-    'home.solution.text2': 'Externaliza tanto a dor de cabe\u00e7a como a incerteza. Uma subscri\u00e7\u00e3o. Uma equipa. Concentra-se no seu neg\u00f3cio.',
+    'home.solution.text2': 'Externaliza tanto a dor de cabe\u00e7a como a incerteza. Uma assinatura. Uma equipa. Concentra-se no seu neg\u00f3cio.',
     'home.solution.price': 'A partir de 300\u00a0\u20ac/m\u00eas',
 
     // Home What You Get
@@ -1746,7 +1746,7 @@ var translations = {
 
     // Home Pricing
     'home.pricing.label': 'Pre\u00e7os simples',
-    'home.pricing.title': 'Uma subscri\u00e7\u00e3o. Tudo inclu\u00eddo.',
+    'home.pricing.title': 'Uma assinatura. Tudo inclu\u00eddo.',
     'home.pricing.essentials': 'Essentials',
     'home.pricing.growth': 'Growth',
     'home.pricing.note': 'Sem fideliza\u00e7\u00e3o. Fatura\u00e7\u00e3o mensal. Cancele quando quiser.',
@@ -1783,7 +1783,7 @@ var translations = {
     'footer.copy': '\u00a9 2026 Oopuo B.V. Todos os direitos reservados.',
 
     // Plans page
-    'plans.hero.title': 'Uma subscri\u00e7\u00e3o. Tudo digital coberto.',
+    'plans.hero.title': 'Uma assinatura. Tudo digital coberto.',
     'plans.hero.subtitle': 'A sua equipa digital & IA externalizada. Escolha o plano que se adapta ao seu neg\u00f3cio.',
 
     // Portfolio page
@@ -1936,7 +1936,7 @@ var translations = {
 
     // Plans Not Included & Enterprise
     'plans.notincluded.title': 'O que n\u00e3o est\u00e1 inclu\u00eddo',
-    'plans.notincluded.text': 'Desenvolvimento de software personalizado, gest\u00e3o de publicidade paga e projetos pontuais fora do \u00e2mbito da subscri\u00e7\u00e3o s\u00e3o or\u00e7amentados separadamente.',
+    'plans.notincluded.text': 'Desenvolvimento de software personalizado, gest\u00e3o de publicidade paga e projetos pontuais fora do \u00e2mbito da assinatura s\u00e3o or\u00e7amentados separadamente.',
     'plans.enterprise.label': 'Precisa de mais?',
     'plans.enterprise.title': 'Solu\u00e7\u00f5es de n\u00edvel enterprise',
     'plans.enterprise.subtitle': 'Para equipas maiores ou empresas com requisitos espec\u00edficos.',
@@ -1971,7 +1971,7 @@ var translations = {
     'about.timeline.t1.text': 'Come\u00e7\u00e1mos com a miss\u00e3o de dar \u00e0s pequenas empresas acesso a gest\u00e3o digital competente e IA.',
     'about.timeline.t2.title': 'Constru\u00e7\u00e3o da base',
     'about.timeline.t2.text': 'Desenvolvemos a nossa infraestrutura interna de IA e processos.',
-    'about.timeline.t3.title': 'Lan\u00e7amento do modelo de subscri\u00e7\u00e3o',
+    'about.timeline.t3.title': 'Lan\u00e7amento do modelo de assinatura',
     'about.timeline.t3.text': 'Introduzimos os planos Essentials e Growth \u2014 acess\u00edveis a partir de 300\u00a0\u20ac/m\u00eas.',
     'about.timeline.t4.title': 'A fam\u00edlia cresce',
     'about.timeline.t4.text': 'A integrar novos parceiros de diversas ind\u00fastrias.',

@@ -1,0 +1,38 @@
+{
+  "name": "Oopuo",
+  "domain": "oopuo.com",
+  "defaultLang": "en",
+  "languages": ["en", "nl", "pt", "de", "fr", "es"],
+  "nav": [
+    {"label": "Plans", "page": "plans", "i18n": {"nl": "Pakketten", "pt": "Planos", "de": "Pakete", "fr": "Forfaits", "es": "Planes"}},
+    {"label": "Our Work", "page": "portfolio", "i18n": {"nl": "Ons Werk", "pt": "Nosso Trabalho", "de": "Unsere Arbeit", "fr": "Nos Réalisations", "es": "Nuestro Trabajo"}},
+    {"label": "About", "page": "about", "i18n": {"nl": "Over Ons", "pt": "Sobre", "de": "Über Uns", "fr": "À Propos", "es": "Nosotros"}},
+    {"label": "Contact", "page": "contact", "i18n": {"nl": "Contact", "pt": "Contato", "de": "Kontakt", "fr": "Contact", "es": "Contacto"}},
+    {"label": "Blog", "page": "blog/index"}
+  ],
+  "pages": [
+    {"id": "index", "file": "index.html", "title": "OOPUO — Your outsourced digital & AI team"},
+    {"id": "plans", "file": "plans.html", "title": "Plans — OOPUO"},
+    {"id": "portfolio", "file": "portfolio.html", "title": "Our Work — OOPUO"},
+    {"id": "about", "file": "about.html", "title": "About — OOPUO"},
+    {"id": "contact", "file": "contact.html", "title": "Contact — OOPUO"},
+    {"id": "enterprise", "file": "enterprise.html", "title": "Vision — OOPUO"},
+    {"id": "blog", "file": "blog/index.html", "title": "Blog — OOPUO"}
+  ],
+  "seo": {
+    "titleTemplate": "%s | Oopuo",
+    "defaultDescription": "One team for all your digital and AI needs. Website, hosting, email, AI tools, and ongoing support — one subscription, one point of contact. Netherlands-based.",
+    "ogImage": "assets/images/og-default.jpg"
+  },
+  "analytics": {
+    "enabled": true,
+    "hubspot": "147967707"
+  },
+  "forms": [
+    {
+      "id": "contact",
+      "page": "contact",
+      "fields": ["name", "email", "company", "service", "message"]
+    }
+  ]
+}
