@@ -9,30 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<!-- Open Graph -->
-<meta property="og:title" content="Contact — OOPUO | Let's Talk">
-<meta property="og:description" content="Get in touch with Oopuo. Book a free call or send us a message about your digital and AI needs.">
-<meta property="og:image" content="https://oopuo.com/assets/images/og-default.jpg">
-<meta property="og:url" content="https://oopuo.com/contact.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Oopuo">
-<link rel="alternate" type="application/rss+xml" title="Oopuo Blog" href="/blog/feed.xml">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Contact — OOPUO | Let's Talk",
-  "url": "https://oopuo.com/contact.html",
-  "description": "Get in touch with Oopuo. Book a free call or send us a message about your digital and AI needs.",
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://oopuo.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://oopuo.com/contact.html"}
-    ]
-  }
-}
-</script>
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -72,15 +48,15 @@
 </nav>
 
 <!-- HERO -->
-<section data-block="hero" data-editable class="hero hero-short">
+<section class="hero" style="min-height:50vh">
   <div class="hero-content">
-    <h1 class="reveal"><span class="gradient" data-field="text" data-i18n="contact.hero.title">Let's talk about your business</span></h1>
-    <p class="reveal reveal-delay-1" data-field="text" data-i18n="contact.hero.subtitle">Book a free 15-minute call. No pressure. We'll tell you honestly if we can help.</p>
+    <h1 class="reveal"><span class="gradient" data-i18n="contact.hero.title">Let's talk about your business</span></h1>
+    <p class="reveal reveal-delay-1" data-i18n="contact.hero.subtitle">Book a free 15-minute call. No pressure. We'll tell you honestly if we can help.</p>
   </div>
 </section>
 
 <!-- CONTACT FORM + INFO -->
-<section data-block="features" data-editable class="section-bg-bottom section-light" style="position:relative;overflow:hidden">
+<section class="section-light" style="padding:0 0 120px;position:relative;overflow:hidden">
   <canvas class="particle-net"></canvas>
   <div class="container" style="position:relative;z-index:1">
     <div class="contact-grid">
@@ -112,7 +88,7 @@
           <label data-i18n="contact.form.message">Message</label>
           <textarea name="message" required placeholder="Tell us about your project, challenges, or goals..." data-i18n="contact.form.message.placeholder"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary w-full-center" data-field="submit" data-i18n="contact.form.submit">Send Message →</button>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="contact.form.submit">Send Message →</button>
       </form>
 
       <!-- Info + Calendly -->
@@ -126,10 +102,10 @@
           <h3 data-i18n="contact.info.schedule.title">Schedule a Call</h3>
           <p data-i18n="contact.info.schedule.desc">Book a free 15-minute call to discuss your business needs.</p>
           <div class="hubspot-meetings-embed">
-            <div class="text-center">
-              <p class="mb-16"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <span data-i18n="contact.booking.label">Calendly Booking</span></p>
+            <div style="text-align:center">
+              <p style="margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <span data-i18n="contact.booking.label">Calendly Booking</span></p>
               <a href="#" id="hubspot-meeting-link" target="_blank" class="btn btn-secondary" data-i18n="contact.booking.cta">Schedule a Meeting →</a>
-              <p class="note-small"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg> <span data-i18n="contact.booking.note">Set up your HubSpot meeting link in the dashboard, then we'll embed it here.</span></p>
+              <p style="color:var(--text2);font-size:.85rem;margin-top:12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg> <span data-i18n="contact.booking.note">Set up your HubSpot meeting link in the dashboard, then we'll embed it here.</span></p>
             </div>
           </div>
         </div>
@@ -137,12 +113,12 @@
         <div class="contact-info-item">
           <h3 data-i18n="contact.info.location.title">Location</h3>
           <p data-i18n="contact.info.location.desc">Netherlands, EU</p>
-          <p class="note-small-mt8" data-i18n="contact.worldwide">We work with clients worldwide. All meetings are conducted online unless otherwise arranged.</p>
+          <p style="margin-top:8px;color:var(--text2);font-size:.9rem" data-i18n="contact.worldwide">We work with clients worldwide. All meetings are conducted online unless otherwise arranged.</p>
         </div>
 
         <div class="contact-info-item">
           <h3 data-i18n="contact.response.title">Response Time</h3>
-          <p class="color-muted" data-i18n="contact.response.text">We typically respond within 24 hours on business days.</p>
+          <p style="color:var(--text2)" data-i18n="contact.response.text">We typically respond within 24 hours on business days.</p>
         </div>
       </div>
     </div>
@@ -150,7 +126,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer data-block="footer" data-editable>
+<footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">

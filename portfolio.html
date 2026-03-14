@@ -9,30 +9,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<!-- Open Graph -->
-<meta property="og:title" content="Our Work — OOPUO | Projects & Results">
-<meta property="og:description" content="Oopuo portfolio: from funded startups to enterprise deployments.">
-<meta property="og:image" content="https://oopuo.com/assets/images/og-default.jpg">
-<meta property="og:url" content="https://oopuo.com/portfolio.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Oopuo">
-<link rel="alternate" type="application/rss+xml" title="Oopuo Blog" href="/blog/feed.xml">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Our Work — OOPUO | Projects & Results",
-  "url": "https://oopuo.com/portfolio.html",
-  "description": "Oopuo portfolio: from funded startups to enterprise deployments.",
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://oopuo.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://oopuo.com/portfolio.html"}
-    ]
-  }
-}
-</script>
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -72,7 +48,7 @@
 </nav>
 
 <!-- HERO -->
-<section data-block="hero" data-editable class="hero hero-short">
+<section class="hero" style="min-height:50vh">
   <div class="hero-content">
     <div class="hero-badge reveal" data-i18n="portfolio.hero.badge">Portfolio</div>
     <h1 class="reveal reveal-delay-1"><span class="gradient" data-i18n="portfolio.hero.title">Our portfolio</span></h1>
@@ -81,7 +57,7 @@
 </section>
 
 <!-- PORTFOLIO GRID -->
-<section data-block="features" data-editable class="section-bg-bottom section-light" style="position:relative;overflow:hidden">
+<section style="background:var(--bg);padding:0 0 120px;position:relative;overflow:hidden" class="section-light">
   <canvas class="particle-net"></canvas>
   <div class="container" style="position:relative;z-index:1">
     <div class="filter-tabs reveal">
@@ -89,11 +65,11 @@
       <button class="filter-tab" data-filter="startups" data-i18n="portfolio.filter.startups">Startups</button>
       <button class="filter-tab" data-filter="client" data-i18n="portfolio.filter.client">Client Work</button>
     </div>
-    <div class="portfolio-grid" data-repeatable>
+    <div class="portfolio-grid">
 
       <!-- CuttingEdge -->
-      <div class="portfolio-card reveal" data-category="client" data-item>
-        <div class="portfolio-card-image port-img-ce">
+      <div class="portfolio-card reveal" data-category="client">
+        <div class="portfolio-card-image" style="background:url('assets/portfolio/cuttingedge.jpg') center/cover no-repeat">
         </div>
         <div class="portfolio-card-body">
           <h3>CuttingEdge</h3>
@@ -103,15 +79,15 @@
             <span class="port-tag" data-i18n="portfolio.tag.interior">Interior Design</span>
             <span class="port-tag" data-i18n="portfolio.tag.websystems">Web + Systems</span>
           </div>
-          <div class="port-actions">
-            <a href="https://cuttingedge.world" target="_blank" class="btn btn-secondary btn-small" data-i18n="portfolio.visit">Visit Website &rarr;</a>
+          <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+            <a href="https://cuttingedge.world" target="_blank" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Interactive Move -->
-      <div class="portfolio-card reveal reveal-delay-1" data-category="startups" data-item>
-        <div class="portfolio-card-image port-img-im">
+      <div class="portfolio-card reveal reveal-delay-1" data-category="startups">
+        <div class="portfolio-card-image" style="background:url('assets/portfolio/interactivemove.jpg') center/cover no-repeat">
         </div>
         <div class="portfolio-card-body">
           <h3>Interactive Move</h3>
@@ -121,15 +97,15 @@
             <span class="port-tag" data-i18n="portfolio.tag.edtech">EdTech</span>
             <span class="port-tag" data-i18n="portfolio.tag.hwsw">Hardware + Software</span>
           </div>
-          <div class="port-actions">
-            <a href="https://interactivemove.nl" target="_blank" class="btn btn-secondary btn-small" data-i18n="portfolio.visit">Visit Website &rarr;</a>
+          <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+            <a href="https://interactivemove.nl" target="_blank" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Solyx Energy -->
-      <div class="portfolio-card reveal reveal-delay-2" data-category="client" data-item>
-        <div class="portfolio-card-image port-img-solyx">
+      <div class="portfolio-card reveal reveal-delay-2" data-category="client">
+        <div class="portfolio-card-image" style="background:url('assets/portfolio/solyx.jpg') center/cover no-repeat">
         </div>
         <div class="portfolio-card-body">
           <h3>Solyx Energy</h3>
@@ -140,15 +116,15 @@
             <span class="port-tag" data-i18n="portfolio.tag.websystems">Web + Systems</span>
             <span class="port-tag" data-i18n="portfolio.tag.aisupport">AI Support</span>
           </div>
-          <div class="port-actions">
-            <a href="https://solyxenergy.nl" target="_blank" class="btn btn-secondary btn-small" data-i18n="portfolio.visit">Visit Website &rarr;</a>
+          <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+            <a href="https://solyxenergy.nl" target="_blank" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Abura Cosmetics -->
-      <div class="portfolio-card reveal" data-category="client" data-item>
-        <div class="portfolio-card-image port-img-abura">
+      <div class="portfolio-card reveal" data-category="client">
+        <div class="portfolio-card-image" style="background:url('assets/portfolio/abura.jpg') center/cover no-repeat">
         </div>
         <div class="portfolio-card-body">
           <h3>Abura Cosmetics</h3>
@@ -158,14 +134,14 @@
             <span class="port-tag" data-i18n="portfolio.tag.ecommerce">E-commerce</span>
             <span class="port-tag" data-i18n="portfolio.tag.salesai">Sales AI</span>
           </div>
-          <div class="port-actions">
-            <a href="https://aburacosmetics.com" target="_blank" class="btn btn-secondary btn-small" data-i18n="portfolio.visit">Visit Website &rarr;</a>
+          <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+            <a href="https://aburacosmetics.com" target="_blank" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- ZenithCred -->
-      <div class="portfolio-card reveal reveal-delay-1" data-category="startups" data-item>
+      <div class="portfolio-card reveal reveal-delay-1" data-category="startups">
         <div class="portfolio-card-image">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
@@ -181,7 +157,7 @@
       </div>
 
       <!-- SentinAgro -->
-      <div class="portfolio-card reveal reveal-delay-2" data-category="startups" data-item>
+      <div class="portfolio-card reveal reveal-delay-2" data-category="startups">
         <div class="portfolio-card-image">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
@@ -201,18 +177,18 @@
 </section>
 
 <!-- CTA -->
-<section data-block="cta-banner" data-editable class="cta-section">
+<section class="cta-section">
   <div class="ascii-bg"><pre id="ascii-cta"></pre></div>
   <div class="container">
     <p class="section-label reveal" data-i18n="portfolio.cta.label">Have a project in mind?</p>
     <h2 class="section-title reveal reveal-delay-1" data-i18n="portfolio.cta.title">Let's build something<br>worth showing off</h2>
     <p class="reveal reveal-delay-2" data-i18n="portfolio.cta.subtitle">Every project in our portfolio started with a single conversation.</p>
-    <a href="contact.html" class="btn btn-primary btn-large reveal reveal-delay-3" data-field="cta" data-i18n="portfolio.cta.btn">Start Yours →</a>
+    <a href="contact.html" class="btn btn-primary reveal reveal-delay-3" style="font-size:1.1rem;padding:18px 48px" data-i18n="portfolio.cta.btn">Start Yours →</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer data-block="footer" data-editable>
+<footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
