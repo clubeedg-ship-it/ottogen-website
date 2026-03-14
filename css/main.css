@@ -469,6 +469,8 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.06);padding:6
 
 .particle-net{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
 
+.hero-short{min-height:50vh!important}
+.hero-medium{min-height:60vh!important}
 @media(max-width:900px){.pricing-grid-2{grid-template-columns:1fr!important}}
 @media(max-width:768px){.hub-grid{grid-template-columns:1fr;gap:40px}}
 
