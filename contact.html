@@ -6,10 +6,21 @@
 <title>Contact — OOPUO | Let's Talk</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta name="description" content="Get in touch with Oopuo. Book a free call or send us a message about your digital and AI needs.">
+<meta property="og:title" content="Contact — OOPUO | Let's Talk">
+<meta property="og:description" content="Get in touch with Oopuo. Book a free call or send us a message about your digital and AI needs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oopuo.com/contact.html">
+<meta property="og:image" content="https://oopuo.com/assets/images/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Contact","url":"https://oopuo.com/contact.html","description":"Get in touch with Oopuo. Book a free call or send us a message about your digital and AI needs.","isPartOf":{"@type":"WebSite","name":"Oopuo","url":"https://oopuo.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oopuo.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://oopuo.com/contact.html"}]}
+</script>
 </head>
 <body>
 
@@ -48,16 +59,16 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero hero-short">
+<section data-block="hero" data-editable class="hero hero-short">
   <div class="ascii-bg"><pre id="ascii-hero"></pre></div>
   <div class="hero-content">
-    <h1 class="reveal"><span class="gradient" data-i18n="contact.hero.title">Let's talk about your business</span></h1>
-    <p class="reveal reveal-delay-1" data-i18n="contact.hero.subtitle">Book a free 15-minute call. No pressure. We'll tell you honestly if we can help.</p>
+    <h1 data-field="heading" class="reveal"><span class="gradient" data-i18n="contact.hero.title">Let's talk about your business</span></h1>
+    <p data-field="text" class="reveal reveal-delay-1" data-i18n="contact.hero.subtitle">Book a free 15-minute call. No pressure. We'll tell you honestly if we can help.</p>
   </div>
 </section>
 
 <!-- CONTACT FORM + INFO -->
-<section class="section-light" style="padding:0 0 120px;position:relative;overflow:hidden">
+<section data-block="contact-form" data-editable class="section-light" style="padding:0 0 120px;position:relative;overflow:hidden">
   <canvas class="particle-net"></canvas>
   <div class="container" style="position:relative;z-index:1">
     <div class="contact-grid">
@@ -95,13 +106,13 @@
       <!-- Info + Calendly -->
       <div class="contact-info reveal reveal-delay-1">
         <div class="contact-info-item">
-          <h3 data-i18n="contact.info.email.title">Email</h3>
+          <h3 data-field="heading" data-i18n="contact.info.email.title">Email</h3>
           <p><a href="mailto:hello@oopuo.com">hello@oopuo.com</a></p>
         </div>
 
         <div class="contact-info-item">
-          <h3 data-i18n="contact.info.schedule.title">Schedule a Call</h3>
-          <p data-i18n="contact.info.schedule.desc">Book a free 15-minute call to discuss your business needs.</p>
+          <h3 data-field="heading" data-i18n="contact.info.schedule.title">Schedule a Call</h3>
+          <p data-field="text" data-i18n="contact.info.schedule.desc">Book a free 15-minute call to discuss your business needs.</p>
           <div class="hubspot-meetings-embed">
             <div style="text-align:center">
               <p style="margin-bottom:16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <span data-i18n="contact.booking.label">Calendly Booking</span></p>
@@ -112,14 +123,14 @@
         </div>
 
         <div class="contact-info-item">
-          <h3 data-i18n="contact.info.location.title">Location</h3>
-          <p data-i18n="contact.info.location.desc">Netherlands, EU</p>
+          <h3 data-field="heading" data-i18n="contact.info.location.title">Location</h3>
+          <p data-field="text" data-i18n="contact.info.location.desc">Netherlands, EU</p>
           <p style="margin-top:8px;color:var(--text2);font-size:.9rem" data-i18n="contact.worldwide">We work with clients worldwide. All meetings are conducted online unless otherwise arranged.</p>
         </div>
 
         <div class="contact-info-item">
-          <h3 data-i18n="contact.response.title">Response Time</h3>
-          <p style="color:var(--text2)" data-i18n="contact.response.text">We typically respond within 24 hours on business days.</p>
+          <h3 data-field="heading" data-i18n="contact.response.title">Response Time</h3>
+          <p data-field="text" style="color:var(--text2)" data-i18n="contact.response.text">We typically respond within 24 hours on business days.</p>
         </div>
       </div>
     </div>
@@ -127,15 +138,15 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer data-block="footer" data-editable>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo"><span>OOPUO</span></a>
-        <p data-i18n="footer.desc">Your outsourced digital & AI team. Netherlands-based, serving small businesses across Europe.</p>
+        <p data-field="text" data-i18n="footer.desc">Your outsourced digital & AI team. Netherlands-based, serving small businesses across Europe.</p>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col1">Navigate</h4>
+        <h4 data-field="heading" data-i18n="footer.col1">Navigate</h4>
         <ul>
           <li><a href="plans.html">Plans</a></li>
           <li><a href="portfolio.html">Our Work</a></li>
@@ -143,14 +154,14 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col2">Company</h4>
+        <h4 data-field="heading" data-i18n="footer.col2">Company</h4>
         <ul>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col3">Connect</h4>
+        <h4 data-field="heading" data-i18n="footer.col3">Connect</h4>
         <ul>
           <li><a href="mailto:hello@oopuo.com">hello@oopuo.com</a></li>
           <li><a href="https://linkedin.com/company/oopuo" target="_blank">LinkedIn</a></li>
@@ -160,7 +171,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p data-i18n="footer.copy">© 2026 Oopuo B.V. All rights reserved.</p>
+      <p data-field="text" data-i18n="footer.copy">© 2026 Oopuo B.V. All rights reserved.</p>
       <p data-i18n="footer.location">Netherlands, EU</p>
     </div>
   </div>

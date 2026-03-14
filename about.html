@@ -6,10 +6,21 @@
 <title>About — OOPUO | Built in the Netherlands</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta name="description" content="Oopuo — founded by Otto, a self-taught AI architect building privacy-first infrastructure from the Netherlands.">
+<meta property="og:title" content="About — OOPUO | Built in the Netherlands">
+<meta property="og:description" content="Oopuo — founded by Otto, a self-taught AI architect building privacy-first infrastructure from the Netherlands.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oopuo.com/about.html">
+<meta property="og:image" content="https://oopuo.com/assets/images/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"About","url":"https://oopuo.com/about.html","description":"Oopuo — founded by Otto, a self-taught AI architect building privacy-first infrastructure from the Netherlands.","isPartOf":{"@type":"WebSite","name":"Oopuo","url":"https://oopuo.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oopuo.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://oopuo.com/about.html"}]}
+</script>
 </head>
 <body>
 
@@ -48,15 +59,15 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero hero-short">
+<section data-block="hero" data-editable class="hero hero-short">
   <div class="ascii-bg"><pre id="ascii-hero"></pre></div>
   <div class="hero-content">
-    <h1 class="reveal"><span class="gradient" data-i18n="about.hero.title">Built in the Netherlands. Powered by conviction.</span></h1>
+    <h1 data-field="heading" class="reveal"><span class="gradient" data-i18n="about.hero.title">Built in the Netherlands. Powered by conviction.</span></h1>
   </div>
 </section>
 
 <!-- ABOUT OTTO -->
-<section class="section-light" style="padding:120px 0;position:relative;overflow:hidden">
+<section data-block="two-column" data-editable class="section-light" style="padding:120px 0;position:relative;overflow:hidden">
   <canvas class="particle-net"></canvas>
   <div class="container" style="position:relative;z-index:1">
     <div class="about-grid">
@@ -65,111 +76,111 @@
       </div>
       <div class="about-text">
         <p class="section-label reveal" data-i18n="about.otto.label">Founder & CEO</p>
-        <h2 class="section-title reveal reveal-delay-1" data-i18n="about.otto.title">Meet Otto</h2>
-        <p class="reveal reveal-delay-2" data-i18n="about.otto.bio1">Self-taught technologist and AI architect. Building the digital & AI team that <strong>small businesses deserve but could never afford</strong>.</p>
-        <p class="reveal reveal-delay-3" data-i18n="about.otto.bio2">Otto started Oopuo with a simple observation: small businesses are overpaying for fragmented digital services while missing out on AI entirely. He set out to build <strong>one team that handles everything — website, email, AI, support, strategy</strong> — so business owners can focus on what they do best.</p>
-        <p class="reveal reveal-delay-3" data-i18n="about.otto.bio3">With a background in AI infrastructure, startup building, and enterprise systems, Otto leads Oopuo with a hands-on approach: <strong>real problems, practical solutions, no fluff</strong>.</p>
+        <h2 data-field="heading" class="section-title reveal reveal-delay-1" data-i18n="about.otto.title">Meet Otto</h2>
+        <p data-field="text" class="reveal reveal-delay-2" data-i18n="about.otto.bio1">Self-taught technologist and AI architect. Building the digital & AI team that <strong>small businesses deserve but could never afford</strong>.</p>
+        <p data-field="text" class="reveal reveal-delay-3" data-i18n="about.otto.bio2">Otto started Oopuo with a simple observation: small businesses are overpaying for fragmented digital services while missing out on AI entirely. He set out to build <strong>one team that handles everything — website, email, AI, support, strategy</strong> — so business owners can focus on what they do best.</p>
+        <p data-field="text" class="reveal reveal-delay-3" data-i18n="about.otto.bio3">With a background in AI infrastructure, startup building, and enterprise systems, Otto leads Oopuo with a hands-on approach: <strong>real problems, practical solutions, no fluff</strong>.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- MISSION -->
-<section style="background:var(--bg2);padding:120px 0">
+<section data-block="cta-banner" data-editable style="background:var(--bg2);padding:120px 0">
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal" data-i18n="about.mission.label">Our Mission</p>
-      <h2 class="section-title reveal reveal-delay-1" style="font-size:clamp(2.2rem,4.5vw,3.5rem)" data-i18n="about.mission.title">Small businesses deserve enterprise-grade digital infrastructure.</h2>
-      <p class="section-subtitle reveal reveal-delay-2" data-i18n="about.mission.subtitle">We believe every business — no matter the size — should have access to competent digital management and practical AI. One team, one subscription, no confusion.</p>
+      <h2 data-field="heading" class="section-title reveal reveal-delay-1" style="font-size:clamp(2.2rem,4.5vw,3.5rem)" data-i18n="about.mission.title">Small businesses deserve enterprise-grade digital infrastructure.</h2>
+      <p data-field="text" class="section-subtitle reveal reveal-delay-2" data-i18n="about.mission.subtitle">We believe every business — no matter the size — should have access to competent digital management and practical AI. One team, one subscription, no confusion.</p>
     </div>
   </div>
 </section>
 
 <!-- TIMELINE -->
-<section class="section-light" style="padding:120px 0;position:relative">
+<section data-block="features" data-editable class="section-light" style="padding:120px 0;position:relative">
   <div class="container" style="position:relative;z-index:1">
     <div class="section-header">
       <p class="section-label reveal" data-i18n="about.timeline.label">Our Journey</p>
-      <h2 class="section-title reveal reveal-delay-1" data-i18n="about.timeline.title">From idea to infrastructure</h2>
+      <h2 data-field="heading" class="section-title reveal reveal-delay-1" data-i18n="about.timeline.title">From idea to infrastructure</h2>
     </div>
-    <div class="timeline" style="max-width:700px;margin:0 auto">
-      <div class="timeline-item reveal">
+    <div class="timeline" data-repeatable style="max-width:700px;margin:0 auto">
+      <div class="timeline-item reveal" data-item>
         <div class="timeline-year">2025</div>
-        <h4 data-i18n="about.timeline.t1.title">Founded Oopuo</h4>
-        <p data-i18n="about.timeline.t1.text">Started with a mission to give small businesses access to competent digital management and AI. Netherlands-based, EU-first.</p>
+        <h4 data-field="heading" data-i18n="about.timeline.t1.title">Founded Oopuo</h4>
+        <p data-field="text" data-i18n="about.timeline.t1.text">Started with a mission to give small businesses access to competent digital management and AI. Netherlands-based, EU-first.</p>
       </div>
-      <div class="timeline-item reveal reveal-delay-1">
+      <div class="timeline-item reveal reveal-delay-1" data-item>
         <div class="timeline-year">2025</div>
-        <h4 data-i18n="about.timeline.t2.title">Built the foundation</h4>
-        <p data-i18n="about.timeline.t2.text">Developed our internal AI infrastructure and processes. Delivered first client projects across web, systems, and AI automation.</p>
+        <h4 data-field="heading" data-i18n="about.timeline.t2.title">Built the foundation</h4>
+        <p data-field="text" data-i18n="about.timeline.t2.text">Developed our internal AI infrastructure and processes. Delivered first client projects across web, systems, and AI automation.</p>
       </div>
-      <div class="timeline-item reveal reveal-delay-2">
+      <div class="timeline-item reveal reveal-delay-2" data-item>
         <div class="timeline-year">2026</div>
-        <h4 data-i18n="about.timeline.t3.title">Launched subscription model</h4>
-        <p data-i18n="about.timeline.t3.text">Introduced our Essentials and Growth plans — making outsourced digital & AI management accessible to small businesses from &euro;300/mo.</p>
+        <h4 data-field="heading" data-i18n="about.timeline.t3.title">Launched subscription model</h4>
+        <p data-field="text" data-i18n="about.timeline.t3.text">Introduced our Essentials and Growth plans — making outsourced digital & AI management accessible to small businesses from &euro;300/mo.</p>
       </div>
-      <div class="timeline-item reveal reveal-delay-3">
+      <div class="timeline-item reveal reveal-delay-3" data-item>
         <div class="timeline-year">2026</div>
-        <h4 data-i18n="about.timeline.t4.title">Growing the family</h4>
-        <p data-i18n="about.timeline.t4.text">Onboarding new partners across industries. Every client gets one point of contact, one subscription, everything handled.</p>
+        <h4 data-field="heading" data-i18n="about.timeline.t4.title">Growing the family</h4>
+        <p data-field="text" data-i18n="about.timeline.t4.text">Onboarding new partners across industries. Every client gets one point of contact, one subscription, everything handled.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- THREE PILLARS -->
-<section style="background:var(--bg2);padding:120px 0;position:relative;overflow:hidden">
+<section data-block="features" data-editable style="background:var(--bg2);padding:120px 0;position:relative;overflow:hidden">
   <canvas class="particle-net"></canvas>
   <div class="container" style="position:relative;z-index:1">
     <div class="section-header">
       <p class="section-label reveal" data-i18n="about.pillars.label">Our philosophy</p>
-      <h2 class="section-title reveal reveal-delay-1" data-i18n="about.pillars.title">The bigger picture</h2>
+      <h2 data-field="heading" class="section-title reveal reveal-delay-1" data-i18n="about.pillars.title">The bigger picture</h2>
       <p class="section-subtitle reveal reveal-delay-2" data-i18n="about.pillars.subtitle">Oopuo is more than a service provider. Here's what drives us.</p>
     </div>
-    <div class="pillars">
-      <div class="pillar reveal">
+    <div class="pillars" data-repeatable>
+      <div class="pillar reveal" data-item>
         <div class="pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3 data-i18n="about.pillars.ai.title">Accessible AI</h3>
-        <p data-i18n="about.pillars.ai.text">AI shouldn't be reserved for companies with engineering teams. We make it practical, affordable, and useful for businesses of any size.</p>
+        <h3 data-field="heading" data-i18n="about.pillars.ai.title">Accessible AI</h3>
+        <p data-field="text" data-i18n="about.pillars.ai.text">AI shouldn't be reserved for companies with engineering teams. We make it practical, affordable, and useful for businesses of any size.</p>
       </div>
-      <div class="pillar reveal reveal-delay-1">
+      <div class="pillar reveal reveal-delay-1" data-item>
         <div class="pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <h3 data-i18n="about.pillars.privacy.title">Privacy by Design</h3>
-        <p data-i18n="about.pillars.privacy.text">Your data stays yours. We build with privacy-preserving principles, EU jurisdiction, and GDPR compliance baked in from day one.</p>
+        <h3 data-field="heading" data-i18n="about.pillars.privacy.title">Privacy by Design</h3>
+        <p data-field="text" data-i18n="about.pillars.privacy.text">Your data stays yours. We build with privacy-preserving principles, EU jurisdiction, and GDPR compliance baked in from day one.</p>
       </div>
-      <div class="pillar reveal reveal-delay-2">
+      <div class="pillar reveal reveal-delay-2" data-item>
         <div class="pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 7.65l.78.77L12 20.64l7.64-7.64.78-.77a5.4 5.4 0 0 0 0-7.65z"/></svg></div>
-        <h3 data-i18n="about.pillars.partnership.title">Long-term Partnership</h3>
-        <p data-i18n="about.pillars.partnership.text">We're not a vendor you hire and fire. We become part of your team — invested in your growth, your efficiency, and your success.</p>
+        <h3 data-field="heading" data-i18n="about.pillars.partnership.title">Long-term Partnership</h3>
+        <p data-field="text" data-i18n="about.pillars.partnership.text">We're not a vendor you hire and fire. We become part of your team — invested in your growth, your efficiency, and your success.</p>
       </div>
     </div>
     <div style="text-align:center;margin-top:48px">
-      <a href="enterprise.html" class="btn btn-secondary reveal" data-i18n="about.pillars.cta">Read Our Full Vision &rarr;</a>
+      <a data-field="cta" href="enterprise.html" class="btn btn-secondary reveal" data-i18n="about.pillars.cta">Read Our Full Vision &rarr;</a>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
+<section data-block="cta-banner" data-editable class="cta-section">
   <div class="ascii-bg"><pre id="ascii-cta"></pre></div>
   <div class="container">
     <p class="section-label reveal" data-i18n="cta.label">Ready?</p>
-    <h2 class="section-title reveal reveal-delay-1" data-i18n="about.cta.title">Let's see if we're a good fit</h2>
-    <p class="reveal reveal-delay-2" data-i18n="about.cta.subtitle">15 minutes. No cost. No pressure. Just an honest conversation about your business.</p>
-    <a href="contact.html" class="btn btn-primary reveal reveal-delay-3" style="font-size:1.1rem;padding:18px 48px" data-i18n="about.cta.btn">Book a Call &rarr;</a>
+    <h2 data-field="heading" class="section-title reveal reveal-delay-1" data-i18n="about.cta.title">Let's see if we're a good fit</h2>
+    <p data-field="text" class="reveal reveal-delay-2" data-i18n="about.cta.subtitle">15 minutes. No cost. No pressure. Just an honest conversation about your business.</p>
+    <a data-field="cta" href="contact.html" class="btn btn-primary reveal reveal-delay-3" style="font-size:1.1rem;padding:18px 48px" data-i18n="about.cta.btn">Book a Call &rarr;</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer data-block="footer" data-editable>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo"><span>OOPUO</span></a>
-        <p data-i18n="footer.desc">Your outsourced digital & AI team. Netherlands-based, serving small businesses across Europe.</p>
+        <p data-field="text" data-i18n="footer.desc">Your outsourced digital & AI team. Netherlands-based, serving small businesses across Europe.</p>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col1">Navigate</h4>
+        <h4 data-field="heading" data-i18n="footer.col1">Navigate</h4>
         <ul>
           <li><a href="plans.html">Plans</a></li>
           <li><a href="portfolio.html">Our Work</a></li>
@@ -177,14 +188,14 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col2">Company</h4>
+        <h4 data-field="heading" data-i18n="footer.col2">Company</h4>
         <ul>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col3">Connect</h4>
+        <h4 data-field="heading" data-i18n="footer.col3">Connect</h4>
         <ul>
           <li><a href="mailto:hello@oopuo.com">hello@oopuo.com</a></li>
           <li><a href="https://linkedin.com/company/oopuo" target="_blank">LinkedIn</a></li>
@@ -194,7 +205,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p data-i18n="footer.copy">© 2026 Oopuo B.V. All rights reserved.</p>
+      <p data-field="text" data-i18n="footer.copy">© 2026 Oopuo B.V. All rights reserved.</p>
       <p data-i18n="footer.location">Netherlands, EU</p>
     </div>
   </div>

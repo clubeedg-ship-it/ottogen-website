@@ -6,10 +6,21 @@
 <title>OOPUO — Your outsourced digital & AI team</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta name="description" content="One team for all your digital and AI needs. Website, hosting, email, AI tools, and ongoing support — one subscription, one point of contact. Netherlands-based.">
+<meta property="og:title" content="OOPUO — Your outsourced digital & AI team">
+<meta property="og:description" content="One team for all your digital and AI needs. Website, hosting, email, AI tools, and ongoing support — one subscription, one point of contact. Netherlands-based.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oopuo.com/">
+<meta property="og:image" content="https://oopuo.com/assets/images/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Oopuo","url":"https://oopuo.com","logo":"https://oopuo.com/assets/favicon.svg","description":"One team for all your digital and AI needs. Website, hosting, email, AI tools, and ongoing support.","address":{"@type":"PostalAddress","addressCountry":"NL"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oopuo.com/"}]}
+</script>
 </head>
 <body>
 
@@ -48,15 +59,15 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section data-block="hero" data-editable class="hero">
   <div class="ascii-bg"><pre id="ascii-hero"></pre></div>
   <div class="hero-content">
     <div class="hero-badge reveal" data-i18n="home.badge">Currently onboarding new partners</div>
-    <h1 class="reveal reveal-delay-1"><span data-i18n="home.hero.title1">One team for all your</span><br><span class="gradient" data-i18n="home.hero.title2">digital & AI needs.</span></h1>
-    <p class="reveal reveal-delay-2" data-i18n="home.hero.subtitle">Stop juggling multiple providers. One subscription. One point of contact. Your business runs smoother.</p>
+    <h1 data-field="heading" class="reveal reveal-delay-1"><span data-i18n="home.hero.title1">One team for all your</span><br><span class="gradient" data-i18n="home.hero.title2">digital & AI needs.</span></h1>
+    <p data-field="text" class="reveal reveal-delay-2" data-i18n="home.hero.subtitle">Stop juggling multiple providers. One subscription. One point of contact. Your business runs smoother.</p>
     <div class="btn-group reveal reveal-delay-3">
-      <a href="plans.html" class="btn btn-primary" data-i18n="home.hero.cta1">See Plans</a>
-      <a href="contact.html" class="btn btn-secondary" data-i18n="home.hero.cta2">Book a Free Call</a>
+      <a data-field="cta" href="plans.html" class="btn btn-primary" data-i18n="home.hero.cta1">See Plans</a>
+      <a data-field="cta" href="contact.html" class="btn btn-secondary" data-i18n="home.hero.cta2">Book a Free Call</a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -89,86 +100,86 @@
 </div>
 
 <!-- THE PROBLEM -->
-<section class="two-path section-light" style="position:relative;overflow:hidden">
+<section data-block="features" data-editable class="two-path section-light" style="position:relative;overflow:hidden">
 <canvas class="particle-net"></canvas>
   <div class="container" style="position:relative;z-index:1">
     <div class="section-header">
       <p class="section-label reveal" data-i18n="home.problem.label">Sound familiar?</p>
-      <h2 class="section-title reveal reveal-delay-1" data-i18n="home.problem.title">Two problems. One solution.</h2>
+      <h2 data-field="heading" class="section-title reveal reveal-delay-1" data-i18n="home.problem.title">Two problems. One solution.</h2>
     </div>
-    <div class="path-grid">
-      <div class="path-card reveal">
+    <div class="path-grid" data-repeatable>
+      <div class="path-card reveal" data-item>
         <div class="path-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <h3 data-i18n="home.problem1.title">Your digital setup is fragmented</h3>
+        <h3 data-field="heading" data-i18n="home.problem1.title">Your digital setup is fragmented</h3>
         <p class="path-audience" data-i18n="home.problem1.label">Problem 1</p>
-        <p data-i18n="home.problem1.text">Your website goes down on a Friday evening. You email the web guy — he says it's a hosting issue. You email the host — they say talk to your developer. Half a day gone, and you're still the middleman between your own suppliers.</p>
-        <p style="margin-top:12px;color:var(--text2)" data-i18n="home.problem1.text2">You spend hours every week coordinating between providers instead of running your business. You have no idea if your setup is secure or if you're overpaying. Nobody's looking at the full picture.</p>
+        <p data-field="text" data-i18n="home.problem1.text">Your website goes down on a Friday evening. You email the web guy — he says it's a hosting issue. You email the host — they say talk to your developer. Half a day gone, and you're still the middleman between your own suppliers.</p>
+        <p data-field="text" style="margin-top:12px;color:var(--text2)" data-i18n="home.problem1.text2">You spend hours every week coordinating between providers instead of running your business. You have no idea if your setup is secure or if you're overpaying. Nobody's looking at the full picture.</p>
       </div>
-      <div class="path-card reveal reveal-delay-1">
+      <div class="path-card reveal reveal-delay-1" data-item>
         <div class="path-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4"/></svg></div>
-        <h3 data-i18n="home.problem2.title">AI is changing everything and you're falling behind</h3>
+        <h3 data-field="heading" data-i18n="home.problem2.title">AI is changing everything and you're falling behind</h3>
         <p class="path-audience" data-i18n="home.problem2.label">Problem 2</p>
-        <p data-i18n="home.problem2.text">You already know AI could automate parts of your business and improve how things work. But you don't have the time to figure it out, the space changes every week, and you don't know where to start.</p>
-        <p style="margin-top:12px;color:var(--text2)" data-i18n="home.problem2.text2">Meanwhile, competitors who figured it out are moving twice as fast. Every month you wait is another month you fall further behind — not because you're not capable, but because it's not your job to keep up with AI. It should be someone else's.</p>
+        <p data-field="text" data-i18n="home.problem2.text">You already know AI could automate parts of your business and improve how things work. But you don't have the time to figure it out, the space changes every week, and you don't know where to start.</p>
+        <p data-field="text" style="margin-top:12px;color:var(--text2)" data-i18n="home.problem2.text2">Meanwhile, competitors who figured it out are moving twice as fast. Every month you wait is another month you fall further behind — not because you're not capable, but because it's not your job to keep up with AI. It should be someone else's.</p>
       </div>
     </div>
 
     <!-- The Solution -->
     <div style="max-width:700px;margin:64px auto 0;text-align:center" class="reveal reveal-delay-2">
       <div class="path-icon" style="margin:0 auto 24px"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-      <h3 style="font-size:1.8rem;margin-bottom:16px" data-i18n="home.solution.title">One team. Both problems solved.</h3>
-      <p style="color:var(--text2);font-size:1.1rem;line-height:1.8;margin-bottom:8px" data-i18n="home.solution.text">We handle your fragmented digital setup. And we make sure you're using AI where it actually matters — without you spending a single hour figuring it out.</p>
-      <p style="color:var(--text2);font-size:1.05rem;line-height:1.8;margin-bottom:32px" data-i18n="home.solution.text2">You outsource both the headache and the anxiety. One subscription. One team. You stay focused on running your business.</p>
+      <h3 data-field="heading" style="font-size:1.8rem;margin-bottom:16px" data-i18n="home.solution.title">One team. Both problems solved.</h3>
+      <p data-field="text" style="color:var(--text2);font-size:1.1rem;line-height:1.8;margin-bottom:8px" data-i18n="home.solution.text">We handle your fragmented digital setup. And we make sure you're using AI where it actually matters — without you spending a single hour figuring it out.</p>
+      <p data-field="text" style="color:var(--text2);font-size:1.05rem;line-height:1.8;margin-bottom:32px" data-i18n="home.solution.text2">You outsource both the headache and the anxiety. One subscription. One team. You stay focused on running your business.</p>
       <div class="path-price" data-i18n="home.solution.price">Starting at &euro;300/mo</div>
-      <a href="plans.html" class="btn btn-primary" style="margin-top:16px" data-i18n="home.solution.cta">See Plans &rarr;</a>
+      <a data-field="cta" href="plans.html" class="btn btn-primary" style="margin-top:16px" data-i18n="home.solution.cta">See Plans &rarr;</a>
     </div>
   </div>
 </section>
 
 <!-- WHAT YOU GET -->
-<section style="background:var(--bg);padding:120px 0;position:relative;overflow:hidden">
+<section data-block="services" data-editable style="background:var(--bg);padding:120px 0;position:relative;overflow:hidden">
   <canvas class="particle-net"></canvas>
   <div class="container" style="position:relative;z-index:1">
     <div class="section-header">
       <p class="section-label reveal" data-i18n="home.get.label">What you get</p>
-      <h2 class="section-title reveal reveal-delay-1" data-i18n="home.get.title">We become your digital & AI department</h2>
+      <h2 data-field="heading" class="section-title reveal reveal-delay-1" data-i18n="home.get.title">We become your digital & AI department</h2>
       <p class="section-subtitle reveal reveal-delay-2" data-i18n="home.get.subtitle">One service that covers everything digital. No gaps, no confusion, no extra vendors.</p>
     </div>
-    <div class="service-cards">
-      <div class="service-card reveal">
+    <div class="service-cards" data-repeatable>
+      <div class="service-card reveal" data-item>
         <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <h3 data-i18n="home.get.web.title">Website & Hosting</h3>
-        <p data-i18n="home.get.web.text">Your website managed, hosted, and kept running. Updates, security, performance — all handled.</p>
+        <h3 data-field="heading" data-i18n="home.get.web.title">Website & Hosting</h3>
+        <p data-field="text" data-i18n="home.get.web.text">Your website managed, hosted, and kept running. Updates, security, performance — all handled.</p>
       </div>
-      <div class="service-card reveal reveal-delay-1">
+      <div class="service-card reveal reveal-delay-1" data-item>
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
-        <h3 data-i18n="home.get.email.title">Email & DNS Infrastructure</h3>
-        <p data-i18n="home.get.email.text">Professional email, domain management, DNS configuration. The digital plumbing that keeps your business reachable.</p>
+        <h3 data-field="heading" data-i18n="home.get.email.title">Email & DNS Infrastructure</h3>
+        <p data-field="text" data-i18n="home.get.email.text">Professional email, domain management, DNS configuration. The digital plumbing that keeps your business reachable.</p>
       </div>
-      <div class="service-card reveal reveal-delay-2">
+      <div class="service-card reveal reveal-delay-2" data-item>
         <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-        <h3 data-i18n="home.get.ai.title">AI Tools & Automation</h3>
-        <p data-i18n="home.get.ai.text">We set up and optimize AI tools that save you hours. From customer support to internal workflows — practical AI that actually works.</p>
+        <h3 data-field="heading" data-i18n="home.get.ai.title">AI Tools & Automation</h3>
+        <p data-field="text" data-i18n="home.get.ai.text">We set up and optimize AI tools that save you hours. From customer support to internal workflows — practical AI that actually works.</p>
       </div>
-      <div class="service-card reveal reveal-delay-3">
+      <div class="service-card reveal reveal-delay-3" data-item>
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3 data-i18n="home.get.support.title">Support & Strategic Direction</h3>
-        <p data-i18n="home.get.support.text">When something breaks, we fix it. When you need direction, we guide you. Regular reviews to keep your digital strategy on track.</p>
+        <h3 data-field="heading" data-i18n="home.get.support.title">Support & Strategic Direction</h3>
+        <p data-field="text" data-i18n="home.get.support.text">When something breaks, we fix it. When you need direction, we guide you. Regular reviews to keep your digital strategy on track.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PRICING PREVIEW -->
-<section class="pricing-section section-light" id="pricing" style="position:relative">
+<section data-block="services" data-editable class="pricing-section section-light" id="pricing" style="position:relative">
   <div class="container">
     <div class="section-header">
       <p class="section-label reveal" data-i18n="home.pricing.label">Simple pricing</p>
-      <h2 class="section-title reveal reveal-delay-1" data-i18n="home.pricing.title">One subscription. Everything included.</h2>
+      <h2 data-field="heading" class="section-title reveal reveal-delay-1" data-i18n="home.pricing.title">One subscription. Everything included.</h2>
     </div>
-    <div class="pricing-grid pricing-grid-2">
-      <div class="pricing-card reveal">
-        <h3 data-i18n="home.pricing.essentials">Essentials</h3>
+    <div class="pricing-grid pricing-grid-2" data-repeatable>
+      <div class="pricing-card reveal" data-item>
+        <h3 data-field="heading" data-i18n="home.pricing.essentials">Essentials</h3>
         <div class="price">&euro;300</div>
         <div class="price-sub" data-i18n="home.pricing.permonth">per month</div>
         <ul>
@@ -178,10 +189,10 @@
           <li data-i18n="home.pricing.essentials.f4">Basic AI setup & guidance</li>
           <li data-i18n="home.pricing.essentials.f5">Quarterly strategy call</li>
         </ul>
-        <a href="contact.html" class="btn btn-secondary" style="width:100%;justify-content:center" data-i18n="home.pricing.essentials.cta">Get Started &rarr;</a>
+        <a data-field="cta" href="contact.html" class="btn btn-secondary" style="width:100%;justify-content:center" data-i18n="home.pricing.essentials.cta">Get Started &rarr;</a>
       </div>
-      <div class="pricing-card featured reveal reveal-delay-1">
-        <h3 data-i18n="home.pricing.growth">Growth</h3>
+      <div class="pricing-card featured reveal reveal-delay-1" data-item>
+        <h3 data-field="heading" data-i18n="home.pricing.growth">Growth</h3>
         <div class="price">&euro;500</div>
         <div class="price-sub" data-i18n="home.pricing.permonth">per month</div>
         <ul>
@@ -192,7 +203,7 @@
           <li data-i18n="home.pricing.growth.f5">Dedicated contact</li>
           <li data-i18n="home.pricing.growth.f6">Cost optimization audit</li>
         </ul>
-        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="home.pricing.growth.cta">Get Started &rarr;</a>
+        <a data-field="cta" href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="home.pricing.growth.cta">Get Started &rarr;</a>
       </div>
     </div>
     <p class="pricing-note reveal" style="margin-top:32px" data-i18n="home.pricing.note">No long-term contracts. Billed monthly. Cancel anytime.</p>
@@ -203,7 +214,7 @@
 </section>
 
 <!-- HUB VISUAL / SYSTEMS -->
-<section style="background:var(--bg2);padding:100px 0;overflow:hidden">
+<section data-block="two-column" data-editable style="background:var(--bg2);padding:100px 0;overflow:hidden">
   <div class="container">
     <div class="hub-grid">
       <div class="hub-visual reveal" id="hub-vis">
@@ -215,8 +226,8 @@
       </div>
       <div class="reveal reveal-delay-1">
         <p class="section-label" data-i18n="home.hub.label">How it works</p>
-        <h2 class="section-title" style="text-align:left" data-i18n="home.hub.title">One team at the center<br>of everything digital</h2>
-        <p class="section-subtitle" data-i18n="home.hub.text">We connect and manage all your digital systems — website, email, support, AI tools — so you have one team to call instead of five.</p>
+        <h2 data-field="heading" class="section-title" style="text-align:left" data-i18n="home.hub.title">One team at the center<br>of everything digital</h2>
+        <p data-field="text" class="section-subtitle" data-i18n="home.hub.text">We connect and manage all your digital systems — website, email, support, AI tools — so you have one team to call instead of five.</p>
         <p style="color:var(--text2);font-size:1.05rem;line-height:1.8;margin-top:16px" data-i18n="home.hub.text2">No more chasing freelancers or wondering who handles what. We take ownership of your entire digital stack.</p>
       </div>
     </div>
@@ -224,40 +235,40 @@
 </section>
 
 <!-- STATS -->
-<section class="stats section-light" style="position:relative">
+<section data-block="stats" data-editable class="stats section-light" style="position:relative">
   <div class="container">
-    <div class="stats-grid">
-      <div class="reveal">
+    <div class="stats-grid" data-repeatable>
+      <div class="reveal" data-item>
         <div class="stat-num" data-count="6" data-suffix="+">0</div>
-        <div class="stat-label" data-i18n="home.stat1.label">Businesses Served</div>
+        <div data-field="text" class="stat-label" data-i18n="home.stat1.label">Businesses Served</div>
       </div>
-      <div class="reveal reveal-delay-1">
+      <div class="reveal reveal-delay-1" data-item>
         <div class="stat-num" data-count="48" data-suffix="h">0</div>
-        <div class="stat-label" data-i18n="home.stat2.label">Max Response Time</div>
+        <div data-field="text" class="stat-label" data-i18n="home.stat2.label">Max Response Time</div>
       </div>
-      <div class="reveal reveal-delay-2">
+      <div class="reveal reveal-delay-2" data-item>
         <div class="stat-num" data-count="1" data-suffix="">0</div>
-        <div class="stat-label" data-i18n="home.stat3.label">Point of Contact</div>
+        <div data-field="text" class="stat-label" data-i18n="home.stat3.label">Point of Contact</div>
       </div>
-      <div class="reveal reveal-delay-3">
+      <div class="reveal reveal-delay-3" data-item>
         <div class="stat-num" data-count="100" data-suffix="%">0</div>
-        <div class="stat-label" data-i18n="home.stat4.label">Client Retention</div>
+        <div data-field="text" class="stat-label" data-i18n="home.stat4.label">Client Retention</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- WHO THIS IS FOR -->
-<section class="trust-section" style="position:relative;overflow:hidden">
+<section data-block="two-column" data-editable class="trust-section" style="position:relative;overflow:hidden">
 <canvas class="particle-net"></canvas>
   <div class="container" style="position:relative;z-index:1">
     <div class="trust-grid">
       <div class="reveal">
         <p class="section-label" data-i18n="home.fit.label">Is this for you?</p>
-        <h2 class="section-title" style="text-align:left" data-i18n="home.fit.title">Built for small businesses without a tech team.</h2>
-        <p class="section-subtitle" data-i18n="home.fit.subtitle">This is for you if you run a small business (2-20 people), don't have an internal IT or tech team, and are tired of managing multiple digital providers.</p>
+        <h2 data-field="heading" class="section-title" style="text-align:left" data-i18n="home.fit.title">Built for small businesses without a tech team.</h2>
+        <p data-field="text" class="section-subtitle" data-i18n="home.fit.subtitle">This is for you if you run a small business (2-20 people), don't have an internal IT or tech team, and are tired of managing multiple digital providers.</p>
         <p style="color:var(--text2);font-size:1.05rem;line-height:1.8;margin-top:16px" data-i18n="home.fit.text">You know AI could help but don't know where to start. You want one trusted team handling everything digital — so you can focus on running your business.</p>
-        <a href="contact.html" class="btn btn-secondary" style="margin-top:32px" data-i18n="home.fit.cta">Book a Free Call &rarr;</a>
+        <a data-field="cta" href="contact.html" class="btn btn-secondary" style="margin-top:32px" data-i18n="home.fit.cta">Book a Free Call &rarr;</a>
       </div>
       <div class="trust-visual reveal reveal-delay-1">
         <div class="trust-shield"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
@@ -267,26 +278,26 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
+<section data-block="cta-banner" data-editable class="cta-section">
   <div class="ascii-bg"><pre id="ascii-cta"></pre></div>
   <div class="container">
     <p class="section-label reveal" data-i18n="cta.label">Ready?</p>
-    <h2 class="section-title reveal reveal-delay-1" data-i18n="cta.title">Book a free 15-minute call</h2>
-    <p class="reveal reveal-delay-2" data-i18n="cta.subtitle">No pressure. We'll tell you honestly if we can help. If we're a good fit, we'll map out next steps together.</p>
-    <a href="contact.html" class="btn btn-primary reveal reveal-delay-3" style="font-size:1.1rem;padding:18px 48px" data-i18n="cta.btn">Book a Call &rarr;</a>
+    <h2 data-field="heading" class="section-title reveal reveal-delay-1" data-i18n="cta.title">Book a free 15-minute call</h2>
+    <p data-field="text" class="reveal reveal-delay-2" data-i18n="cta.subtitle">No pressure. We'll tell you honestly if we can help. If we're a good fit, we'll map out next steps together.</p>
+    <a data-field="cta" href="contact.html" class="btn btn-primary reveal reveal-delay-3" style="font-size:1.1rem;padding:18px 48px" data-i18n="cta.btn">Book a Call &rarr;</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer data-block="footer" data-editable>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo"><span>OOPUO</span></a>
-        <p data-i18n="footer.desc">Your outsourced digital & AI team. Netherlands-based, serving small businesses across Europe.</p>
+        <p data-field="text" data-i18n="footer.desc">Your outsourced digital & AI team. Netherlands-based, serving small businesses across Europe.</p>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col1">Navigate</h4>
+        <h4 data-field="heading" data-i18n="footer.col1">Navigate</h4>
         <ul>
           <li><a href="plans.html">Plans</a></li>
           <li><a href="portfolio.html">Our Work</a></li>
@@ -294,14 +305,14 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col2">Company</h4>
+        <h4 data-field="heading" data-i18n="footer.col2">Company</h4>
         <ul>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col3">Connect</h4>
+        <h4 data-field="heading" data-i18n="footer.col3">Connect</h4>
         <ul>
           <li><a href="mailto:hello@oopuo.com">hello@oopuo.com</a></li>
           <li><a href="https://linkedin.com/company/oopuo" target="_blank">LinkedIn</a></li>
@@ -311,7 +322,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p data-i18n="footer.copy">© 2026 Oopuo B.V. All rights reserved.</p>
+      <p data-field="text" data-i18n="footer.copy">© 2026 Oopuo B.V. All rights reserved.</p>
       <p data-i18n="footer.location">Netherlands, EU</p>
     </div>
   </div>

@@ -6,10 +6,21 @@
 <title>Our Work — OOPUO | Projects & Results</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta name="description" content="Oopuo portfolio: ZenithCred, Interactive Move, Solyx Energy, SentinAgro, CuttingEdge, Abura Cosmetics. From funded startups to enterprise deployments.">
+<meta property="og:title" content="Our Work — OOPUO | Projects & Results">
+<meta property="og:description" content="Oopuo portfolio: ZenithCred, Interactive Move, Solyx Energy, SentinAgro, CuttingEdge, Abura Cosmetics. From funded startups to enterprise deployments.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oopuo.com/portfolio.html">
+<meta property="og:image" content="https://oopuo.com/assets/images/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Our Work","url":"https://oopuo.com/portfolio.html","description":"Oopuo portfolio: projects and results from funded startups to enterprise deployments.","isPartOf":{"@type":"WebSite","name":"Oopuo","url":"https://oopuo.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oopuo.com/"},{"@type":"ListItem","position":2,"name":"Our Work","item":"https://oopuo.com/portfolio.html"}]}
+</script>
 </head>
 <body>
 
@@ -48,17 +59,17 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero hero-short">
+<section data-block="hero" data-editable class="hero hero-short">
   <div class="ascii-bg"><pre id="ascii-hero"></pre></div>
   <div class="hero-content">
     <div class="hero-badge reveal" data-i18n="portfolio.hero.badge">Portfolio</div>
-    <h1 class="reveal reveal-delay-1"><span class="gradient" data-i18n="portfolio.hero.title">Our portfolio</span></h1>
-    <p class="reveal reveal-delay-2" data-i18n="portfolio.hero.subtitle">From funded startups to enterprise deployments — every project built with precision.</p>
+    <h1 data-field="heading" class="reveal reveal-delay-1"><span class="gradient" data-i18n="portfolio.hero.title">Our portfolio</span></h1>
+    <p data-field="text" class="reveal reveal-delay-2" data-i18n="portfolio.hero.subtitle">From funded startups to enterprise deployments — every project built with precision.</p>
   </div>
 </section>
 
 <!-- PORTFOLIO GRID -->
-<section class="section-light" style="padding:0 0 120px;position:relative;overflow:hidden">
+<section data-block="features" data-editable class="section-light" style="padding:0 0 120px;position:relative;overflow:hidden">
   <canvas class="particle-net"></canvas>
   <div class="container" style="position:relative;z-index:1">
     <div class="filter-tabs reveal">
@@ -66,51 +77,51 @@
       <button class="filter-tab" data-filter="startups" data-i18n="portfolio.filter.startups">Startups</button>
       <button class="filter-tab" data-filter="client" data-i18n="portfolio.filter.client">Client Work</button>
     </div>
-    <div class="portfolio-grid">
+    <div class="portfolio-grid" data-repeatable>
 
       <!-- CuttingEdge -->
-      <div class="portfolio-card reveal" data-category="client">
+      <div class="portfolio-card reveal" data-item data-category="client">
         <div class="portfolio-card-image" style="background:url('assets/portfolio/cuttingedge.jpg') center/cover no-repeat">
         </div>
         <div class="portfolio-card-body">
-          <h3>CuttingEdge</h3>
-          <p class="port-desc" data-i18n="portfolio.ce.desc">Complete digital presence for an interior design & rebuilding firm. Website, project management workflows, and client communication — all under one roof.</p>
+          <h3 data-field="heading">CuttingEdge</h3>
+          <p data-field="text" class="port-desc" data-i18n="portfolio.ce.desc">Complete digital presence for an interior design & rebuilding firm. Website, project management workflows, and client communication — all under one roof.</p>
           <div class="port-tags">
             <span class="port-tag" data-i18n="portfolio.tag.client">Client Work</span>
             <span class="port-tag" data-i18n="portfolio.tag.interior">Interior Design</span>
             <span class="port-tag" data-i18n="portfolio.tag.websystems">Web + Systems</span>
           </div>
           <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
-            <a href="https://cuttingedge.world" target="_blank" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
+            <a href="https://cuttingedge.world" target="_blank" data-field="cta" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Interactive Move -->
-      <div class="portfolio-card reveal reveal-delay-1" data-category="startups">
+      <div class="portfolio-card reveal reveal-delay-1" data-item data-category="startups">
         <div class="portfolio-card-image" style="background:url('assets/portfolio/interactivemove.jpg') center/cover no-repeat">
         </div>
         <div class="portfolio-card-body">
-          <h3>Interactive Move</h3>
-          <p class="port-desc" data-i18n="portfolio.im.desc">Interactive projection systems for children's play areas and corporate offices. Turning any surface into an engaging, interactive experience with custom content.</p>
+          <h3 data-field="heading">Interactive Move</h3>
+          <p data-field="text" class="port-desc" data-i18n="portfolio.im.desc">Interactive projection systems for children's play areas and corporate offices. Turning any surface into an engaging, interactive experience with custom content.</p>
           <div class="port-tags">
             <span class="port-tag" data-i18n="portfolio.tag.startup">Startup</span>
             <span class="port-tag" data-i18n="portfolio.tag.edtech">EdTech</span>
             <span class="port-tag" data-i18n="portfolio.tag.hwsw">Hardware + Software</span>
           </div>
           <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
-            <a href="https://interactivemove.nl" target="_blank" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
+            <a href="https://interactivemove.nl" target="_blank" data-field="cta" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Solyx Energy -->
-      <div class="portfolio-card reveal reveal-delay-2" data-category="client">
+      <div class="portfolio-card reveal reveal-delay-2" data-item data-category="client">
         <div class="portfolio-card-image" style="background:url('assets/portfolio/solyx.jpg') center/cover no-repeat">
         </div>
         <div class="portfolio-card-body">
-          <h3>Solyx Energy</h3>
-          <p class="port-desc" data-i18n="portfolio.solyx.desc">Complete digital infrastructure for a solar energy company. Brand website, inventory management system, and AI-powered customer support — all connected.</p>
+          <h3 data-field="heading">Solyx Energy</h3>
+          <p data-field="text" class="port-desc" data-i18n="portfolio.solyx.desc">Complete digital infrastructure for a solar energy company. Brand website, inventory management system, and AI-powered customer support — all connected.</p>
           <div class="port-tags">
             <span class="port-tag" data-i18n="portfolio.tag.client">Client Work</span>
             <span class="port-tag" data-i18n="portfolio.tag.energy">Energy</span>
@@ -118,37 +129,37 @@
             <span class="port-tag" data-i18n="portfolio.tag.aisupport">AI Support</span>
           </div>
           <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
-            <a href="https://solyxenergy.nl" target="_blank" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
+            <a href="https://solyxenergy.nl" target="_blank" data-field="cta" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- Abura Cosmetics -->
-      <div class="portfolio-card reveal" data-category="client">
+      <div class="portfolio-card reveal" data-item data-category="client">
         <div class="portfolio-card-image" style="background:url('assets/portfolio/abura.jpg') center/cover no-repeat">
         </div>
         <div class="portfolio-card-body">
-          <h3>Abura Cosmetics</h3>
-          <p class="port-desc" data-i18n="portfolio.abura.desc">AI-powered sales support system for a cosmetics brand. Automated customer engagement, product recommendations, and order processing.</p>
+          <h3 data-field="heading">Abura Cosmetics</h3>
+          <p data-field="text" class="port-desc" data-i18n="portfolio.abura.desc">AI-powered sales support system for a cosmetics brand. Automated customer engagement, product recommendations, and order processing.</p>
           <div class="port-tags">
             <span class="port-tag" data-i18n="portfolio.tag.client">Client Work</span>
             <span class="port-tag" data-i18n="portfolio.tag.ecommerce">E-commerce</span>
             <span class="port-tag" data-i18n="portfolio.tag.salesai">Sales AI</span>
           </div>
           <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
-            <a href="https://aburacosmetics.com" target="_blank" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
+            <a href="https://aburacosmetics.com" target="_blank" data-field="cta" class="btn btn-secondary" style="padding:10px 20px;font-size:.85rem" data-i18n="portfolio.visit">Visit Website &rarr;</a>
           </div>
         </div>
       </div>
 
       <!-- ZenithCred -->
-      <div class="portfolio-card reveal reveal-delay-1" data-category="startups">
+      <div class="portfolio-card reveal reveal-delay-1" data-item data-category="startups">
         <div class="portfolio-card-image">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <div class="portfolio-card-body">
-          <h3>ZenithCred</h3>
-          <p class="port-desc" data-i18n="portfolio.zenith.desc">Corporate wellness gamification platform. Employee health metrics turned into engagement through tokens and biofeedback — from concept to investment-ready product.</p>
+          <h3 data-field="heading">ZenithCred</h3>
+          <p data-field="text" class="port-desc" data-i18n="portfolio.zenith.desc">Corporate wellness gamification platform. Employee health metrics turned into engagement through tokens and biofeedback — from concept to investment-ready product.</p>
           <div class="port-tags">
             <span class="port-tag" data-i18n="portfolio.tag.startup">Startup</span>
             <span class="port-tag" data-i18n="portfolio.tag.gamification">Gamification</span>
@@ -158,13 +169,13 @@
       </div>
 
       <!-- SentinAgro -->
-      <div class="portfolio-card reveal reveal-delay-2" data-category="startups">
+      <div class="portfolio-card reveal reveal-delay-2" data-item data-category="startups">
         <div class="portfolio-card-image">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
         <div class="portfolio-card-body">
-          <h3>SentinAgro</h3>
-          <p class="port-desc" data-i18n="portfolio.sentin.desc">AI-powered drone monitoring system for cattle and crop management. Computer vision meets agriculture — real-time monitoring at scale.</p>
+          <h3 data-field="heading">SentinAgro</h3>
+          <p data-field="text" class="port-desc" data-i18n="portfolio.sentin.desc">AI-powered drone monitoring system for cattle and crop management. Computer vision meets agriculture — real-time monitoring at scale.</p>
           <div class="port-tags">
             <span class="port-tag" data-i18n="portfolio.tag.startup">Startup</span>
             <span class="port-tag" data-i18n="portfolio.tag.agritech">AgriTech</span>
@@ -178,26 +189,26 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
+<section data-block="cta-banner" data-editable class="cta-section">
   <div class="ascii-bg"><pre id="ascii-cta"></pre></div>
   <div class="container">
     <p class="section-label reveal" data-i18n="portfolio.cta.label">Have a project in mind?</p>
-    <h2 class="section-title reveal reveal-delay-1" data-i18n="portfolio.cta.title">Let's build something<br>worth showing off</h2>
-    <p class="reveal reveal-delay-2" data-i18n="portfolio.cta.subtitle">Every project in our portfolio started with a single conversation.</p>
-    <a href="contact.html" class="btn btn-primary reveal reveal-delay-3" style="font-size:1.1rem;padding:18px 48px" data-i18n="portfolio.cta.btn">Start Yours →</a>
+    <h2 data-field="heading" class="section-title reveal reveal-delay-1" data-i18n="portfolio.cta.title">Let's build something<br>worth showing off</h2>
+    <p data-field="text" class="reveal reveal-delay-2" data-i18n="portfolio.cta.subtitle">Every project in our portfolio started with a single conversation.</p>
+    <a href="contact.html" data-field="cta" class="btn btn-primary reveal reveal-delay-3" style="font-size:1.1rem;padding:18px 48px" data-i18n="portfolio.cta.btn">Start Yours →</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer data-block="footer" data-editable>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo"><span>OOPUO</span></a>
-        <p data-i18n="footer.desc">Your outsourced digital & AI team. Netherlands-based, serving small businesses across Europe.</p>
+        <p data-field="text" data-i18n="footer.desc">Your outsourced digital & AI team. Netherlands-based, serving small businesses across Europe.</p>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col1">Navigate</h4>
+        <h4 data-field="heading" data-i18n="footer.col1">Navigate</h4>
         <ul>
           <li><a href="plans.html">Plans</a></li>
           <li><a href="portfolio.html">Our Work</a></li>
@@ -205,14 +216,14 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col2">Company</h4>
+        <h4 data-field="heading" data-i18n="footer.col2">Company</h4>
         <ul>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col3">Connect</h4>
+        <h4 data-field="heading" data-i18n="footer.col3">Connect</h4>
         <ul>
           <li><a href="mailto:hello@oopuo.com">hello@oopuo.com</a></li>
           <li><a href="https://linkedin.com/company/oopuo" target="_blank">LinkedIn</a></li>
@@ -222,7 +233,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p data-i18n="footer.copy">© 2026 Oopuo B.V. All rights reserved.</p>
+      <p data-field="text" data-i18n="footer.copy">© 2026 Oopuo B.V. All rights reserved.</p>
       <p data-i18n="footer.location">Netherlands, EU</p>
     </div>
   </div>
