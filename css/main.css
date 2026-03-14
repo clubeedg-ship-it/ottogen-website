@@ -450,11 +450,11 @@ footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.06);padding:6
 .section-light .stat-num{color:var(--blue)}
 .section-light .stat-label,.section-light .pricing-note,.section-light .price-sub,.section-light ul li{color:#4a4a6a}
 .section-light .price{color:#0a0a1a}
-.section-light .timeline-item h4{color:#0a0a1a}
+.section-light .timeline-item h4{color:#0a0a1a!important}
 .section-light .timeline-item p{color:#4a4a6a}
 .section-light .timeline::before{background:rgba(0,85,255,.3)}
-.section-light .portfolio-card{background:#fff;border-color:rgba(0,85,255,.08);box-shadow:0 2px 20px rgba(0,0,0,.04)}
-.section-light .portfolio-card-body h3{color:#0a0a1a}
+.section-light .portfolio-card{background:#fff!important;border-color:rgba(0,85,255,.08)!important;box-shadow:0 2px 20px rgba(0,0,0,.04)}
+.section-light .portfolio-card-body h3{color:#0a0a1a!important}
 .section-light .portfolio-card-body .port-desc{color:#4a4a6a}
 .section-light .portfolio-card-image{background:linear-gradient(135deg,#eef1f8,rgba(0,85,255,.06))}
 .section-light .compare-table{background:#fff;border-color:rgba(0,85,255,.08)}
