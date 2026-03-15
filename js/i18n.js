@@ -89,11 +89,11 @@ var translations = {
     'cta.btn': 'Book a Call',
 
     // Footer
-    'footer.desc': 'Your outsourced digital & AI team. Netherlands-based, serving small businesses across Europe.',
+    'footer.desc': 'Your outsourced digital & AI team. Brazil-based, serving businesses worldwide.',
     'footer.col1': 'Navigate',
     'footer.col2': 'Company',
     'footer.col3': 'Connect',
-    'footer.copy': '\u00a9 2026 Oopuo B.V. All rights reserved.',
+    'footer.copy': '\u00a9 2026 Nine Corp. Servico e Consultoria LTDA. All rights reserved.',
 
     // Plans page
     'plans.hero.title': 'One subscription. Everything digital.',
@@ -104,7 +104,7 @@ var translations = {
     'portfolio.hero.subtitle': 'Real projects. Real results. From startups to established businesses.',
 
     // About page
-    'about.hero.title': 'Built in the Netherlands. Powered by conviction.',
+    'about.hero.title': 'Built in Brazil. Powered by conviction.',
     'about.otto.label': 'Founder & CEO',
     'about.otto.title': 'Meet Otto',
     'about.mission.label': 'Our Mission',
@@ -132,7 +132,7 @@ var translations = {
     'contact.info.schedule.title': 'Schedule a Call',
     'contact.info.schedule.desc': 'Book a free 15-minute call to discuss your business needs.',
     'contact.info.location.title': 'Location',
-    'contact.info.location.desc': 'Netherlands, EU',
+    'contact.info.location.desc': 'Jaupaci, GO — Brazil',
     'contact.form.name.placeholder': 'Your name',
     'contact.form.email.placeholder': 'you@company.com',
     'contact.form.company.placeholder': 'Your company name',
@@ -145,7 +145,7 @@ var translations = {
     'contact.worldwide': 'We work with clients worldwide. All meetings are conducted online unless otherwise arranged.',
 
     // Footer shared
-    'footer.location': 'Netherlands, EU',
+    'footer.location': 'Jaupaci, GO — Brazil',
 
     // Index — extra keys
     'home.marquee.label': 'Tools we use to power your business',
@@ -263,7 +263,7 @@ var translations = {
     'about.otto.bio3': 'With a background in AI infrastructure, startup building, and enterprise systems, Otto leads Oopuo with a hands-on approach: real problems, practical solutions, no fluff.',
     'about.mission.subtitle': 'We believe every business \u2014 no matter the size \u2014 should have access to competent digital management and practical AI. One team, one subscription, no confusion.',
     'about.timeline.t1.title': 'Founded Oopuo',
-    'about.timeline.t1.text': 'Started with a mission to give small businesses access to competent digital management and AI. Netherlands-based, EU-first.',
+    'about.timeline.t1.text': 'Started with a mission to give small businesses access to competent digital management and AI. Brazil-based, serving globally.',
     'about.timeline.t2.title': 'Built the foundation',
     'about.timeline.t2.text': 'Developed our internal AI infrastructure and processes. Delivered first client projects across web, systems, and AI automation.',
     'about.timeline.t3.title': 'Launched subscription model',
@@ -323,7 +323,7 @@ var translations = {
     'enterprise.ai.title': 'AI for Everyone',
     'enterprise.ai.text': 'AI shouldn\'t require an engineering team. We package powerful technology into practical, affordable services that any business can use \u2014 starting at \u20ac300/mo.',
     'enterprise.privacy.title': 'Privacy as Architecture',
-    'enterprise.privacy.text': 'We\'re a Dutch company operating under EU jurisdiction. Privacy isn\'t an add-on \u2014 it\'s how we build. Your data stays yours, always.',
+    'enterprise.privacy.text': 'We\'re committed to privacy-first principles. Privacy isn\'t an add-on \u2014 it\'s how we build. Your data stays yours, always.',
     'enterprise.partnership.title': 'Partnership Over Transactions',
     'enterprise.partnership.text': 'We don\'t do one-off projects and disappear. We build long-term relationships with our clients \u2014 becoming their trusted digital & AI team for years to come.',
     'enterprise.advantage.title': 'Competitive Advantage Through Technology',
@@ -334,7 +334,7 @@ var translations = {
     'enterprise.chimera.title': 'Chimera',
     'enterprise.chimera.text': 'Our privacy-preserving AI compute layer. The foundation that lets us deliver powerful AI capabilities while keeping your data under your control.',
     'enterprise.gdpr.title': 'EU & GDPR Native',
-    'enterprise.gdpr.text': 'Dutch company, EU jurisdiction. We don\'t bolt on compliance \u2014 it\'s in our architecture from the start.',
+    'enterprise.gdpr.text': 'Privacy by design. We don\'t bolt on compliance \u2014 it\'s in our architecture from the start.',
     'enterprise.road.label': 'Where we\'re going',
     'enterprise.road.title': 'The road ahead',
     'enterprise.road.community.title': 'Grow the Community',
@@ -342,7 +342,7 @@ var translations = {
     'enterprise.road.tools.title': 'Smarter AI Tools',
     'enterprise.road.tools.text': 'Continuously improve the AI capabilities we offer \u2014 making automation more powerful, more practical, and easier to adopt.',
     'enterprise.road.expand.title': 'Expand Across Europe',
-    'enterprise.road.expand.text': 'Starting from the Netherlands, growing to serve small businesses across the EU with local expertise and multilingual support.',
+    'enterprise.road.expand.text': 'Starting from Brazil, growing to serve businesses worldwide with local expertise and multilingual support.',
     'enterprise.road.impact.title': 'Measure Real Impact',
     'enterprise.road.impact.text': 'Track the concrete difference we make \u2014 hours saved, costs reduced, efficiency gained. Transparent results for every partner.',
     'enterprise.cta.label': 'Interested?',
@@ -433,11 +433,11 @@ var translations = {
     'cta.btn': 'Plan een Gesprek',
 
     // Footer
-    'footer.desc': 'Je uitbestede digitale & AI-team. Gevestigd in Nederland, voor kleine bedrijven in heel Europa.',
+    'footer.desc': 'Je uitbestede digitale & AI-team. Gevestigd in Brazili\u00eb, voor bedrijven wereldwijd.',
     'footer.col1': 'Navigatie',
     'footer.col2': 'Bedrijf',
     'footer.col3': 'Contact',
-    'footer.copy': '\u00a9 2026 Oopuo B.V. Alle rechten voorbehouden.',
+    'footer.copy': '\u00a9 2026 Nine Corp. Servico e Consultoria LTDA. Alle rechten voorbehouden.',
 
     // Plans page
     'plans.hero.title': 'E\u00e9n abonnement. Alles digitaal geregeld.',
@@ -448,7 +448,7 @@ var translations = {
     'portfolio.hero.subtitle': 'Echte projecten. Echte resultaten. Van startups tot gevestigde bedrijven.',
 
     // About page
-    'about.hero.title': 'Gebouwd in Nederland. Gedreven door overtuiging.',
+    'about.hero.title': 'Gebouwd in Brazili\u00eb. Gedreven door overtuiging.',
     'about.otto.label': 'Oprichter & CEO',
     'about.otto.title': 'Maak kennis met Otto',
     'about.mission.label': 'Onze Missie',
@@ -476,7 +476,7 @@ var translations = {
     'contact.info.schedule.title': 'Plan een Gesprek',
     'contact.info.schedule.desc': 'Plan een gratis gesprek van 15 minuten om je wensen te bespreken.',
     'contact.info.location.title': 'Locatie',
-    'contact.info.location.desc': 'Nederland, EU',
+    'contact.info.location.desc': 'Jaupaci, GO \u2014 Brazili\u00eb',
     'contact.form.name.placeholder': 'Je naam',
     'contact.form.email.placeholder': 'jij@bedrijf.nl',
     'contact.form.company.placeholder': 'Naam van je bedrijf',
@@ -487,7 +487,7 @@ var translations = {
     'contact.response.title': 'Reactietijd',
     'contact.response.text': 'We reageren doorgaans binnen 24 uur op werkdagen.',
     'contact.worldwide': 'We werken met klanten wereldwijd. Alle gesprekken vinden online plaats, tenzij anders afgesproken.',
-    'footer.location': 'Nederland, EU',
+    'footer.location': 'Jaupaci, GO \u2014 Brazili\u00eb',
     'home.marquee.label': 'Tools waarmee we jouw bedrijf versterken',
     'home.pricing.permonth': 'per maand',
     'home.pricing.essentials.f1': 'Website beheerd, bijgewerkt, gehost',
@@ -599,7 +599,7 @@ var translations = {
     'about.otto.bio3': 'Met een achtergrond in AI-infrastructuur, startups bouwen en enterprise-systemen leidt Otto Oopuo met een hands-on aanpak: echte problemen, praktische oplossingen, geen onzin.',
     'about.mission.subtitle': 'Wij geloven dat elk bedrijf — ongeacht de grootte — toegang verdient tot competent digitaal beheer en praktische AI. Eén team, één abonnement, geen verwarring.',
     'about.timeline.t1.title': 'Oopuo opgericht',
-    'about.timeline.t1.text': 'Gestart met de missie om kleine bedrijven toegang te geven tot competent digitaal beheer en AI. Gevestigd in Nederland, EU-first.',
+    'about.timeline.t1.text': 'Gestart met de missie om kleine bedrijven toegang te geven tot competent digitaal beheer en AI. Gevestigd in Brazili\u00eb, wereldwijd actief.',
     'about.timeline.t2.title': 'De basis gebouwd',
     'about.timeline.t2.text': 'Onze interne AI-infrastructuur en processen ontwikkeld. Eerste klantprojecten opgeleverd in web, systemen en AI-automatisering.',
     'about.timeline.t3.title': 'Abonnementsmodel gelanceerd',
@@ -655,7 +655,7 @@ var translations = {
     'enterprise.ai.title': 'AI voor Iedereen',
     'enterprise.ai.text': 'AI hoort geen engineeringteam te vereisen. Wij verpakken krachtige technologie in praktische, betaalbare diensten die elk bedrijf kan gebruiken — vanaf €300/maand.',
     'enterprise.privacy.title': 'Privacy als Architectuur',
-    'enterprise.privacy.text': 'We zijn een Nederlands bedrijf onder EU-jurisdictie. Privacy is geen toevoeging — het is hoe we bouwen. Jouw data blijft van jou, altijd.',
+    'enterprise.privacy.text': 'We zijn toegewijd aan privacy-first principes. Privacy is geen toevoeging — het is hoe we bouwen. Jouw data blijft van jou, altijd.',
     'enterprise.partnership.title': 'Partnerschap Boven Transacties',
     'enterprise.partnership.text': 'Wij doen geen eenmalige projecten om daarna te verdwijnen. We bouwen langetermijnrelaties met onze klanten — als hun vertrouwde digitale & AI-team voor jaren.',
     'enterprise.advantage.title': 'Concurrentievoordeel Door Technologie',
@@ -666,7 +666,7 @@ var translations = {
     'enterprise.chimera.title': 'Chimera',
     'enterprise.chimera.text': 'Onze privacy-beschermende AI-rekenlaag. De basis die ons in staat stelt krachtige AI-mogelijkheden te leveren terwijl jouw data onder jouw controle blijft.',
     'enterprise.gdpr.title': 'EU & AVG Natief',
-    'enterprise.gdpr.text': 'Nederlands bedrijf, EU-jurisdictie. We plakken geen compliance erop — het zit in onze architectuur vanaf het begin.',
+    'enterprise.gdpr.text': 'Privacy by design. We plakken geen compliance erop — het zit in onze architectuur vanaf het begin.',
     'enterprise.road.label': 'Waar we naartoe gaan',
     'enterprise.road.title': 'De weg vooruit',
     'enterprise.road.community.title': 'De Community Laten Groeien',
@@ -674,7 +674,7 @@ var translations = {
     'enterprise.road.tools.title': 'Slimmere AI-tools',
     'enterprise.road.tools.text': 'Continu de AI-mogelijkheden verbeteren die we aanbieden — automatisering krachtiger, praktischer en makkelijker te adopteren maken.',
     'enterprise.road.expand.title': 'Uitbreiden door Europa',
-    'enterprise.road.expand.text': 'Vanuit Nederland groeien om kleine bedrijven in de hele EU te bedienen met lokale expertise en meertalige support.',
+    'enterprise.road.expand.text': 'Vanuit Brazili\u00eb groeien om bedrijven wereldwijd te bedienen met lokale expertise en meertalige support.',
     'enterprise.road.impact.title': 'Echte Impact Meten',
     'enterprise.road.impact.text': 'Het concrete verschil dat we maken bijhouden — uren bespaard, kosten verlaagd, efficiëntie gewonnen. Transparante resultaten voor elke partner.',
     'enterprise.cta.label': 'Geïnteresseerd?',
@@ -765,11 +765,11 @@ var translations = {
     'cta.btn': 'Gespr\u00e4ch vereinbaren',
 
     // Footer
-    'footer.desc': 'Ihr ausgelagertes Digital- & KI-Team. In den Niederlanden ans\u00e4ssig, f\u00fcr kleine Unternehmen in ganz Europa.',
+    'footer.desc': 'Ihr ausgelagertes Digital- & KI-Team. In Brasilien ans\u00e4ssig, f\u00fcr Unternehmen weltweit.',
     'footer.col1': 'Navigation',
     'footer.col2': 'Unternehmen',
     'footer.col3': 'Kontakt',
-    'footer.copy': '\u00a9 2026 Oopuo B.V. Alle Rechte vorbehalten.',
+    'footer.copy': '\u00a9 2026 Nine Corp. Servico e Consultoria LTDA. Alle Rechte vorbehalten.',
 
     // Plans page
     'plans.hero.title': 'Ein Abo. Alles Digitale abgedeckt.',
@@ -780,7 +780,7 @@ var translations = {
     'portfolio.hero.subtitle': 'Echte Projekte. Echte Ergebnisse. Von Startups bis zu etablierten Unternehmen.',
 
     // About page
-    'about.hero.title': 'Gegr\u00fcndet in den Niederlanden. Angetrieben von \u00dcberzeugung.',
+    'about.hero.title': 'Gegr\u00fcndet in Brasilien. Angetrieben von \u00dcberzeugung.',
     'about.otto.label': 'Gr\u00fcnder & CEO',
     'about.otto.title': 'Lernen Sie Otto kennen',
     'about.mission.label': 'Unsere Mission',
@@ -808,7 +808,7 @@ var translations = {
     'contact.info.schedule.title': 'Gespr\u00e4ch vereinbaren',
     'contact.info.schedule.desc': 'Vereinbaren Sie ein kostenloses 15-Minuten-Gespr\u00e4ch, um Ihre Anforderungen zu besprechen.',
     'contact.info.location.title': 'Standort',
-    'contact.info.location.desc': 'Niederlande, EU',
+    'contact.info.location.desc': 'Jaupaci, GO \u2014 Brasilien',
     'contact.form.name.placeholder': 'Ihr Name',
     'contact.form.email.placeholder': 'sie@unternehmen.de',
     'contact.form.company.placeholder': 'Name Ihres Unternehmens',
@@ -819,7 +819,7 @@ var translations = {
     'contact.response.title': 'Reaktionszeit',
     'contact.response.text': 'Wir antworten in der Regel innerhalb von 24 Stunden an Werktagen.',
     'contact.worldwide': 'Wir arbeiten mit Kunden weltweit. Alle Meetings finden online statt, sofern nicht anders vereinbart.',
-    'footer.location': 'Niederlande, EU',
+    'footer.location': 'Jaupaci, GO \u2014 Brasilien',
     'home.marquee.label': 'Tools, mit denen wir Ihr Unternehmen voranbringen',
     'home.pricing.permonth': 'pro Monat',
     'home.pricing.essentials.f1': 'Website verwaltet, aktualisiert, gehostet',
@@ -931,7 +931,7 @@ var translations = {
     'about.otto.bio3': 'Mit einem Hintergrund in KI-Infrastruktur, Startup-Aufbau und Enterprise-Systemen führt Otto Oopuo mit einem praxisnahen Ansatz: echte Probleme, praktische Lösungen, kein überflüssiges Beiwerk.',
     'about.mission.subtitle': 'Wir glauben, dass jedes Unternehmen — unabhängig von der Größe — Zugang zu kompetentem Digitalmanagement und praxisnaher KI verdient. Ein Team, ein Abo, keine Verwirrung.',
     'about.timeline.t1.title': 'Oopuo gegründet',
-    'about.timeline.t1.text': 'Gestartet mit der Mission, kleinen Unternehmen Zugang zu kompetentem Digitalmanagement und KI zu geben. In den Niederlanden ansässig, EU-first.',
+    'about.timeline.t1.text': 'Gestartet mit der Mission, kleinen Unternehmen Zugang zu kompetentem Digitalmanagement und KI zu geben. In Brasilien ansässig, EU-first.',
     'about.timeline.t2.title': 'Das Fundament gebaut',
     'about.timeline.t2.text': 'Unsere interne KI-Infrastruktur und Prozesse entwickelt. Erste Kundenprojekte in Web, Systemen und KI-Automatisierung geliefert.',
     'about.timeline.t3.title': 'Abo-Modell eingeführt',
@@ -1006,7 +1006,7 @@ var translations = {
     'enterprise.road.tools.title': 'Intelligentere KI-Tools',
     'enterprise.road.tools.text': 'Die KI-Fähigkeiten, die wir anbieten, kontinuierlich verbessern — Automatisierung leistungsfähiger, praxisnäher und einfacher zu übernehmen.',
     'enterprise.road.expand.title': 'Expansion in Europa',
-    'enterprise.road.expand.text': 'Von den Niederlanden aus wachsen, um kleine Unternehmen in der gesamten EU mit lokaler Expertise und mehrsprachigem Support zu betreuen.',
+    'enterprise.road.expand.text': 'Von Brasilien aus wachsen, um Unternehmen weltweit mit lokaler Expertise und mehrsprachigem Support zu betreuen.',
     'enterprise.road.impact.title': 'Echte Wirkung messen',
     'enterprise.road.impact.text': 'Den konkreten Unterschied nachverfolgen, den wir machen — eingesparte Stunden, reduzierte Kosten, gewonnene Effizienz. Transparente Ergebnisse für jeden Partner.',
     'enterprise.cta.label': 'Interessiert?',
@@ -1097,11 +1097,11 @@ var translations = {
     'cta.btn': 'R\u00e9server un Appel',
 
     // Footer
-    'footer.desc': 'Votre \u00e9quipe digitale & IA externalis\u00e9e. Bas\u00e9s aux Pays-Bas, au service des PME \u00e0 travers l\'Europe.',
+    'footer.desc': 'Votre \u00e9quipe digitale & IA externalis\u00e9e. Bas\u00e9s au Brésil, au service des PME \u00e0 travers l\'Europe.',
     'footer.col1': 'Navigation',
     'footer.col2': 'Entreprise',
     'footer.col3': 'Contact',
-    'footer.copy': '\u00a9 2026 Oopuo B.V. Tous droits r\u00e9serv\u00e9s.',
+    'footer.copy': '\u00a9 2026 Nine Corp. Servico e Consultoria LTDA. Tous droits r\u00e9serv\u00e9s.',
 
     // Plans page
     'plans.hero.title': 'Un abonnement. Tout le digital couvert.',
@@ -1112,7 +1112,7 @@ var translations = {
     'portfolio.hero.subtitle': 'De vrais projets. De vrais r\u00e9sultats. Des startups aux entreprises \u00e9tablies.',
 
     // About page
-    'about.hero.title': 'Fond\u00e9 aux Pays-Bas. Port\u00e9 par la conviction.',
+    'about.hero.title': 'Fond\u00e9 au Br\u00e9sil. Port\u00e9 par la conviction.',
     'about.otto.label': 'Fondateur & CEO',
     'about.otto.title': 'D\u00e9couvrez Otto',
     'about.mission.label': 'Notre Mission',
@@ -1140,7 +1140,7 @@ var translations = {
     'contact.info.schedule.title': 'Planifier un Appel',
     'contact.info.schedule.desc': 'R\u00e9servez un appel gratuit de 15 minutes pour discuter de vos besoins.',
     'contact.info.location.title': 'Localisation',
-    'contact.info.location.desc': 'Pays-Bas, UE',
+    'contact.info.location.desc': 'Jaupaci, GO \u2014 Br\u00e9sil',
 
     // Contact extras
     'contact.form.name.placeholder': 'Votre nom',
@@ -1155,7 +1155,7 @@ var translations = {
     'contact.worldwide': 'Nous accompagnons des clients dans le monde entier. Toutes les réunions se déroulent en ligne, sauf arrangement contraire.',
 
     // Footer
-    'footer.location': 'Pays-Bas, UE',
+    'footer.location': 'Jaupaci, GO \u2014 Br\u00e9sil',
 
     // Index page
     'home.marquee.label': 'Les outils que nous utilisons pour propulser votre activité',
@@ -1273,7 +1273,7 @@ var translations = {
     'about.otto.bio3': 'Fort d\'une expertise en infrastructure IA, création de startups et systèmes d\'entreprise, Otto dirige Oopuo avec une approche pragmatique : des problèmes concrets, des solutions pratiques, sans superflu.',
     'about.mission.subtitle': 'Nous croyons que chaque entreprise — quelle que soit sa taille — devrait avoir accès à une gestion numérique compétente et à une IA pratique. Une seule équipe, un seul abonnement, aucune confusion.',
     'about.timeline.t1.title': 'Fondation d\'Oopuo',
-    'about.timeline.t1.text': 'Créé avec la mission de donner aux petites entreprises accès à une gestion numérique compétente et à l\'IA. Basé aux Pays-Bas, ancré dans l\'UE.',
+    'about.timeline.t1.text': 'Créé avec la mission de donner aux petites entreprises accès à une gestion numérique compétente et à l\'IA. Basé au Brésil, ancré dans l\'UE.',
     'about.timeline.t2.title': 'Construction des fondations',
     'about.timeline.t2.text': 'Développement de notre infrastructure IA interne et de nos processus. Livraison des premiers projets clients en web, systèmes et automatisation IA.',
     'about.timeline.t3.title': 'Lancement du modèle par abonnement',
@@ -1352,7 +1352,7 @@ var translations = {
     'enterprise.road.tools.title': 'Des Outils IA Plus Intelligents',
     'enterprise.road.tools.text': 'Améliorer continuellement les capacités IA que nous proposons — rendre l\'automatisation plus puissante, plus pratique et plus facile à adopter.',
     'enterprise.road.expand.title': 'S\'étendre à Travers l\'Europe',
-    'enterprise.road.expand.text': 'En partant des Pays-Bas, nous grandissons pour servir les petites entreprises à travers l\'UE avec une expertise locale et un support multilingue.',
+    'enterprise.road.expand.text': 'En partant du Brésil, nous grandissons pour servir les petites entreprises à travers l\'UE avec une expertise locale et un support multilingue.',
     'enterprise.road.impact.title': 'Mesurer l\'Impact Réel',
     'enterprise.road.impact.text': 'Suivre la différence concrète que nous apportons — heures économisées, coûts réduits, efficacité accrue. Des résultats transparents pour chaque partenaire.',
     'enterprise.cta.label': 'Intéressé ?',
@@ -1443,11 +1443,11 @@ var translations = {
     'cta.btn': 'Reservar Llamada',
 
     // Footer
-    'footer.desc': 'Tu equipo digital & IA externalizado. Con sede en Pa\u00edses Bajos, al servicio de pymes en toda Europa.',
+    'footer.desc': 'Tu equipo digital & IA externalizado. Con sede en Brasil, al servicio de pymes en toda Europa.',
     'footer.col1': 'Navegaci\u00f3n',
     'footer.col2': 'Empresa',
     'footer.col3': 'Contacto',
-    'footer.copy': '\u00a9 2026 Oopuo B.V. Todos los derechos reservados.',
+    'footer.copy': '\u00a9 2026 Nine Corp. Servico e Consultoria LTDA. Todos los derechos reservados.',
 
     // Plans page
     'plans.hero.title': 'Una suscripci\u00f3n. Todo lo digital cubierto.',
@@ -1458,7 +1458,7 @@ var translations = {
     'portfolio.hero.subtitle': 'Proyectos reales. Resultados reales. Desde startups hasta empresas consolidadas.',
 
     // About page
-    'about.hero.title': 'Fundado en los Pa\u00edses Bajos. Impulsado por convicci\u00f3n.',
+    'about.hero.title': 'Fundado en Brasil. Impulsado por convicci\u00f3n.',
     'about.otto.label': 'Fundador & CEO',
     'about.otto.title': 'Conoce a Otto',
     'about.mission.label': 'Nuestra Misi\u00f3n',
@@ -1486,7 +1486,7 @@ var translations = {
     'contact.info.schedule.title': 'Agendar una Llamada',
     'contact.info.schedule.desc': 'Reserva una llamada gratuita de 15 minutos para hablar de tus necesidades.',
     'contact.info.location.title': 'Ubicaci\u00f3n',
-    'contact.info.location.desc': 'Pa\u00edses Bajos, UE',
+    'contact.info.location.desc': 'Jaupaci, GO \u2014 Brasil',
 
     'contact.form.name.placeholder': 'Tu nombre',
     'contact.form.email.placeholder': 'tu@empresa.com',
@@ -1498,7 +1498,7 @@ var translations = {
     'contact.response.title': 'Tiempo de Respuesta',
     'contact.response.text': 'Normalmente respondemos en menos de 24 horas en d\u00edas laborables.',
     'contact.worldwide': 'Trabajamos con clientes en todo el mundo. Todas las reuniones se realizan online salvo que se acuerde lo contrario.',
-    'footer.location': 'Pa\u00edses Bajos, UE',
+    'footer.location': 'Jaupaci, GO \u2014 Brasil',
     'home.marquee.label': 'Herramientas que usamos para impulsar tu negocio',
     'home.pricing.permonth': 'al mes',
     'home.pricing.essentials.f1': 'Web gestionada, actualizada y alojada',
@@ -1685,7 +1685,7 @@ var translations = {
     'enterprise.road.tools.title': 'Herramientas IA M\u00e1s Inteligentes',
     'enterprise.road.tools.text': 'Mejorar continuamente las capacidades de IA que ofrecemos.',
     'enterprise.road.expand.title': 'Expansi\u00f3n por Europa',
-    'enterprise.road.expand.text': 'Empezando desde los Pa\u00edses Bajos, creciendo para servir a peque\u00f1as empresas en toda la UE.',
+    'enterprise.road.expand.text': 'Desde Brasil, creciendo para servir a peque\u00f1as empresas en toda la UE.',
     'enterprise.road.impact.title': 'Medir el Impacto Real',
     'enterprise.road.impact.text': 'Rastrear la diferencia concreta que marcamos \u2014 horas ahorradas, costes reducidos, eficiencia ganada.',
     'enterprise.cta.label': '\u00bfTe interesa?',
@@ -1776,11 +1776,11 @@ var translations = {
     'cta.btn': 'Marcar Chamada',
 
     // Footer
-    'footer.desc': 'A sua equipa digital & IA externalizada. Sediados nos Pa\u00edses Baixos, ao servi\u00e7o de PMEs em toda a Europa.',
+    'footer.desc': 'A sua equipa digital & IA externalizada. Sediados no Brasil, ao servi\u00e7o de PMEs em toda a Europa.',
     'footer.col1': 'Navega\u00e7\u00e3o',
     'footer.col2': 'Empresa',
     'footer.col3': 'Contacto',
-    'footer.copy': '\u00a9 2026 Oopuo B.V. Todos os direitos reservados.',
+    'footer.copy': '\u00a9 2026 Nine Corp. Servico e Consultoria LTDA. Todos os direitos reservados.',
 
     // Plans page
     'plans.hero.title': 'Uma assinatura. Tudo digital coberto.',
@@ -1791,7 +1791,7 @@ var translations = {
     'portfolio.hero.subtitle': 'Projetos reais. Resultados reais. De startups a empresas estabelecidas.',
 
     // About page
-    'about.hero.title': 'Fundado nos Pa\u00edses Baixos. Movido pela convic\u00e7\u00e3o.',
+    'about.hero.title': 'Fundado no Brasil. Movido pela convic\u00e7\u00e3o.',
     'about.otto.label': 'Fundador & CEO',
     'about.otto.title': 'Conhe\u00e7a o Otto',
     'about.mission.label': 'A Nossa Miss\u00e3o',
@@ -1819,7 +1819,7 @@ var translations = {
     'contact.info.schedule.title': 'Agendar Chamada',
     'contact.info.schedule.desc': 'Marque uma chamada gratuita de 15 minutos para discutir as suas necessidades.',
     'contact.info.location.title': 'Localiza\u00e7\u00e3o',
-    'contact.info.location.desc': 'Pa\u00edses Baixos, UE',
+    'contact.info.location.desc': 'Jaupaci, GO \u2014 Brasil',
 
     // Contact Form Placeholders & Booking
     'contact.form.name.placeholder': 'O seu nome',
@@ -1834,7 +1834,7 @@ var translations = {
     'contact.worldwide': 'Trabalhamos com clientes em todo o mundo. Todas as reuni\u00f5es s\u00e3o realizadas online, salvo acordo em contr\u00e1rio.',
 
     // Footer
-    'footer.location': 'Pa\u00edses Baixos, UE',
+    'footer.location': 'Jaupaci, GO \u2014 Brasil',
 
     // Home Marquee
     'home.marquee.label': 'Ferramentas que usamos para impulsionar o seu neg\u00f3cio',
@@ -2047,7 +2047,7 @@ var translations = {
     'enterprise.road.tools.title': 'Ferramentas de IA Mais Inteligentes',
     'enterprise.road.tools.text': 'Melhorar continuamente as capacidades de IA que oferecemos.',
     'enterprise.road.expand.title': 'Expandir pela Europa',
-    'enterprise.road.expand.text': 'A come\u00e7ar pelos Pa\u00edses Baixos, a crescer pela UE.',
+    'enterprise.road.expand.text': 'A come\u00e7ar pelo Brasil, a crescer globalmente.',
     'enterprise.road.impact.title': 'Medir o Impacto Real',
     'enterprise.road.impact.text': 'Acompanhar a diferen\u00e7a concreta que fazemos.',
     'enterprise.cta.label': 'Interessado?',
