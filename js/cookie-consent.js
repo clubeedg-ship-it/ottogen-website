@@ -6,7 +6,7 @@
   banner.innerHTML = `
     <div class="cookie-inner">
       <div class="cookie-text">
-        <p>We use cookies to enhance your experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies.</p>
+        <p>We use cookies to enhance your experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies. <a href="/cookies.html" style="color:#0055ff;text-decoration:underline">Cookie Policy</a></p>
       </div>
       <div class="cookie-actions">
         <button id="cookie-reject" class="cookie-btn cookie-btn-secondary">Reject</button>
