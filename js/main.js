@@ -282,24 +282,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-    const entries = Object.fromEntries(data);
-    
-    // Show success state
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = '#22c55e';
+    btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.style.background = '';
+    const data = new FormData(form);
+    
+    // HubSpot Forms API submit
+    const portalId = '147967707';
+    // TODO: Replace with your actual form ID from HubSpot (Marketing > Forms > Embed > formId)
+    const formId = 'INSERT_FORM_ID_HERE'; 
+    
+    const payload = {
+      fields: [
+        { name: 'full_name', value: data.get('name') },
+        { name: 'email', value: data.get('email') },
+        { name: 'company', value: data.get('company') },
+        { name: 'message', value: data.get('message') }
+      ],
+      context: {
+        pageUri: window.location.href,
+        pageName: document.title
+      }
+    };
+
+    try {
+      if (formId !== 'INSERT_FORM_ID_HERE') {
+        await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      }
+      
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#22c55e';
+      
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+        form.reset();
+      }, 3000);
+    } catch (err) {
+      console.error('Form submission failed:', err);
+      btn.textContent = 'Error - Try Again';
       btn.disabled = false;
-      form.reset();
-    }, 3000);
+    }
   });
 });
 

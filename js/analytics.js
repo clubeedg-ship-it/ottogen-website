@@ -2,7 +2,7 @@
 // Only loads after cookie consent
 // GA4 Measurement ID: placeholder (update with real ID)
 
-window.OOPUO_GA_ID = 'G-XXXXXXXXXX'; // TODO: Replace with real GA4 Measurement ID
+window.OOPUO_GA_ID = 'G-6Q4Z0KWEDM'; // TODO: Replace with real GA4 Measurement ID
 
 window.enableAnalytics = function() {
   if (window._analyticsLoaded) return;
